@@ -1,0 +1,25 @@
+.wrapper-admin-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+
+  .admin-login-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    img {
+      width: 154px;
+    }
+  }
+
+  .ant-form {
+    width: 300px;
+
+    .ant-space {
+      width: 100%;
+    }
+  }
+}

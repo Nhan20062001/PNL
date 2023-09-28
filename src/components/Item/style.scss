@@ -1,0 +1,24 @@
+.wrapper-item-main {
+  cursor: pointer;
+  .container-item-main {
+    .wrapper-image-item-main {
+      img {
+        width: 100%;
+        height: 165px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+    }
+    .wrapper-title-item-main {
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-weight: 600;
+        color: #000000;
+        font-size: 16px;
+      }
+    }
+  }
+}

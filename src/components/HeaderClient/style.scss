@@ -1,0 +1,95 @@
+@import "@/styles/mixins.scss";
+
+// top bar
+.flex-row-header {
+  align-items: center;
+  display: flex;
+
+  height: 32px;
+  .flex-col-header {
+    max-height: 100%;
+  }
+
+  &,
+  .wrapper-top-bar {
+    @media (max-width: $sm-min-width) {
+      display: none;
+    }
+  }
+
+  .wrapper-top-bar-left {
+    flex: 1;
+    text-align: left;
+  }
+
+  .wrapper-top-bar-mid {
+    flex: 0;
+    text-align: center;
+  }
+
+  .wrapper-top-bar-right {
+    flex: 1;
+    text-align: right;
+  }
+}
+
+// menu
+.wide-nav {
+  background-color: #066156;
+  @media (max-width: $sm-min-width) {
+    background-color: rgba(255, 255, 255, 0.781); /* Trong suốt */
+    width: 100%;
+    z-index: 30;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15);
+  }
+  .wrapper-menu-home {
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .item-menu-home {
+      height: 100%;
+      line-height: 44px;
+      padding: 0 12px;
+      text-align: center;
+      .menu-title-content {
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        font-weight: 600;
+        font-size: 14px;
+        text-wrap: nowrap;
+      }
+      &:hover {
+        background-color: #b4aa21;
+        .menu-title-content {
+          color: black;
+        }
+      }
+    }
+
+    @media (max-width: $sm-min-width) {
+      display: none;
+    }
+  }
+
+  .menu-mobile {
+    @media (min-width: $sm-min-width) {
+      display: none;
+    }
+
+    @media (max-width: $sm-min-width) {
+      display: flex;
+
+      & > .bar-home {
+        margin-right: auto; /* "bar" sẽ nằm sát bên trái */
+      }
+
+      & > .home-logo-mobile {
+        flex: 1; /* "Logo" sẽ mở rộng để đối xứng với khoảng trống còn lại */
+        text-align: center;
+      }
+    }
+  }
+}

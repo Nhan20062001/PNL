@@ -1,0 +1,197 @@
+@import "@/styles/mixins.scss";
+
+// var(--primary-glow)
+
+.ant-carousel {
+  .carousel-home-page {
+    .slick-prev {
+      top: 50%;
+      z-index: 1000;
+      left: 2%;
+      background: red;
+    }
+
+    .slick-next {
+      top: 50%;
+      z-index: 1000;
+      right: 2%;
+      background: red;
+    }
+
+    img {
+      height: 694px;
+      object-fit: cover;
+      width: 100%;
+
+      @media (max-width: $sm-max-width) {
+        height: 240px;
+      }
+    }
+  }
+
+  .carousel-product-main {
+    .slick-prev {
+      top: 50%;
+      z-index: 1000;
+      left: 2%;
+      background: red;
+    }
+
+    .slick-next {
+      top: 50%;
+      z-index: 1000;
+      right: 2%;
+      background: red;
+    }
+
+    img {
+      height: 160px;
+      width: 160px;
+      object-fit: cover;
+      margin: 0 auto;
+      border-radius: 12px;
+    }
+  }
+
+  .carousel-customer {
+    .slick-prev {
+      top: 50%;
+      z-index: 1000;
+      left: 2%;
+      background: red;
+    }
+
+    .slick-next {
+      top: 50%;
+      z-index: 1000;
+      right: 2%;
+      background: red;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .carousel-customer-item {
+      transition: transform 0.5s, filter 0.5s;
+      filter: blur(4px); /* Mờ các item */
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .slick-slide {
+      padding: 10px;
+    }
+
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+
+    .slick-center {
+      // transform: scale(1.2); /* Phóng to item ở giữa */
+      z-index: 9;
+      @media (max-width: $sm-max-width) {
+        width: 240px;
+      }
+      .carousel-customer-item {
+        filter: none;
+        height: 220px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.container-section-product {
+  .wrapper-image-product {
+    .title-product {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      color: #ffffff;
+      font-size: 22px;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+.container-section-print {
+  .col-section-print {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .wrapper-image-print {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px 0 #dedede;
+      width: 300px;
+      @media (max-width: $xs-max-width-large) {
+        width: 100%;
+      }
+      img {
+        width: 300px;
+        height: 200px;
+        border-radius: 12px 12px 0 0;
+        @media (max-width: $xs-max-width-large) {
+          width: 100%;
+        }
+      }
+
+      .wrapper-title-print {
+        padding: 12px 0;
+        .title-print {
+          color: #f59421;
+        }
+      }
+    }
+  }
+}
+
+.wrapper-design-course {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  .content-design-course {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper-design-course-iframe {
+    position: relative;
+    padding-bottom: 56.25%;
+    width: 100%;
+    height: 400px;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 12px;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.wrapper-item-design-resource {
+  width: 400px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+  }
+}

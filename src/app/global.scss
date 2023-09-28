@@ -1,0 +1,85 @@
+@import "@/styles/mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  font-family: "NunitoSansBlack", sans-serif;
+  background-color: var(--background-main-color);
+  text-rendering: optimizeSpeed;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    vertical-align: top;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    font-family: "__Montserrat_d9cbf0";
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .container {
+    padding: 0 12px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .wrapper-bread-crumb {
+    margin-bottom: 24px;
+    a {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (min-width: $xs-min-width) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: $sm-min-width) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: $md-min-width) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: $xl-min-width) {
+  .container {
+    width: 1170px;
+  }
+}
