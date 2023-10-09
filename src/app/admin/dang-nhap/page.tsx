@@ -1,28 +1,64 @@
-"use client";
+'use client';
 
-import theme from "@/theme/themeConfig";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, ConfigProvider, Form, Input, Space } from "antd";
-import { useDispatch } from "react-redux";
-import { loginAdminAction } from "@/store/auth/auth.action";
-import { AppDispatch } from "@/store";
-import "./style.scss";
+import React, { useEffect } from 'react';
+import theme from '@/theme/themeConfig';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  Button, ConfigProvider, Form, Input, Space, notification,
+} from 'antd';
+import { loginAdminAction } from '@/store/auth/auth.action';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { useRouter } from 'next/navigation';
+import { LOGO_LOGIN_AMDIN, NotificationTypeEnum } from '@/config/constant';
+import './style.scss';
 
-const Login = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const onFinish = (values: any) => {
+function Login() {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+  const authSlice = useAppSelector((state) => state.authSlice);
+  const [api, contextHolder] = notification.useNotification();
+
+  useEffect(() => {
+    // login
+    if (Object.values(authSlice.token).every((value) => value !== '')) {
+      router.push('/admin/thong-ke');
+    }
+  }, [authSlice.token, router]);
+
+  const openNotificationWithIcon = (
+    type: NotificationTypeEnum,
+    message: string,
+  ) => {
+    api[type]({
+      message,
+      description: '',
+    });
+  };
+
+  const onFinish = async (values: any) => {
     const { email, password } = values;
-    dispatch(loginAdminAction({ email, password }));
+    const res: any = await dispatch(loginAdminAction({ email, password }));
+    if (res.payload.error) {
+      openNotificationWithIcon(
+        NotificationTypeEnum.error,
+        'Đăng nhập thất bại',
+      );
+    } else {
+      notification.success({
+        message: 'Thông báo',
+        description: 'Đăng nhập thành công',
+      });
+    }
   };
 
   return (
     <ConfigProvider theme={theme}>
+      {contextHolder}
       <div className="wrapper-admin-login">
         <div className="admin-login-logo">
-          <img
-            src="https://building.vienthammygangnam.vn/wp-content/uploads/2023/07/gangnam-logo.png"
-            alt=""
-          />
+          <picture>
+            <img src={LOGO_LOGIN_AMDIN} alt="admin" />
+          </picture>
         </div>
         <Form
           name="normal_login"
@@ -34,7 +70,7 @@ const Login = () => {
           <Space direction="vertical">
             <Form.Item
               name="email"
-              rules={[{ required: true, message: "Vui lòng nhập email!" }]}
+              rules={[{ required: true, message: 'Vui lòng nhập email!' }]}
             >
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
@@ -45,7 +81,7 @@ const Login = () => {
 
             <Form.Item
               name="password"
-              rules={[{ required: true, message: "Vui lòng nhập password!" }]}
+              rules={[{ required: true, message: 'Vui lòng nhập password!' }]}
             >
               <Input.Password
                 prefix={<LockOutlined className="site-form-item-icon" />}
@@ -55,27 +91,21 @@ const Login = () => {
               />
             </Form.Item>
 
-            <Form.Item name="remember" valuePropName="checked" noStyle>
-              <Checkbox>Lưu mật khẩu</Checkbox>
-            </Form.Item>
-
             <Button
               type="primary"
               htmlType="submit"
               className="login-form-button mt-3 bg-blue-600"
               block
               size="large"
+              loading={authSlice.loading}
             >
               Đăng nhập
             </Button>
-            <a style={{ float: "right" }} className="login-form-forgot" href="">
-              Quên mật khẩu
-            </a>
           </Space>
         </Form>
       </div>
     </ConfigProvider>
   );
-};
+}
 
 export default Login;

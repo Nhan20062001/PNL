@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+
+Host: https://thietkesata.com
+
+Sitemap: https://thietkesata.com/sitemap.xml

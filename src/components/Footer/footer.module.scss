@@ -1,0 +1,65 @@
+@import "@/styles/mixins.scss";
+
+.wrapper-footer {
+  background-color: #066156;
+  color: #a9b3bb;
+  overflow: hidden;
+  padding: 24px 0 24px;
+
+  .ant-space {
+    @media (max-width: $sm-max-width) {
+      width: 100%;
+    }
+  }
+
+  .wrapper-footer-info {
+    .ant-space-item {
+      &:first-child {
+        @media (max-width: $xs-max-width-large) {
+          text-align: center;
+        }
+      }
+    }
+
+    .footer-logo {
+      border-radius: 12px;
+      height: 98px;
+      width: 98px;
+      object-fit: cover;
+      margin-bottom: 24px;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  p {
+    color: white;
+    font-size: 16px;
+  }
+
+  a {
+    color: white;
+  }
+
+  .footer-title {
+    font-size: 24px;
+    color: white;
+
+    @media (max-width: $sm-max-width) {
+      margin-top: 24px;
+    }
+  }
+
+  .wrapper-footer-bottom {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    p {
+      font-size: 12px;
+    }
+  }
+}

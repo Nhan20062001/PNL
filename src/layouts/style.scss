@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    transition: all 0.3s ease 0s;
+    transition: all 0.1s ease 0s;
     .container-sidebar-admin-logo {
       display: flex;
       align-items: center;
@@ -26,20 +26,53 @@
       img {
         width: 90%;
         height: 54px;
-        object-fit: cover;
+        object-fit: contain;
       }
+    }
+
+    ul {
+      overflow: scroll;
+      padding-bottom: 58px;
     }
   }
 
   .wrapper-sidebar-admin-menu {
     background-color: #066156;
     height: calc(100vh - 84px);
-    margin-top: 84px;
+    margin-top: 64px;
+
+    &.ant-menu {
+      height: calc(100vh - 64px);
+      position: fixed;
+    }
 
     .ant-menu-item {
       color: white;
+
       &.ant-menu-item-selected {
         background-color: #e9b824;
+        &:hover {
+          .ant-menu-title-content {
+            color: #066156;
+          }
+          .anticon {
+            svg {
+              color: #066156;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .ant-menu-title-content {
+          color: #e9b824;
+        }
+
+        .anticon {
+          svg {
+            color: #e9b824;
+          }
+        }
       }
     }
 
@@ -52,5 +85,55 @@
         background-color: #e9b824;
       }
     }
+  }
+}
+
+.wrapper-content-admin {
+  margin: 24px 16px 0;
+  padding: 24px;
+  overflow: initial;
+  height: calc(100vh - 64px - 48px);
+  margin-top: 64px;
+  .wrapper-table-admin {
+    margin-top: 24px;
+
+    .ant-table-wrapper {
+      .ant-table-footer {
+        text-align: right;
+      }
+    }
+  }
+
+  .wrapper-action-admin {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.wrapper-action-contact {
+  position: fixed;
+  bottom: 180px;
+  right: 20px;
+
+  .btn-icon-facebook {
+    .ant-btn-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .btn-icon-phone {
+    .ant-btn-icon {
+      svg {
+        width: 36px !important;
+        height: 36px;
+      }
+    }
+  }
+  .ant-btn {
+    width: 46px !important;
+    height: 46px;
+    border-radius: 50%;
   }
 }

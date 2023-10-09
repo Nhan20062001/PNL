@@ -1,67 +1,110 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { loginAdminAction } from "./auth.action";
+import { createSlice } from '@reduxjs/toolkit';
+import { loginAdminAction } from './auth.action';
+import { AuthState } from './auth.type';
 
-// const userStorage = JSON.parse(
-//   (localStorage.getItem("user") || null) as string
-// );
-
-const userStorage = "";
+const initialState: AuthState = {
+  user: {
+    id: '',
+    createdAt: '',
+    updatedAt: '',
+    deletedAt: null,
+    role: '',
+    email: '',
+    firstName: null,
+    lastName: null,
+    avatar: '',
+  },
+  token: {
+    expiresIn: 0,
+    accessToken: '',
+    refreshToken: '',
+  },
+  error: '',
+  loading: false,
+};
 
 const authSlice = createSlice({
-  name: "auth",
-  initialState: {
-    infoAccount: {
-      user: userStorage || {},
-      accessToken: "",
-      refreshToken: "",
-    },
-  },
+  name: 'auth',
+  initialState,
   reducers: {
-    setAuthTokens: (state, action) => {
-      const { accessToken, refreshToken } = action.payload;
-
-      localStorage.setItem("user", JSON.stringify(action.payload.data.user));
-      state.infoAccount = {
-        user: action.payload.data.user,
-        accessToken: accessToken,
-        refreshToken: refreshToken,
-      };
-    },
-
-    removeAuth: (state, _) => {
-      state.infoAccount = {
-        user: {},
-        accessToken: "",
-        refreshToken: "",
-      };
-      localStorage.removeItem("user");
-    },
+    setUserAuth: (state: AuthState, action: any) => ({
+      ...state,
+      user: action.payload,
+    }),
+    setTokenAuth: (state: AuthState, action: any) => ({
+      ...state,
+      token: action.payload,
+    }),
+    setErrorAuth: (state: AuthState, action: any) => ({
+      ...state,
+      error: action.payload,
+    }),
   },
 
   extraReducers: (builder) => {
     builder
-      .addCase(loginAdminAction.pending, (state) => {
-        state.infoAccount = {
-          user: {},
-          accessToken: "",
-          refreshToken: "",
+      .addCase(loginAdminAction.pending, (state: AuthState) => ({
+        ...state,
+        token: {
+          expiresIn: 0,
+          accessToken: '',
+          refreshToken: '',
+        },
+        user: {
+          id: '',
+          createdAt: '',
+          updatedAt: '',
+          deletedAt: null,
+          role: '',
+          email: '',
+          firstName: null,
+          lastName: null,
+          avatar: '',
+        },
+        error: '',
+        loading: true,
+      }))
+      .addCase(loginAdminAction.fulfilled, (state: AuthState, action: any) => {
+        const { data } = action.payload;
+        return {
+          ...state,
+          token: {
+            ...data.token,
+          },
+          user: {
+            ...data.user,
+          },
+          error: '',
+          loading: false,
         };
       })
-      .addCase(loginAdminAction.fulfilled, (state, action) => {
-        if (!action.payload) {
-          // expiresIn
-        }
-      })
-      .addCase(loginAdminAction.rejected, (state, _) => {
-        state.infoAccount = {
-          user: {},
-          accessToken: "",
-          refreshToken: "",
+      .addCase(loginAdminAction.rejected, (state: AuthState, action: any) => {
+        const { error } = action.payload;
+        return {
+          ...state,
+          token: {
+            expiresIn: 0,
+            accessToken: '',
+            refreshToken: '',
+          },
+          user: {
+            id: '',
+            createdAt: '',
+            updatedAt: '',
+            deletedAt: null,
+            role: '',
+            email: '',
+            firstName: null,
+            lastName: null,
+            avatar: '',
+          },
+          error,
+          loading: false,
         };
       });
   },
 });
 
-export const { setAuthTokens, removeAuth } = authSlice.actions;
+export const { setTokenAuth, setUserAuth, setErrorAuth } = authSlice.actions;
 
 export default authSlice.reducer;

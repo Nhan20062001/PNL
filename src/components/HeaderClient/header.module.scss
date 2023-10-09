@@ -1,0 +1,9 @@
+@import "@/styles/mixins.scss";
+
+.wrapper-header-client {
+  position: sticky;
+  top: -100px;
+  background-color: blue;
+  transition: top 0.5s ease;
+  z-index: 1000;
+}

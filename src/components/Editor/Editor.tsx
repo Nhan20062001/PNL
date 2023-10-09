@@ -1,89 +1,101 @@
-"use client";
+'use client';
 
-import dynamic from "next/dynamic";
-import { useState } from "react";
+import React from 'react';
+import dynamic from 'next/dynamic';
 import type {
   UploadBeforeHandler,
   UploadBeforeReturn,
-} from "suneditor-react/dist/types/upload";
+} from 'suneditor-react/dist/types/upload';
 
-import "suneditor/dist/css/suneditor.min.css";
-import "./style.scss";
+import { useAppDispatch } from '@/store';
+import { encryptCloudMediaKey } from '@/utils/encryptCloudMediaKey';
+import { postUploadImageAction } from '@/store/upload/upload.action';
+import 'suneditor/dist/css/suneditor.min.css';
+import './style.scss';
 
-const SunEditor = dynamic(() => import("suneditor-react"), {
+const SunEditor = dynamic(() => import('suneditor-react'), {
   ssr: false,
 });
 
-const Editor = () => {
-  const [content, setContent] = useState("");
+type Props = {
+  contentEditor: string;
+  onChangeContentEditor?: (newContent: string) => void;
+};
+
+function Editor({ contentEditor, onChangeContentEditor }: Props) {
+  const dispatch = useAppDispatch();
 
   const handleImageUploadBefore = (
     files: File[],
     _: object,
-    uploadHandler: UploadBeforeHandler
+    uploadHandler: UploadBeforeHandler,
   ): UploadBeforeReturn => {
-    if (files.length === 0) {
-      // Handle the case where there are no files to upload
-      return undefined;
-    }
-    const fileToUpload = files[0];
-    const formData = new FormData();
-    if (fileToUpload) {
-      formData.append("file", fileToUpload, fileToUpload.name); // Specify name and filename
-    }
-    try {
-      const response = {
-        status: 200,
-      };
-      if (response.status === 200 || response.status === 201) {
+    let result: UploadBeforeReturn;
+
+    (async () => {
+      try {
+        const res: any = await dispatch(
+          postUploadImageAction({
+            key: encryptCloudMediaKey(),
+            file: files[0],
+          }),
+        );
+        // eslint-disable-next-line no-shadow
+        const result = [
+          {
+            url: res.payload.data?.result,
+            name: res.payload.data?.originalname,
+            size: 100,
+          },
+        ];
+
+        uploadHandler({ result });
+      } catch (error) {
         uploadHandler({
-          result: [
-            {
-              url: "",
-              name: "",
-              size: 100,
-            },
-          ],
+          errorMessage: 'Error uploading image',
+          result: [],
         });
       }
-    } catch (error) {
-      uploadHandler({
-        errorMessage: "Kích thước ảnh tối đa 1MB",
-        result: [],
-      });
-    }
-    return undefined;
+    })();
+
+    return result;
   };
 
   return (
     <SunEditor
       name="content"
-      defaultValue={content}
-      onChange={(text) => setContent(text)}
+      setContents={contentEditor || ''}
+      onChange={onChangeContentEditor}
       setOptions={{
-        height: "200",
+        height: '200',
         buttonList: [
           [
-            "formatBlock",
-            "font",
-            "fontSize",
-            "fontColor",
-            "align",
-            "paragraphStyle",
-            "blockquote",
+            'formatBlock',
+            'font',
+            'fontSize',
+            'fontColor',
+            'align',
+            'paragraphStyle',
+            'blockquote',
           ],
-          ["bold", "underline", "italic", "strike", "subscript", "superscript"],
-          ["removeFormat"],
-          ["outdent", "indent"],
-          ["table", "list"],
-          ["link", "image", "video"],
-          ["preview", "print"],
-          ["undo", "redo"],
+          ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript'],
+          ['removeFormat'],
+          ['outdent', 'indent'],
+          ['table', 'list'],
+          ['link', 'image', 'video'],
+          ['preview', 'print'],
+          ['undo', 'redo'],
         ],
+        defaultTag: 'div',
+        showPathLabel: false,
       }}
       onImageUploadBefore={handleImageUploadBefore}
     />
   );
+}
+
+Editor.defaultProps = {
+  onChangeContentEditor: () => {}, // Giá trị mặc định ở đây là một hàm trống
 };
 
 export default Editor;

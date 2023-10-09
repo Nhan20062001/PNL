@@ -1,11 +1,12 @@
 const removeEmptyProperties = (obj: any) => {
   const cleanedParams = new URLSearchParams();
 
-  for (const key in obj) {
-    if (obj[key] !== null && obj[key] !== undefined && obj[key] !== "") {
-      cleanedParams.append(key, obj[key]);
+  Object.keys(obj).forEach((key) => {
+    const value = obj[key];
+    if (value !== null && value !== undefined && value !== '') {
+      cleanedParams.append(key, value);
     }
-  }
+  });
 
   return cleanedParams.toString();
 };

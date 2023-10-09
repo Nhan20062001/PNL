@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { AxiosResponse } from 'axios';
 
 export type ParamLoginAdmin = {
   email: string;
@@ -16,12 +16,40 @@ export type LoginAdminResponse = AxiosResponse<{
       id: string;
       createdAt: string;
       updatedAt: string;
+      deletedAt: string | null;
       role: string;
       email: string;
       firstName: string | null;
       lastName: string | null;
       avatar: string;
-      deletedAt: string | null;
     };
   };
+  error?: string;
 }>;
+
+export interface AuthState {
+  user: {
+    id: string;
+    createdAt: string;
+    updatedAt: string;
+    deletedAt: string | null;
+    role: string;
+    email: string;
+    firstName: string | null;
+    lastName: string | null;
+    avatar: string;
+  };
+  token: {
+    expiresIn: number;
+    accessToken: string;
+    refreshToken: string;
+  };
+  error: string;
+  loading: boolean;
+}
+
+export interface ResetPasswordModel {
+  email: string;
+  newPassword: string;
+  oldPassword: string;
+}

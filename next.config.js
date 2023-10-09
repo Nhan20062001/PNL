@@ -1,12 +1,29 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
+  eslintConfig: {
+    extends: ['prettier'],
+  },
+  experimental: {
+    outputStandalone: true,
+  },
   images: {
     domains: [
-      "building.vienthammygangnam.vn",
-      "i.ibb.co",
-      "images.pexels.com",
-      "l3.googleusercontent.com",
+      'res.cloudinary.com',
+      'building.vienthammygangnam.vn',
+      'bizflyportal.mediacdn.vn',
+      'i.ibb.co',
+      'images.pexels.com',
+      'l3.googleusercontent.com',
+      'img.icons8.com',
+      'intietkiem.com',
+      'img.freepik.com',
+      'preview.redd.it',
     ],
   },
 };

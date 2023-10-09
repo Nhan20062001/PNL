@@ -1,24 +1,31 @@
-import type { ReactNode } from "react";
-import FooterClient from "@/components/Footer/Footer";
-import HeaderClient from "@/components/HeaderClient/HeaderClient";
-import theme from "../theme/themeConfig";
-import { ConfigProvider } from "antd";
+import React, { type ReactNode, useEffect } from 'react';
+import FooterClient from '@/components/Footer/Footer';
+import HeaderClient from '@/components/HeaderClient/HeaderClient';
+import { ConfigProvider, FloatButton } from 'antd';
+import { ArrowUpOutlined } from '@ant-design/icons';
+import { usePathname } from 'next/navigation';
+import theme from '../theme/themeConfig';
+import './style.scss';
 
 type IMainProps = {
-  meta?: ReactNode;
   children: ReactNode;
 };
 
-const MainClient = (props: IMainProps) => {
+function MainClient({ children }: IMainProps) {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
-    <>
-      <ConfigProvider theme={theme}>
-        <HeaderClient />
-        <main className="">{props.children}</main>
-        <FooterClient />
-      </ConfigProvider>
-    </>
+    <ConfigProvider theme={theme}>
+      <HeaderClient />
+      <main>{children}</main>
+      <FooterClient />
+      <FloatButton.BackTop type="primary" icon={<ArrowUpOutlined />} />
+    </ConfigProvider>
   );
-};
+}
 
 export { MainClient };
