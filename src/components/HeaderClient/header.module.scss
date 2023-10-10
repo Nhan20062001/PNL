@@ -1,33 +1,48 @@
 @import "@/styles/mixins.scss";
 
 .wrapper-header-client {
-  position: sticky;
-  top: -100px;
-  // background-color: blue;
+  position: fixed;
+  top: 0px;
   transition: top 0.5s ease;
+  background-color: #fff;
   z-index: 1000;
   width: 100%;
   height: 86px;
   flex-shrink: 0;
-
-  font-family: Poppins;
+  // font-family: Poppins;
+  // font-size: 18px;
+  
+  
+  .nav-header-logo {
+    position: fixed;
+  }
 
   .nav-header-client {
     float: right;
     position: relative;
 
-    .ant-anchor {
+     .ant-anchor {
       top: 28px;
+      border-bottom: none;
 
-      .ant-anchor-link {
-        padding-left: 30px;
-        padding-right: 30px;
-         
+      :global(.ant-anchor-ink-visible) {
+        background-color: #5AAF32;
       }
-      :global(.ant-anchor-link-active){
-        background-color: red;
-      }
-    }
 
+      :global(.ant-anchor-link) {
+        margin-left: 15px;
+        margin-right: 15px;
+        
+        :global(.ant-anchor-link-title) {
+          font-family: Poppins;
+          font-size: 18px;
+        } 
+      }
+      :global(.ant-anchor-link-active) {
+        :global(.ant-anchor-link-title-active) {
+          color: #5AAF32;
+        }
+      }
+     }
   }
 }
