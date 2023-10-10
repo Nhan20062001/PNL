@@ -3,7 +3,31 @@
 .wrapper-header-client {
   position: sticky;
   top: -100px;
-  background-color: blue;
+  // background-color: blue;
   transition: top 0.5s ease;
   z-index: 1000;
+  width: 100%;
+  height: 86px;
+  flex-shrink: 0;
+
+  font-family: Poppins;
+
+  .nav-header-client {
+    float: right;
+    position: relative;
+
+    .ant-anchor {
+      top: 28px;
+
+      .ant-anchor-link {
+        padding-left: 30px;
+        padding-right: 30px;
+         
+      }
+      :global(.ant-anchor-link-active){
+        background-color: red;
+      }
+    }
+
+  }
 }
