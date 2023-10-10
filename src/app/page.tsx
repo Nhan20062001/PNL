@@ -43,7 +43,7 @@ export default function Home() {
       <div className='container'>
         <div className={styles['about-us']}>
           <Image 
-            src=""
+            src="/images/"
             alt=""
           />
           <div className={styles['content-about-us']}>
