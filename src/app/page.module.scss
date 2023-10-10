@@ -1,70 +1,55 @@
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 
 .container {
-    background-color: #ECEDEC;
-    top: 86px;
-    // position: relative;
+  background-color: #ecedec;
+  top: 86px;
+  // position: relative;
 }
 .main {
-    // position: relative;
-    font-family: Poppins;
-    height: 590px;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-between;
+  // position: relative;
+  font-family: Poppins;
+  height: 590px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
 
-    .content-left {
-        float: left;
-        padding-left: 91px;
-        margin-top: 138px;
-        width: 690px;
+  .content-left {
+    float: left;
+    padding-left: 91px;
+    margin-top: 138px;
+    width: 690px;
 
-        h3 {
-            font-size: 40px;
-            color: #414241;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 44px;
-        }
-        .content-detail {
-            margin-top: 45px;
-            margin-bottom: 41px;
-
-            h6 {
-                font-size: 20px;
-                color: #8E908D;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 24px; 
-                width: 525px;
-            }
-        }
-        :global(.ant-btn-default) {
-            width: 277px;
-            height: 68px;
-            border-radius: 24px;
-            flex-shrink: 0;
-            padding: 0px 18px;
-        }
+    h3 {
+      font-size: 40px;
+      color: #414241;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 44px;
     }
+    .content-detail {
+      margin-top: 45px;
+      margin-bottom: 41px;
 
-    .content-right {
-        margin-top: 64px;
-        // background-color: #414241;        
+      h6 {
+        font-size: 20px;
+        color: #8e908d;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        width: 525px;
+      }
     }
-    
-
-    
-}
-
-.about-us {
-    margin-top: 91px;
-    margin-bottom: 91px;
-
-    .content-about-us {
-        fill: rgba(51, 137, 10, 0.90);
-        stroke-width: 1px;
-        stroke: #5AAF32;
-        filter: drop-shadow(4px 4px 8px #9FD685);
+    :global(.ant-btn-default) {
+      width: 277px;
+      height: 68px;
+      border-radius: 24px;
+      flex-shrink: 0;
+      padding: 0px 18px;
     }
+  }
+
+  .content-right {
+    margin-top: 64px;
+    // background-color: #414241;
+  }
 }

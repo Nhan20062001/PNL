@@ -6,6 +6,7 @@ import styles from './page.module.scss';
 import { Image } from 'antd';
 import ButtonSample from '@/components/Button/button';
 import SendIcon from '@/components/icons/send.icons';
+import AboutUsCardComponent from '@/components/AboutUsCard/page';
 
 export default function Home() {
   return (
@@ -40,20 +41,7 @@ export default function Home() {
       </div>
       {/* end contact */}
 
-      <div className='container'>
-        <div className={styles['about-us']}>
-          <Image 
-            src="/images/"
-            alt=""
-          />
-          <div className={styles['content-about-us']}>
-            <h4>Tầm nhìn</h4>
-            <h6>t is a long established fact that a reader will be distracted by the readable content of a page 
-              when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
-              distribution of letters, as opposed to using 'Content here, content here', making</h6>
-          </div>
-        </div>
-      </div>
+      <AboutUsCardComponent/>
     </MainClient>
   );
 }
