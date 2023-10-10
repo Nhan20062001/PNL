@@ -1,0 +1,49 @@
+@import "@/styles/mixins.scss";
+
+.main {
+    font-family: Poppins;
+    height: 590px;
+    background-color: #ECEDEC;
+    flex-shrink: 0;
+    display: flex;
+
+    .content-left {
+        float: left;
+        padding-left: 91px;
+        background-color: aquamarine;
+        // width: 620px;
+
+        h3 {
+            font-size: 40px;
+            padding-top: 138px;
+            color: #414241;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 44px;
+        }
+        .content-detail {
+            // width: 533px;
+            margin-top: 45px;
+            margin-bottom: 41px;
+
+            h6 {
+                font-size: 20px;
+                color: #8E908D;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px; 
+            }
+        }
+    }
+
+    .content-right {
+        float: right;
+        width: 525px;
+        height: 100px;
+        margin-top: 64px;
+        
+    }
+    
+
+    
+}
