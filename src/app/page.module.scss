@@ -1,49 +1,55 @@
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 
+.container {
+  background-color: #ecedec;
+  top: 86px;
+  // position: relative;
+}
 .main {
-    font-family: Poppins;
-    height: 590px;
-    background-color: #ECEDEC;
-    flex-shrink: 0;
-    display: flex;
+  // position: relative;
+  font-family: Poppins;
+  height: 590px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
 
-    .content-left {
-        float: left;
-        padding-left: 91px;
-        background-color: aquamarine;
-        // width: 620px;
+  .content-left {
+    float: left;
+    padding-left: 91px;
+    margin-top: 138px;
+    width: 690px;
 
-        h3 {
-            font-size: 40px;
-            padding-top: 138px;
-            color: #414241;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 44px;
-        }
-        .content-detail {
-            // width: 533px;
-            margin-top: 45px;
-            margin-bottom: 41px;
-
-            h6 {
-                font-size: 20px;
-                color: #8E908D;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 24px; 
-            }
-        }
+    h3 {
+      font-size: 40px;
+      color: #414241;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 44px;
     }
+    .content-detail {
+      margin-top: 45px;
+      margin-bottom: 41px;
 
-    .content-right {
-        float: right;
+      h6 {
+        font-size: 20px;
+        color: #8e908d;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
         width: 525px;
-        height: 100px;
-        margin-top: 64px;
-        
+      }
     }
-    
+    :global(.ant-btn-default) {
+      width: 277px;
+      height: 68px;
+      border-radius: 24px;
+      flex-shrink: 0;
+      padding: 0px 18px;
+    }
+  }
 
-    
+  .content-right {
+    margin-top: 64px;
+    // background-color: #414241;
+  }
 }

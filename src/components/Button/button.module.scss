@@ -1,0 +1,26 @@
+@import "@/styles/mixins.scss";
+
+.btn {
+    :global(.ant-btn) {
+        background-color: #5AAF32;   
+        border: none;
+                
+        
+        .btn-main {
+            display: inline-flex;
+            color: #fff;
+            font-size: 24px;
+            align-items: center;
+        }
+        
+    }
+    :hover {
+        // background: linear-gradient(to bottom, #5AAF32, #33890A);
+        background-color: #33890A;  
+        opacity: 0.1;
+        transition: opacity 0.2s;
+        
+    }
+    
+    
+}

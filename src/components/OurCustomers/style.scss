@@ -1,0 +1,58 @@
+.our-customers {
+    margin: 58px 0px;
+    background-color: antiquewhite;
+    position: relative;
+
+    .our-customers-header {
+        display: flex;
+        justify-content: space-between;
+
+        h3 {
+            color: #33363F;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 44px; /* 110% */
+        }
+
+        .rectangle {
+            width: 550px;
+            display: block;
+
+            .rectangle-top {
+                right: 0;
+                width: 288px;
+                height: 12px;
+                border-radius: 8px;
+                background: #FFE450;
+                float: right;
+                margin-bottom: 7px;
+            }
+
+            .rectangle-bottom {
+                width: 546px;
+                height: 12px;
+                border-radius: 8px;
+                background: #5AAF32;
+                float: right;
+            }
+        }
+    }
+
+    .our-customers-main {
+        // background-color: #FFE450;
+        height: 100px;
+        margin: 50px 100px 0 100px;
+
+        .logo-customers {
+            img {
+                background-size: 50% cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                filter: grayscale(100%);
+                // filter: brightness(5%);
+                // filter: color(lightgray);
+            }
+        }
+    }
+}
