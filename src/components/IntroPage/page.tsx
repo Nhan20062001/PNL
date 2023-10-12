@@ -3,7 +3,7 @@ import SendIcon from '../icons/send.icons';
 import { Image } from 'antd';
 import './style.scss';
 
-const Intro = () => {
+const IntroPage = () => {
     return (
         <div className='intro-container'>
             <div className='intro-main'>
@@ -25,8 +25,6 @@ const Intro = () => {
                     className='content-image-right'
                     src='/images/header twiscode 1.png'
                     alt=''
-                    width={656}
-                    height={525}
                     />
                 </div>
             </div>
@@ -34,4 +32,4 @@ const Intro = () => {
     );
 }
 
-export default Intro;
+export default IntroPage;

@@ -1,17 +1,22 @@
 .intro-container {
     background-color: #ecedec;
     margin-top: 86px;
+    max-width: 100%;
 
     .intro-main {
-        height: 590px;
+        // height: 590px;
         display: flex;
         justify-content: space-between;
+        max-width: 100%;
 
         .intro-left {
             float: left;
-            padding-left: 91px;
-            margin-top: 138px;
-            width: 690px;
+            // padding-left: 91px;
+            padding-left: 8%;
+            // margin-top: 138px;
+            padding-top: 8%;
+            // width: 800px;
+            width: 54%;
 
             h3 {
                 font-size: 40px;
@@ -30,9 +35,11 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: 24px;
-                    width: 525px;
+                    // width: 525px;
+                    width: 97%;
                 }
             }
+
 
             :global(.ant-btn ant-btn-default ant-btn-lg) {
                 width: 277px;
@@ -43,7 +50,18 @@
         }
 
         .intro-right {
-             margin-top: 64px;
+            margin-top: 64px;
+            // width: 656px;
+            width: 40%;
+             .content-image-right {
+                width: 100%;
+             }
         }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .intro-left {
+        padding-bottom: 5%;
     }
 }

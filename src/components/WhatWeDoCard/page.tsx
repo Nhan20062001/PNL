@@ -5,7 +5,7 @@ import AndroidIcon from '../icons/android.icons';
 import WebsiteIcon from '../icons/website.icons';
 import UIUXIcon from '../icons/UIUX.icons';
 
-const WhatWeDoCard = () => {
+const WhatWeDoCardPage = () => {
     return (
         <div className='what-we-do container'>
             <div className='what-we-do image-left'>
@@ -62,4 +62,4 @@ const WhatWeDoCard = () => {
         </div>
     );
 }
-export default WhatWeDoCard;
+export default WhatWeDoCardPage;

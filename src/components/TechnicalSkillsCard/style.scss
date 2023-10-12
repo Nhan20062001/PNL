@@ -1,10 +1,9 @@
-.our-customers {
-    margin: 58px 0px;
-    background-color: antiquewhite;
-    position: relative;
+.technical-skills-card {
+    margin: 91px 0;
 
-    .our-customers-header {
+    .technical-skills-header {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
 
         h3 {
@@ -12,21 +11,27 @@
             font-size: 36px;
             font-style: normal;
             font-weight: 700;
-            line-height: 44px; /* 110% */
+            line-height: 44px; 
+            right: 0;
         }
 
         .rectangle {
             width: 550px;
-            display: block;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap-reverse;
+            flex-direction: column;
+
+            flex-direction: row-reverse;
+
 
             .rectangle-top {
-                right: 0;
                 width: 288px;
                 height: 12px;
                 border-radius: 8px;
                 background: #FFE450;
-                float: right;
                 margin-bottom: 7px;
+                order: 1;
             }
 
             .rectangle-bottom {
@@ -34,24 +39,23 @@
                 height: 12px;
                 border-radius: 8px;
                 background: #5AAF32;
-                float: right;
+                order: 2;
             }
         }
     }
 
-    .our-customers-main {
-        // background-color: #FFE450;
-        height: 100px;
-        margin: 50px 100px 0 100px;
+    .technical-skills-main {
+    
+        margin: 40px 0;
+        
 
-        .logo-customers {
+        .logo-skills {
+            display: flex;
+            justify-content: space-between;
+
             img {
-                background-size: 50% cover;
-                background-position: center center;
-                background-repeat: no-repeat;
-                filter: grayscale(100%);
-                // filter: brightness(5%);
-                // filter: color(lightgray);
+                width: 180px;
+                height: 70px;
             }
         }
     }

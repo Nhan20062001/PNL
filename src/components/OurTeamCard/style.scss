@@ -1,0 +1,58 @@
+.our-team-container {
+    width: 825px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+
+    h3 {
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 44px; 
+        text-align: center;
+    }
+
+    :global(.ant-carousel css-dev-only-do-not-override-1jesf74) {
+        margin-top: 15px;
+    }
+    :global(.slick-list) {
+        display: inline;
+
+        :global(.slick-track) {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+    }
+
+    :global(.slick-slide slick-active slick-current) {
+        img {
+            width: 281px;
+            height: 281px;
+            border-radius: 50%;
+        }
+    }
+    
+    .member-card {
+        width: 100px;
+        margin-top: 25px;
+        position: relative;
+
+        img {
+            position: relative;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            left: 52px;
+        }
+
+
+        .member-info {
+            display: block;
+            text-align: center;
+        }
+
+    }    
+        
+}
