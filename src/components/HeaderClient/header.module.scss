@@ -12,7 +12,6 @@
 
   :global(.container) {
     height: 100%;
-    width: 88%;
   }
  
   .nav-header-logo {
@@ -51,19 +50,19 @@
   
 }
 
-@media screen and (max-width: 1599px) {
+@media (max-width: $xxl-max-width) {
   .wrapper-menu-mobile {
     display: none;
   }
 }
 
-@media screen and (max-width: 1199px) {
+@media (max-width: $xl-max-width) {
   .wrapper-menu-mobile {
     display: none;
   }
 }
 
-@media screen and (max-width: 991px) {
+@media (max-width: $md-max-width) {
     .ant-anchor{
       display: none;
 
@@ -76,15 +75,4 @@
       align-items: stretch;
       justify-content: space-evenly;
     }
-}
-
-@media screen and (max-width: 767px) {
-  // .wrapper-menu-mobile{
-  //   display: flex;
-  //   flex-direction: column-reverse;
-  //   flex-wrap: wrap;
-  //   align-content: center;
-  //   align-items: stretch;
-  //   justify-content: space-evenly;
-  // }
 }

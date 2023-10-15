@@ -13,8 +13,6 @@ const WhatWeDoCardPage = () => {
                     className='image-style'
                     src='/images/pedram-sedghi-QXxmRGMoJv0-unsplash.jpg'
                     alt=''
-                    width={440}
-                    height={604}
                 />  
             </div>
 

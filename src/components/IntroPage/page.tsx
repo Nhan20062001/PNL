@@ -1,6 +1,5 @@
-import ButtonSample from '../Button/button';
 import SendIcon from '../icons/send.icons';
-import { Image } from 'antd';
+import { Button, Image } from 'antd';
 import './style.scss';
 
 const IntroPage = () => {
@@ -14,10 +13,15 @@ const IntroPage = () => {
                             when an unknown printer took a galley of type and scrambled it to make a type specimen book
                         </h6>
                     </div>
-                    <ButtonSample>
+                    <Button
+                        className="button"
+                        shape='round'
+                        onClick={() => {}}
+                    >
                         <SendIcon />
-                        <p>Contact to work</p>
-                    </ButtonSample>
+                        Contact to work
+                    </Button>
+                    
                 </div>
 
                 <div className='intro-right'>

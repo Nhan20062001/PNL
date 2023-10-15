@@ -1,22 +1,23 @@
+@import "@/styles/mixins.scss";
+
 .intro-container {
     background-color: #ecedec;
     margin-top: 86px;
     max-width: 100%;
 
     .intro-main {
-        // height: 590px;
         display: flex;
         justify-content: space-between;
-        max-width: 100%;
+        // width: 100%;
+        position: relative;
 
         .intro-left {
-            float: left;
-            // padding-left: 91px;
-            padding-left: 8%;
-            // margin-top: 138px;
-            padding-top: 8%;
-            // width: 800px;
-            width: 54%;
+            // padding-left: 174.6px;
+            padding-left: 13%;
+            // width: 900px;
+            width: 61%;
+            display: block;
+            margin: auto 0;
 
             h3 {
                 font-size: 40px;
@@ -26,42 +27,78 @@
                 line-height: 44px;
             }
             .intro-detail {
-            margin-top: 45px;
-            margin-bottom: 41px;
-        
+                margin: 45px 0;     
+                
                 h6 {
                     font-size: 20px;
                     color: #8e908d;
                     font-style: normal;
                     font-weight: 400;
                     line-height: 24px;
-                    // width: 525px;
-                    width: 97%;
                 }
+               
             }
 
 
-            :global(.ant-btn ant-btn-default ant-btn-lg) {
-                width: 277px;
-                height: 68px;
+            .button {
+                background-color: #5AAF32;
                 border-radius: 24px;
-                padding: 0px 18px;
+                // width: 228px;
+                // width: 34%;
+                height: 58px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                color: #fff;
+                font-size: 1.3rem;
+                // size: 1rem;
             }
         }
 
         .intro-right {
-            margin-top: 64px;
-            // width: 656px;
-            width: 40%;
-             .content-image-right {
+            // margin-top: 64px;
+            margin-top: 4%;
+            // width: 600px;
+            width: 39%;
+            
+            .content-image-right {
                 width: 100%;
-             }
+            }
         }
     }
 }
 
-@media screen and (max-width: 1199px) {
+@media only screen and  (max-width: $xl-max-width) {
+    .intro-main {
+        padding: 60px 0;
+    }
+}
+
+@media only screen and  (max-width: $md-max-width) {
+    .intro-main {
+        height: 100%;
+        flex:  auto 0 0;
+        .intro-right {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+@media only screen and (max-width: $sm-min-width) {
     .intro-left {
-        padding-bottom: 5%;
+        width: 60%;
+        h3 {
+            font-size: 30px;
+        }
+        .intro-detail {
+            margin: 20px 0;
+            position: relative;
+            h6 {
+                font-size: 18px;
+            }
+            
+        }
+
     }
 }
