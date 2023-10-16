@@ -1,7 +1,7 @@
 import { Button, Form, Input } from 'antd';
 import './style.scss';
 import TextArea from 'antd/es/input/TextArea';
-import SendIcon from '../icons/send.icons';
+import SendIcon from '../icons/Send.icons';
 
 const ContactCardComponent = () => {
     const [form] = Form.useForm();

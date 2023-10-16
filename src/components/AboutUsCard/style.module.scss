@@ -1,0 +1,91 @@
+@import '@/styles/mixins.scss';
+
+.about-us {
+  height: 335px;
+  margin: auto 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 120px;
+  border-bottom-right-radius: 120px;
+  position: relative;
+  margin-top: 91px;
+  margin-bottom: 91px;
+
+  .about-us-image {
+    object-fit: cover;
+    width: 100%;
+    border-top-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+    height: 100%;
+  }
+
+  .about-us-opacity-layer {
+    background-color: #33890a;
+    opacity: 0.9;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    right: 0; 
+    height: 335px;
+    border-top-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+  }
+}
+
+.carousel-container {
+  width: calc(100% - 320px);
+  position: absolute;
+  align-items: center;
+  margin: auto 0;
+
+  &--title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: 'center';
+    font-size: 32px;
+    line-height: 64px;
+    font-weight: 600;
+  }
+
+  &--description {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 24px;
+  }
+
+  .carousel-content-padding {
+    padding: 0px 30px 42px 30px;
+  }
+}
+
+@media only screen and (max-width: $sm-max-width) {
+  .about-us {
+    .carousel-container {
+      width: 100%;
+      &--title {
+        font-size: 28px;
+      }
+      .carousel-content-padding {
+        padding: 0 15px 30px 15px;
+      }
+    }
+
+  }
+}
+@media only screen and (max-width: $xs-max-width) {
+  .about-us {
+    .carousel-container {
+      width: 100%;
+      &--description {
+        font-size: 18px;
+      }
+    }
+
+  }
+}
