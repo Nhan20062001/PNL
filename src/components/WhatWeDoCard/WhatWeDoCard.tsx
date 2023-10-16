@@ -2,9 +2,9 @@ import { Image } from 'antd';
 import styles from './style.module.scss'
 import UIUXIcon from '../icons/UIUX.icons';
 import React from 'react';
-import LampIcon from '../icons/lamp.icons';
-import AndroidIcon from '../icons/android.icons';
-import WebsiteIcon from '../icons/website.icons';
+import LampIcon from '../icons/Lamp.icons';
+import AndroidIcon from '../icons/Android.icons';
+import WebsiteIcon from '../icons/Website.icons';
 
 type Types = {
     id?: string,
