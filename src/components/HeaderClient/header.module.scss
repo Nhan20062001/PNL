@@ -10,12 +10,18 @@
   height: 86px;
   flex-shrink: 0;
 
+ 
+
   :global(.container) {
     height: 100%;
   }
  
   .nav-header-logo {
     position: fixed;
+  }
+
+  :global(.ant-drawer-wrapper-body) {
+    background-color: #5AAF32;
   }
 
   .nav-header-client {
@@ -63,6 +69,7 @@
 }
 
 @media (max-width: $md-max-width) {
+  .wrapper-header-client {
     .ant-anchor{
       display: none;
 
@@ -74,5 +81,24 @@
       align-content: center;
       align-items: stretch;
       justify-content: space-evenly;
+
+     
+
+      // :global(.ant-drawer-body){
+      //   .menu-list{
+      //     margin-bottom: 10px;
+      //     font-size: 18px;
+      //   }
+      // }
     }
+
+    // :global(.ant-drawer) {
+    // :global(.ant-drawer-content-wrapper) {
+    //   :global(.ant-drawer-content) {
+    //     :global(.ant-drawer-wrapper-body) {
+    //       background-color: #5AAF32;
+    //     }
+    //   }
+    // }
+  }
 }

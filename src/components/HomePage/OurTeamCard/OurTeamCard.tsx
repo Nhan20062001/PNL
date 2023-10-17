@@ -16,7 +16,7 @@ const OurTeamCardComponent = () => {
         centerPadding: "0",
         slidesToShow: 3,
         speed: 500,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 4000,
         slidesToScroll: 1,
         initialSlide: 0,
         autoplay: true,

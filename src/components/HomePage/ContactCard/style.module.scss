@@ -1,0 +1,176 @@
+@import "@/styles/mixins.scss";
+
+.contact-card {
+    height: 700px;
+    margin: 58px 0px;
+   
+    background-color: antiquewhite;
+    position: relative;
+
+    :global(.container) {
+        padding: 20px 12px;
+    }
+
+    .contact-container {
+        display: flex;
+        width: 100%;
+        height: 700px;
+        position: relative;
+        justify-content: space-around;
+        // padding: 20px 0;
+    
+        &--image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        }
+    
+        &--opacity-layer {
+            background-color: #33890a;
+            opacity: 0.85;
+            position: absolute;
+            width: 100%;
+            height: 700px;
+        }
+
+        .contact-card-content {
+            height: 100%;
+            position: absolute;
+            color: #fff;
+            margin: auto 0;
+        
+            h3 {
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 44px; 
+            }
+            p {
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+        
+            .contact-form {
+                display: flex;
+                // width: 738px;
+                max-width: 65%;
+                margin-top: 15px;
+
+                :global(.ant-col) {
+                    label {
+                        color: #fff;
+                        font-size: 18px;
+                    }
+                }
+               
+                .form-container {
+                    width: 100%;
+        
+                    .input-name {
+                        // width: 527px;
+                        width: 71%;
+                        height: 37px;
+                        border-radius: 24px;
+                        border: 1px solid #33890A;
+                        background: #F5F5F5;
+                    }
+                    .input-phone-number {
+                        // width: 463px;
+                        width: 62%;
+                        height: 37px;
+                        border-radius: 24px;
+                        border: 1px solid #33890A;
+                        background: #F5F5F5;
+                    }
+                    .input-email {
+                        // width: 701px;
+                        width: 94%;
+                        height: 37px;
+                        border-radius: 24px;
+                        border: 1px solid #33890A;
+                        background: #F5F5F5;
+                    }
+                    .input-address {
+                        // width: 394px;
+                        width: 53%;
+                        height: 37px;
+                        border-radius: 24px;
+                        border: 1px solid #33890A;
+                        background: #F5F5F5;
+                    }
+                    .input-note {
+                        // width: 738px;
+                        width: 99%;
+                        height: 80px;
+                        border-radius: 24px;
+                        border: 1px solid #33890A;
+                        background: #F5F5F5;
+                    }
+        
+                    :global(button) {
+                        width: 100px;
+                        background-color: yellow;
+                    }
+        
+                    .button {
+                        display: flex;
+                        justify-content: space-evenly;
+                    }
+                    
+                    .button-contact {
+                        border-radius: 24px;
+                        background: #E6EA37;
+                        width: 224px;
+                        height: 48px;
+                        display: flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        border: none;
+        
+                        text-align: center;
+                        color: #33890A;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 24px; 
+        
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $md-max-width) {
+    .contact-card {
+        .contact-container {
+            .contact-card-content {
+                h3 {
+                    font-size: 30px;
+                }
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+        
+    }
+}
+
+@media only screen and (max-width: $xs-max-width) {
+    .contact-card {
+        .contact-container {
+            .contact-card-content {
+                h3 {
+                    font-size: 28px;
+                }
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+        
+    }
+}
+
