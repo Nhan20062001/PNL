@@ -1,65 +1,31 @@
 @import "@/styles/mixins.scss";
 
-.wrapper-footer {
-  background-color: #066156;
-  color: #a9b3bb;
-  overflow: hidden;
-  padding: 24px 0 24px;
+.wrapper-footer-client {
+  background-color: antiquewhite;
 
-  .ant-space {
-    @media (max-width: $sm-max-width) {
-      width: 100%;
+    .footer-title {
+      color: #414141;
+
+      font-family: Poppins;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 72px;
     }
+
+  .company-list {
+      list-style-type: none;
+      list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 50 L100 50' stroke='black' stroke-width='10'%3E%3C/path%3E%3C/svg%3E");
+      list-style-color: #9F9F9F;
   }
 
-  .wrapper-footer-info {
-    .ant-space-item {
-      &:first-child {
-        @media (max-width: $xs-max-width-large) {
-          text-align: center;
-        }
-      }
-    }
-
-    .footer-logo {
-      border-radius: 12px;
-      height: 98px;
-      width: 98px;
-      object-fit: cover;
-      margin-bottom: 24px;
-    }
-
-    img {
-      object-fit: cover;
-    }
+  .contact-list {
+    list-style: none;
   }
 
-  p {
-    color: white;
+  li {
     font-size: 16px;
+    color: #9F9F9F;
   }
-
-  a {
-    color: white;
-  }
-
-  .footer-title {
-    font-size: 24px;
-    color: white;
-
-    @media (max-width: $sm-max-width) {
-      margin-top: 24px;
-    }
-  }
-
-  .wrapper-footer-bottom {
-    margin-top: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    p {
-      font-size: 12px;
-    }
-  }
+  
 }

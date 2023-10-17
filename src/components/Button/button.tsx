@@ -4,7 +4,7 @@ import styles from './button.module.scss';
 
 type IMainProps = {
     children: ReactNode;
-  };
+};
 
 function ButtonSample({ children }: IMainProps) {
     return (

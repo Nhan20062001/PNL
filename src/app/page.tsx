@@ -2,22 +2,31 @@
 
 import React from 'react';
 import { MainClient } from '@/layouts/MainClient';
-import AboutUsCardComponent from '@/components/AboutUsCard/page';
-import WhatWeDoCard from '@/components/WhatWeDoCard/page';
-import OurCustomers from '@/components/OurCustomers/page';
-import Intro from '@/components/Intro/page';
+import AboutUsCardComponent from '@/components/AboutUsCard/AboutUsCard';
+import WhatWeDoCardPage from '@/components/WhatWeDoCard/WhatWeDoCard';
+import IntroPage from '@/components/IntroPage/IntroCard';
+import OurCustomersPage from '@/components/OurCustomersCard/OurCustomerCard';
+import OurTeamCardComponent from '@/components/OurTeamCard/OurTeamCard';
+import TechnicalSkillsCardComponent from '@/components/TechnicalSkillsCard/TechnicalSkillsCard';
+import ContactCardComponent from '@/components/ContactCard/page';
 
 export default function Home() {
   return (
     <MainClient>
       
-      <Intro />
+      <IntroPage />
 
       <AboutUsCardComponent/>
 
-      <WhatWeDoCard />
+      <WhatWeDoCardPage />
 
-      <OurCustomers />
+      <OurCustomersPage />
+
+      <OurTeamCardComponent />
+
+      <TechnicalSkillsCardComponent />
+
+      <ContactCardComponent />
       
     </MainClient>
   );
