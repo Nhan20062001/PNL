@@ -1,0 +1,250 @@
+@import '@/styles/mixins.scss';
+
+.career-banner {
+  :global(.ant-image) {
+    width: 100%;
+    .image-career-banner {
+      margin-top: 86px;
+      margin-bottom: 80px;
+      height: 598px;
+      width: 100%;
+      // object-fit: cover;
+      @media (max-width: $sm-min-width) {
+        height: 450px;
+        margin-bottom: 60px;
+      }
+      @media (max-width: $xs-max-width-large) {
+        height: 400px;
+        margin-bottom: 40px;
+      }
+      @media (max-width: $xs-max-width-medium) {
+        margin-bottom: 30px;
+      }
+      @media (max-width: $xs-max-width-small) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+.content-career-body {
+  position: relative;
+  margin-bottom: 80px;
+  @media (max-width: $sm-min-width) {
+    margin-bottom: 60px;
+  }
+  @media (max-width: $xs-max-width-large) {
+    margin-bottom: 40px;
+  }
+  @media (max-width: $xs-max-width-medium) {
+    margin-bottom: 30px;
+  }
+  @media (max-width: $xs-max-width-small) {
+    margin-bottom: 25px;
+  }
+  .text-career-body-header {
+    position: absolute;
+    z-index: 90;
+    top: 25%;
+    width: 130%;
+    height: 50%;
+    background: white;
+    border-radius: 30px 0;
+    box-shadow: 0 0 20px #aaa;
+    .text-child-career-body-header {
+      margin: 6% 12%;
+      @media (max-width: $xl-min-width) {
+        margin: 2.5% 12%;
+      }
+      @media (max-width: $sm-min-width) {
+        margin: 2.5% 12%;
+      }
+      @media (max-width: $xs-max-width-large) {
+        margin: 0 12%;
+      }
+      @media (max-width: $xs-max-width-medium) {
+        margin: 0 10%;
+      }
+      h3 {
+        text-align: center;
+        margin-bottom: 7%;
+        font-size: 28px;
+        font-weight: bold;
+        @media (max-width: $sm-min-width) {
+          font-size: 20px;
+        }
+        @media (max-width: $xs-max-width-large) {
+          font-size: 15px;
+        }
+        @media (max-width: $xs-max-width-medium) {
+          font-size: 11px;
+          margin-bottom: 4px;
+        }
+        @media (max-width: $xs-max-width-small) {
+          font-size: 9px;
+          margin-bottom: 3px;
+        }
+      }
+      p {
+        margin-bottom: 7%;
+        font-size: 20px;
+        -webkit-line-clamp: 4;
+        text-overflow: ellipsis;
+        @media (max-width: $sm-min-width) {
+          font-size: 12px;
+        }
+        @media (max-width: $xs-max-width-large) {
+          font-size: 10px;
+        }
+        @media (max-width: $xs-max-width-medium) {
+          font-size: 9px;
+        }
+        @media (max-width: $xs-max-width-small) {
+          font-size: 8px;
+        }
+      }
+      Button {
+        width: 100px;
+        border-radius: 40%;
+        font-size: 18px;
+        height: 40px;
+        span {
+          @media (max-width: $xs-max-width-large) {
+            margin-left: -5.5px;
+          }
+        }
+        @media (max-width: $sm-min-width) {
+          height: 30px;
+          font-size: 12px;
+          width: 72px;
+        }
+        @media (max-width: $xs-max-width-large) {
+          font-size: 6px;
+          width: 35px;
+          height: 19px;
+          margin-top: 2px;
+        }
+        @media (max-width: $xs-max-width-medium) {
+          font-size: 6px;
+          width: 37px;
+          height: 19px;
+          margin-top: -2px;
+        }
+        @media (max-width: $xs-max-width-small) {
+          font-size: 6px;
+        }
+      }
+    }
+  }
+
+  :global(.ant-image) {
+    width: 100%;
+    .image-career-body-header {
+      border-radius: 30px;
+      height: 405px;
+    }
+  }
+
+  .text-career-body-center {
+    position: absolute;
+    z-index: 90;
+    top: 25%;
+    right: 0px;
+    width: 130%;
+    height: 50%;
+    background: white;
+    border-radius: 30px 0;
+    box-shadow: 0 0 20px #aaa;
+    .text-child-career-body-center {
+      margin: 6% 12%;
+      @media (max-width: $xl-min-width) {
+        margin: 2.5% 12%;
+      }
+      @media (max-width: $sm-min-width) {
+        margin: 2.5% 12%;
+      }
+      @media (max-width: $xs-max-width-large) {
+        margin: 0 12%;
+      }
+      @media (max-width: $xs-max-width-medium) {
+        margin: 0 10%;
+      }
+      h3 {
+        text-align: center;
+        margin-bottom: 7%;
+        font-size: 28px;
+        font-weight: bold;
+        @media (max-width: $sm-min-width) {
+          font-size: 20px;
+        }
+        @media (max-width: $xs-max-width-large) {
+          font-size: 15px;
+        }
+        @media (max-width: $xs-max-width-medium) {
+          font-size: 11px;
+          margin-bottom: 4px;
+        }
+        @media (max-width: $xs-max-width-small) {
+          font-size: 9px;
+          margin-bottom: 3px;
+        }
+      }
+      p {
+        margin-bottom: 7%;
+        font-size: 20px;
+        -webkit-line-clamp: 4;
+        text-overflow: ellipsis;
+        @media (max-width: $sm-min-width) {
+          font-size: 12px;
+        }
+        @media (max-width: $xs-max-width-large) {
+          font-size: 10px;
+        }
+        @media (max-width: $xs-max-width-medium) {
+          font-size: 9px;
+        }
+        @media (max-width: $xs-max-width-small) {
+          font-size: 8px;
+        }
+      }
+      Button {
+        width: 100px;
+        border-radius: 40%;
+        font-size: 18px;
+        height: 40px;
+        span {
+          @media (max-width: $xs-max-width-large) {
+            margin-left: -5.5px;
+          }
+        }
+        @media (max-width: $sm-min-width) {
+          height: 30px;
+          font-size: 12px;
+          width: 72px;
+        }
+        @media (max-width: $xs-max-width-large) {
+          font-size: 6px;
+          width: 35px;
+          height: 19px;
+          margin-top: 2px;
+        }
+        @media (max-width: $xs-max-width-medium) {
+          font-size: 6px;
+          width: 37px;
+          height: 19px;
+          margin-top: -2px;
+        }
+        @media (max-width: $xs-max-width-small) {
+          font-size: 6px;
+        }
+      }
+    }
+  }
+
+  :global(.ant-image) {
+    width: 100%;
+    .image-career-body-center {
+      border-radius: 30px;
+      height: 405px;
+    }
+  }
+}

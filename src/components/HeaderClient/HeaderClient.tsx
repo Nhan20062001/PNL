@@ -39,7 +39,7 @@ function HeaderClient() {
       },
       {
         key: 'career',
-        href: '#career',
+        href: '/career',
         title: 'Career',
       },
       {
