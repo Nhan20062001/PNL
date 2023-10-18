@@ -1,81 +1,87 @@
 import React from 'react';
 import { Col, Row } from 'antd';
 import styles from './footer.module.scss';
-import Image from 'next/image';
+import { Image } from 'antd';
+import { FacebookOutlined, InstagramOutlined, MailOutlined } from '@ant-design/icons';
 
 function FooterClient() {
   return (
     <footer className={styles['wrapper-footer-client']}>
-      <div className='footer-container'>
-      <Row>
-        <Col className='footer-location' xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
-          <p className={styles['footer-title']} >Location</p>
-          <Image 
-            src="/images/Rectangle 16.png"
-            alt=""
-            width={250}
-            height={110}
-          />
-        </Col>
-
-        <Col xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
-          <p className={styles['footer-title']}>Company</p>
-          <ul className={styles['company-list']} >
-            <li>
-              Work
-            </li>
-            <li>
-              Service
-            </li>
-            <li>
-              Team
-            </li>
-            <li>
-              Contact
-            </li>
-          </ul>
-        </Col>
-
-        <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
-          <p className={styles['footer-title']}>Contact Us</p>
-          <ul className={styles['contact-list']} >
-            <li>
-              Twiscode
-            </li>
-            <li>
-              Twiscode
-            </li>
-            <li>
-              andree@twiscode.com
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    
-        {/* <Row>
-          <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-            <Space direction="vertical" size="middle">
-              <Image
-                src="https://building.vienthammygangnam.vn/wp-content/uploads/2023/07/gangnam-banner-1400x535.png"
-                alt=""
-                width={98}
-                height={98}
-              />
-            </Space>
+      <div className='container'>
+        <Row >
+          <Col xs={{ span: 24, offset: 0 }} lg={{ span: 8, offset: 0 }} md={{ span: 10, offset: 0}}>
+            <p className={styles['footer-title']} >Location</p>
+            <Image 
+              className={styles['location-map']}
+              src="/images/Rectangle 16.png"
+              alt=""
+            />
+            <div className={styles['rectangle-location']}>
+              <h6>Twiscode</h6>
+              <span>Jl. Kayoon, Surabaya</span>
+            </div>
           </Col>
-          <Col xs={24} sm={24} md={8} lg={8} xl={8} />
-          <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-            <Space direction="vertical" size="middle">
-              <Link href="/">Mã số thuế: 0109922901</Link>
-              <Link href="/">Ngày thành lập: 04/04/2023</Link>
-              <Link href="/">Lĩnh vực: Thiết kế - In ấn.</Link>
-            </Space>
+
+          <Col sm={6} className={styles['col-company']} xs={{ span: 12, offset: 0 }} lg={{ span: 8, offset: 0 }} md={{ span: 7, offset: 0}}>
+            <p className={styles['footer-title']}>Company</p>
+            <ul className={styles['company-list']}>
+              <li>
+                Work
+              </li>
+              <li>
+                Service
+              </li>
+              <li>
+                Team
+              </li>
+              <li>
+                Contact
+              </li>
+            </ul>
+          </Col>
+
+          <Col sm={6} className={styles['col-contact-us']} xs={{ span: 12, offset: 0}} lg={{ span: 8, offset: 0}} md={{ span: 7, offset: 0}}>
+            <p className={styles['footer-title']}>Contact Us</p>
+            <ul className={styles['contact-list']} >
+              <li>
+                <FacebookOutlined />
+                <span className={styles['icon-name']}>Twiscode</span>
+              </li>
+              <li>
+                <InstagramOutlined />
+                <span className={styles['icon-name']}>Twiscode</span>
+              </li>
+              <li>
+                <MailOutlined />
+                <span className={styles['icon-name']}>andree@twiscode.com</span>
+              </li>
+            </ul>
           </Col>
         </Row>
-        <div>
-          <p>@2023 Sata - All right reserved</p>
-          <p>Designed and Developed by PNL ltd.</p>
-        </div> */}
+
+        <div className={styles['footer-center']}>
+          <Image 
+            className={styles['image']}
+            src='/images/dmca.jpg'
+            alt=''
+          />
+          <Image 
+            className={styles['image']}
+            src='/images/bo-cong-thuong.gif'
+            alt=''
+          />
+        </div>
+
+        <div className={styles['footer-bottom']}>
+          <ul>
+            <li>copyright © 2023. Công ty cung cấp giải pháp chuyến đổi số PNL</li>
+            <li>Mã số thuế: 2340923424</li>
+          </ul>
+          <ul>
+            <li>Bản quyền và sở hữu thuộc Công ty cung cấp giải pháp chuyến đổi số PNL   </li>
+            <li>powerby PNL ltd</li>
+          </ul>
+        </div>
       </div>
     </footer>
   );
