@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 import { type } from 'os';
 import React from 'react';
 
-type Types ={
+type Types = {
   id?: string,
   title?: string,
   content?: string

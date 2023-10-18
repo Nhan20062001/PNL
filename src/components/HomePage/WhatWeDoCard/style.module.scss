@@ -5,7 +5,7 @@
     justify-content: space-between;
 
     :global(.ant-image) {
-        width: 80%;
+        width: 90%;
     }
 
     .image-left {
@@ -38,7 +38,6 @@
         .content-right-main-container {
             display: block;     
             
-         
             .box-content {
                 width: 100%;
                 display: flex;
@@ -80,15 +79,90 @@
 @media only screen and (max-width: $xl-max-width) {
     .what-we-do {
         .image-left {
+            width: 40%;
             :global(.ant-image) {
-                width: 80%;
+                width: 90%;
             }
         }
-
         .content-right-container {
-            width: 50%;
+            width: 60%;
         }
     }
 }
+
+@media only screen and (max-width: $md-max-width),
+screen and (max-width: $sm-max-width) 
+{
+    .what-we-do {
+        .image-left {
+            width: 50%;
+            .image-style {
+                height: 500px;
+            }
+            :global(.ant-image) {
+                width: 90%;
+            }
+        }
+        .content-right-container {
+            width: 50%;
+            height: 500px;
+            .content-right-title {
+                font-size: 30px;
+            }
+            .content-right-main-container {
+                height: 80%;
+                overflow-y: hidden;
+                transition: overflow-y 0.3s ease;
+                
+
+                .box-content {
+                    margin: 15px 0;
+                }
+            }
+            .content-right-main-container:hover {
+                overflow-y: auto;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $xs-min-width) {
+    .what-we-do {
+        .image-left {
+            width: 50%;
+            .image-style {
+                height: 350px;
+            }
+            :global(.ant-image) {
+                width: 90%;
+            }
+        }
+        .content-right-container {
+            width: 50%;
+            height: 350px;
+            .content-right-title {
+                font-size: 24px;
+            }
+            .content-right-main-container {
+                height: 80%;
+                overflow-y: hidden;
+                transition: overflow-y 0.3s ease;
+                
+
+                .box-content {
+                    margin: 15px 0;
+                    .text-right p {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .content-right-main-container:hover {
+                overflow-y: auto;
+            }
+        }
+    }
+}
+
+
 
 

@@ -1,4 +1,4 @@
-import SendIcon from '../icons/Send.icons';
+import SendIcon from '../../icons/Send.icons';
 import { Button, Image } from 'antd';
 import styles from './style.module.scss';
 
