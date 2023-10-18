@@ -1,9 +1,9 @@
 import { Button, ButtonProps } from 'antd';
-import { ReactNode } from 'react';
+import { ReactNode, FC } from 'react';
 import styles from './style.module.scss';
 import csx from 'classnames';
 
-export enum buttonType {
+export enum ButtonType {
   DEFAULT = 'btn-default',
   PRIMARY = 'btn-primary',
 }
@@ -14,7 +14,7 @@ interface Props extends ButtonProps {
   className?: string;
 }
 
-const CustomButton = ({
+const CustomButton: FC<Props> = ({
   children,
   className,
   shape,
