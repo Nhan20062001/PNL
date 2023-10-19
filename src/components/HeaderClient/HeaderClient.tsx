@@ -85,7 +85,7 @@ const HeaderClient = () => {
             </Button>
             <Drawer title="Basic Drawer" placement="right" onClose={onClose} open={open}>
               {listItems.map((item) => {
-                return <p className={styles['menu-list']}>{item.title}</p>;
+                return <p className={styles['menu-list']} key={item.key}>{item.title}</p>;
               })}
             </Drawer>
           </div>

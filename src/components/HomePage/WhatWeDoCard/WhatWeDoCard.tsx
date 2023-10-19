@@ -57,7 +57,7 @@ const WhatWeDoCardPage = () => {
                     <div className={styles['content-right-main-container']}>                 
                         {dataMock.map((item) => {
                             return (
-                                <div className={styles['box-content']}>
+                                <div className={styles['box-content']} key={item.id}>
                                     <div className={styles['icon-left']}>
                                         {item.icon}
                                     </div>

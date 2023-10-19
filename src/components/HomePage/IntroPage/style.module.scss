@@ -41,24 +41,16 @@
 
 
             .button {
-                background-color: #5AAF32;
-                border-radius: 24px;
-                // width: 228px;
-                // width: 34%;
-                height: 58px;
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                color: #fff;
-                font-size: 1.3rem;
-                // size: 1rem;
+                width: 277px;
+                height: 68px;
+                .button-text {
+                    padding-left: 10px;
+                }
             }
         }
 
         .intro-right {
-            // margin-top: 64px;
             margin-top: 4%;
-            // width: 600px;
             width: 39%;
             
             .content-image-right {

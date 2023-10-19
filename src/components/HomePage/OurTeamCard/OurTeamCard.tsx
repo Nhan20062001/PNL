@@ -85,7 +85,7 @@ const OurTeamCardComponent = () => {
             <Carousel {...settings}>
               {dataMock.map((item => {
                 return (
-                  <div className={styles['member-card']}>
+                  <div className={styles['member-card']} key={item.id}>
                     <img 
                         src={item.image}
                         alt=''

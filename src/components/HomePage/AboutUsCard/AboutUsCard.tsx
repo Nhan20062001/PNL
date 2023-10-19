@@ -47,11 +47,11 @@ const AboutUsCardComponent = () => {
               <Carousel autoplay>
                 {dataMock.map((item => {
                   return (
-                    <div className={styles['carousel-content-padding']}>
-                    <h3 className={styles['carousel-container--title']}>{item.title}</h3>
-                    <span className={styles['carousel-container--description']}>
-                      {item.content}
-                    </span>
+                    <div className={styles['carousel-content-padding']} key={item.id}>
+                      <h3 className={styles['carousel-container--title']}>{item.title}</h3>
+                      <span className={styles['carousel-container--description']}>
+                        {item.content}
+                      </span>
                   </div>
                   )
                 }))}

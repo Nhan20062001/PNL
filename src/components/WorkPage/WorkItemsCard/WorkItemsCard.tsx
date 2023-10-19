@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './style.module.scss'
-import { Button, Image } from 'antd'
+import { Button, Image, Modal } from 'antd'
 import { Col, Row } from 'antd';
-import { type } from 'os';
+import WorkDetail from '../WorkDetail/WorkDetail';
 
 type Types = {
   id?: string,
@@ -12,6 +12,7 @@ type Types = {
 }
 
 function WorkItemsCard() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dataMock:Types[] = [
     {
       id: '1',
@@ -44,13 +45,20 @@ function WorkItemsCard() {
       description: 'here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don'
     }
   ]
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={styles['work-items-card']}>
       <div className='container'>
         <div className={styles['work-item-container']}>
           {dataMock.map((item => {
             return (
-              <Row className={styles['box-item']} id={item.id}>
+              <Row className={styles['box-item']} key={item.id}>
                 <Col lg={{span: 8, offset: 0}} xs={{span: 10, offset: 0}} md={{span: 8, offset: 0}}>
                   <Image 
                     className={styles['image-left']}
@@ -62,12 +70,23 @@ function WorkItemsCard() {
                   <h4>{item.title}</h4>
                   <h5>{item.description}</h5>
                   <div className={styles['button-card']}>
-                    <Button className={styles['outline-btn']} type='primary' ghost>Xem thêm</Button>
+                    <Button className={styles['outline-btn']} type='primary' ghost onClick={showModal}>Xem thêm</Button>
                   </div>
                 </Col>
               </Row>
             )
-          }))}    
+          }))} 
+         
+          <Modal 
+            className={styles['model-work-detail']}
+            open={isModalOpen} 
+            footer={null}
+            onCancel={handleCancel}
+            width={1146}
+          >
+            <WorkDetail />
+          </Modal>        
+         
         </div>
       </div>
     </div>
