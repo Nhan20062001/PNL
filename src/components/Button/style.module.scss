@@ -1,9 +1,38 @@
 @import '@/styles/mixins.scss';
 
+.btn-default,
+.btn-primary {
+  &:global(.ant-btn-default) {
+    display: flex;
+    align-items: center;
+  }
+  &:global(.ant-btn) {
+    font-size: 20px;
+    padding: 20px;
+  }
+}
+
+.btn-default {
+  &:global(.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover) {
+    background-color: var(--bg-color-btn-default-hover);
+    color: var(--font-color-white);
+    border-color: var(--bg-color-btn-default-hover);
+  }
+}
+
+.btn-primary {
+  &:global(.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover) {
+    background-color: var(--bg-color-btn-primary-hover);
+    color: var(--font-color-white);
+    border-color: var(--bg-color-btn-primary-hover);
+  }
+}
+
 .btn-default {
   &:global(.ant-btn-default) {
     border-radius: 20px;
-    background-color: var(--bg-color-white);
+    color: var(--font-color-black);
+    background-color: var(--bg-color-btn-default);
     border: 2px solid var(--primary-color);
   }
 }
@@ -11,7 +40,8 @@
 .btn-primary {
   &:global(.ant-btn-default) {
     border-radius: 20px;
-    background-color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    background-color: var(--bg-color-btn-primary);
+    color: var(--font-color-white);
+    border: 1px solid var(--bg-color-btn-primary);
   }
 }

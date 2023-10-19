@@ -2,15 +2,11 @@ import { Button, ButtonProps } from 'antd';
 import { ReactNode, FC } from 'react';
 import styles from './style.module.scss';
 import csx from 'classnames';
-
-export enum ButtonType {
-  DEFAULT = 'btn-default',
-  PRIMARY = 'btn-primary',
-}
+import { ButtonType } from '@/config/constant';
 
 interface Props extends ButtonProps {
   children: ReactNode;
-  buttonType?: string;
+  buttonType?: ButtonType;
   className?: string;
 }
 
@@ -18,7 +14,7 @@ const CustomButton: FC<Props> = ({
   children,
   className,
   shape,
-  buttonType = 'btn-default',
+  buttonType = ButtonType.DEFAULT,
   ...rest
 }: Props) => {
   return (
