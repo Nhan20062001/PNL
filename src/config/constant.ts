@@ -80,4 +80,10 @@ export const ADMIN_PATH = {
   },
 };
 
+//Common button
+export enum ButtonType {
+  DEFAULT = 'btn-default',
+  PRIMARY = 'btn-primary',
+}
+
 export const LOGO_LOGIN_AMDIN = 'https://res.cloudinary.com/dlcvpix8s/image/upload/v1696488184/sata/vtgrcnzfvsqiv0pyh7aa.png';
