@@ -11,7 +11,7 @@
 .btn-primary {
   &:global(.ant-btn-default) {
     border-radius: 20px;
-    background-color: var(--bg-color-white);
+    background-color: var(--primary-color);
     border: 1px solid var(--primary-color);
   }
 }

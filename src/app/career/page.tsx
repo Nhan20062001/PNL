@@ -2,8 +2,8 @@
 
 import { MainClient } from '@/layouts/MainClient';
 import { Image } from 'antd';
-import Form, { Type } from './form';
-import styles from './career.module.scss';
+import FormCareer, { Type } from './form';
+import styles from './style.module.scss';
 
 const Career = () => {
   const dataMock: Type[] = [
@@ -31,7 +31,6 @@ const Career = () => {
       description: 'abc',
       image: '/images/imageBody.jpg',
     },
-    
   ];
   return (
     <MainClient>
@@ -45,7 +44,7 @@ const Career = () => {
       </div>
       <div className="container">
         {dataMock.map((item, index) => {
-          return <Form key={item.id} left={index % 2 === 0 ? true : false} data={item} />;
+          return <FormCareer key={item.id} left={index % 2 === 0 ? true : false} data={item} />;
         })}
       </div>
     </MainClient>
