@@ -9,26 +9,24 @@ const Career = () => {
   const dataMock: Type[] = [
     {
       id: '1',
-      title: 'Abc',
-      description: 'abc',
+      title: 'DEV FRONTEND NEXTJS',
+      description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
       image: '/images/imageBody.jpg',
     },
     {
       id: '2',
-      title: 'Abc',
-      description: 'abc',
+      title: 'DEV FRONTEND NEXTJS',
+      description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
       image: '/images/imageBody.jpg',
-    },
-    {
+    },{
       id: '3',
-      title: 'Abc',
-      description: 'abc',
+      title: 'DEV FRONTEND NEXTJS',
+      description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
       image: '/images/imageBody.jpg',
-    },
-    {
+    },{
       id: '4',
-      title: 'Abc',
-      description: 'abc',
+      title: 'DEV FRONTEND NEXTJS',
+      description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
       image: '/images/imageBody.jpg',
     },
   ];
