@@ -1,0 +1,11 @@
+{
+  "clientHeader": {
+    "itemHome": "Homepage",
+    "serviceHome": "Service",
+    "workHome": "Work",
+    "customerHome": "Customer",
+    "teamHome": "Team",
+    "careerHome": "Career",
+    "contactHome": "Contact"
+  }
+}

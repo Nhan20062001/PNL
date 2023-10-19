@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import authSlice from './auth/auth.reducer';
 import uploadSlice from './upload/upload.reducer';
 import customerSlice from './customer/customer.reducer';
+import translateSlice from './translation/translation.reducer';
 import { AuthState } from './auth/auth.type';
 
 const authPersistConfig = {
@@ -18,11 +19,13 @@ export const store = configureStore({
     authSlice: persistReducer<AuthState>(authPersistConfig, authSlice),
     customerSlice,
     uploadSlice,
+    translation: translateSlice,
   },
   devTools: true,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-    serializableCheck: false,
-  }),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
