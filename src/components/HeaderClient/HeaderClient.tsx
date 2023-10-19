@@ -84,8 +84,8 @@ const HeaderClient = () => {
               <MenuOutlined />
             </Button>
             <Drawer title="Basic Drawer" placement="right" onClose={onClose} open={open}>
-              {listItems.map((item) => {
-                return <p className={styles['menu-list']}>{item.title}</p>;
+              {listItems.map((item, index) => {
+                return <p key={index} className={styles['menu-list']}>{item.title}</p>;
               })}
             </Drawer>
           </div>

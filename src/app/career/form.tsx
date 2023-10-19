@@ -1,8 +1,10 @@
-import { Button, Col, Image, Row, Modal, Input, Form } from 'antd';
-import React, { FC, useState } from 'react';
-import styles from './style.module.scss';
-import CustomButton, { ButtonType } from '@/components/Button/CustomButton';
+import CustomButton from '@/components/Button/CustomButton';
 import SendIcon from '@/components/icons/send.icons';
+import { ButtonType } from '@/config/constant';
+import { Button, Col, Form, Image, Input, Modal, Row, Upload } from 'antd';
+import { FC, useState } from 'react';
+import styles from './style.module.scss';
+import { UploadOutlined } from '@ant-design/icons';
 
 interface Props {
   left: boolean;
@@ -39,7 +41,11 @@ const FormCareer: FC<Props> = ({ left, data }) => {
               <div className={styles['text-child-career-body-header']}>
                 <h3>{data.title}</h3>
                 <p>{data.description}</p>
-                <CustomButton buttonType={ButtonType.DEFAULT} onClick={showModal}>
+                <CustomButton
+                  className={styles['btn-apply']}
+                  buttonType={ButtonType.DEFAULT}
+                  onClick={showModal}
+                >
                   Apply
                 </CustomButton>
               </div>
@@ -69,7 +75,11 @@ const FormCareer: FC<Props> = ({ left, data }) => {
               <div className={styles['text-child-career-body-center']}>
                 <h3>{data.title}</h3>
                 <p>{data.description}</p>
-                <CustomButton buttonType={ButtonType.DEFAULT} onClick={showModal}>
+                <CustomButton
+                  className={styles['btn-apply']}
+                  buttonType={ButtonType.DEFAULT}
+                  onClick={showModal}
+                >
                   Apply
                 </CustomButton>
               </div>
@@ -91,57 +101,34 @@ const FormCareer: FC<Props> = ({ left, data }) => {
           </div>
         }
       >
-        <Row gutter={30}>
-          <Col span={12}>
+        <Row gutter={[32, 24]}>
+          <Col xl={12} lg={12} md={12}>
             <Form layout="vertical">
-              <Form.Item
-                hasFeedback
-                label="Tên của bạn"
-                name="name"
-                validateTrigger="onBlur"
-                rules={[{ max: 3 }]}
-              >
-                <Input placeholder="Nhập họ và tên" />
+              <Form.Item hasFeedback label="Tên của bạn" name="name">
+                <Input className={styles['input-form']} placeholder="Nhập họ và tên" />
               </Form.Item>
-              <Form.Item
-                hasFeedback
-                label="Email của bạn"
-                name="email"
-                validateTrigger="onBlur"
-                rules={[{ max: 3 }]}
-              >
-                <Input placeholder="Nhập email" />
+              <Form.Item hasFeedback label="Email của bạn" name="email">
+                <Input className={styles['input-form']} placeholder="Nhập email" />
               </Form.Item>
-              <Form.Item
-                hasFeedback
-                label="Để lại lời nhắn của bạn"
-                name="field_a"
-                validateTrigger="onBlur"
-                rules={[{ max: 3 }]}
-              >
-                <Input.TextArea placeholder="Viết gì đó cho chúng tôi" />
+              <Form.Item hasFeedback label="Để lại lời nhắn của bạn" name="message">
+                <Input
+                  className={styles['input-message-form']}
+                  placeholder="Viết gì đó cho chúng tôi"
+                  maxLength={100}
+                />
               </Form.Item>
             </Form>
           </Col>
-          <Col span={12}>
+          <Col xl={12} lg={12} md={12}>
             <Form layout="vertical">
-              <Form.Item
-                hasFeedback
-                label="Số điện thoại của bạn"
-                name="field_a"
-                validateTrigger="onBlur"
-                rules={[{ max: 3 }]}
-              >
-                <Input placeholder="Nhập số điện thoại" />
+              <Form.Item hasFeedback label="Số điện thoại của bạn" name="phone">
+                <Input className={styles['input-form']} placeholder="Nhập số điện thoại" />
               </Form.Item>
-              <Form.Item
-                hasFeedback
-                label="CV của bạn"
-                name="field_a"
-                validateTrigger="onBlur"
-                rules={[{ max: 3 }]}
-              >
-                <Input placeholder="Validate required onBlur" />
+              <Form.Item hasFeedback label="CV của bạn" name="cv">
+                {/* <Input className={styles['input-form']} placeholder="Validate required onBlur" /> */}
+                <Upload>
+                  <Button icon={<UploadOutlined />}>Upload</Button>
+                </Upload>
               </Form.Item>
             </Form>
           </Col>
