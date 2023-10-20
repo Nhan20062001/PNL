@@ -121,7 +121,6 @@
             }
             &:hover {
               background-color: var(--bg-color-btn-default-2);
-
             }
           }
         }
@@ -182,7 +181,7 @@
           .button {
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             flex-direction: row;
           }
         }
