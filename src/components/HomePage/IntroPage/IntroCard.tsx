@@ -17,12 +17,13 @@ const IntroPage = () => {
             </h6>
           </div>
           <CustomButton
-            className={styles['button']}
-            onClick={() => {}}
             buttonType={ButtonType.PRIMARY}
+            className={styles['button']}
           >
             <SendIcon />
-            <p className={styles['button-text']}> Contact to work</p>
+            <p className={styles['button-text']}>
+              Contact to work
+            </p>
           </CustomButton>
         </div>
 
@@ -31,6 +32,7 @@ const IntroPage = () => {
             className={styles['content-image-right']}
             src='/images/header twiscode 1.png'
             alt=''
+            preview={false}
           />
         </div>
       </div>

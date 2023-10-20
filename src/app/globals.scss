@@ -58,6 +58,21 @@ body {
       font-size: 16px;
     }
   }
+
+  .ant-drawer {
+    .ant-drawer-body {
+      padding: 0 20px;
+    }
+    .ant-drawer-wrapper-body p {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+  }
+  .ant-drawer-close {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+  }
 }
 
 @media (min-width: $xs-min-width) {
