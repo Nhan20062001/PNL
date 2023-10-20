@@ -61,6 +61,10 @@
             align-content: space-around;
             justify-content: space-around;
             flex-wrap: wrap;
+
+            &:hover {
+              background-color: var(--bg-color-btn-default-hover);
+            }
           }
         }
       }
@@ -142,7 +146,7 @@
           .button-card {
             .outline-btn {
               width: 94px;
-              height: 32px;
+              height: 22px;
               font-size: var(--fs-text-primary);
             }
           }
@@ -152,7 +156,7 @@
   }
 }
 
-@media only screen and (max-width: $sm-max-width) {
+@media only screen and (max-width: $xs-max-width) {
   .work-items-card {
     .work-item-container {
       .box-item {
@@ -176,9 +180,11 @@
             -webkit-line-clamp: 3;
           }
           .button-card {
+            display: flex;
+            flex-direction: row-reverse;
             .outline-btn {
               width: 94px;
-              height: 32px;
+              height: 22px;
               font-size: var(--fs-text-primary);
             }
           }
@@ -188,7 +194,7 @@
   }
 }
 
-@media only screen and (max-width: $sm-max-width) {
+@media only screen and (max-width: $xs-max-width-large) {
   .work-items-card {
     .work-item-container {
       .box-item {

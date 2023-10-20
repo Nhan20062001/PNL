@@ -15,6 +15,7 @@ function FooterClient() {
               className={styles['location-map']}
               src="/images/Rectangle 16.png"
               alt=""
+              preview={false}
             />
             <div className={styles['rectangle-location']}>
               <h6>Twiscode</h6>
@@ -64,11 +65,13 @@ function FooterClient() {
             className={styles['image']}
             src='/images/dmca.jpg'
             alt=''
+            preview={false}
           />
           <Image 
             className={styles['image']}
             src='/images/bo-cong-thuong.gif'
             alt=''
+            preview={false}
           />
         </div>
 

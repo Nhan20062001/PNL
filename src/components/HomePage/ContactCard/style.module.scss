@@ -119,9 +119,10 @@
               color: var(--primary-color);
               font-size: var(--fs-text-primary-2);
             }
-          }
-          .btn-style:hover {
-            background-color: var(--bg-color-btn-default-2);
+            &:hover {
+              background-color: var(--bg-color-btn-default-2);
+
+            }
           }
         }
       }

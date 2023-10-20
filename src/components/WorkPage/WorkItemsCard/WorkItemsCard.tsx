@@ -3,6 +3,8 @@ import styles from './style.module.scss';
 import { Button, Image, Modal } from 'antd';
 import { Col, Row } from 'antd';
 import WorkDetail from '../WorkDetail/WorkDetail';
+import CustomButton from '@/components/Button/CustomButton';
+import { ButtonType } from '@/config/constant';
 
 type Types = {
   id?: string;
@@ -74,7 +76,7 @@ function WorkItemsCard() {
                   xs={{ span: 10, offset: 0 }}
                   md={{ span: 8, offset: 0 }}
                 >
-                  <Image className={styles['image-left']} src={item.image} alt="" />
+                  <Image className={styles['image-left']} src={item.image} preview={false} alt="" />
                 </Col>
                 <Col
                   className={styles['box-item-content']}
@@ -85,14 +87,13 @@ function WorkItemsCard() {
                   <h4>{item.title}</h4>
                   <h5>{item.description}</h5>
                   <div className={styles['button-card']}>
-                    <Button
+                    <CustomButton
                       className={styles['outline-btn']}
-                      type="primary"
-                      ghost
+                      buttonType={ButtonType.DEFAULT}
                       onClick={showModal}
                     >
                       Xem thêm
-                    </Button>
+                    </CustomButton>
                   </div>
                 </Col>
               </Row>
