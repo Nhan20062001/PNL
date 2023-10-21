@@ -1,10 +1,10 @@
 import CustomButton from '@/components/Button/CustomButton';
 import SendIcon from '@/components/icons/send.icons';
 import { ButtonType } from '@/config/constant';
-import { Button, Col, Form, Image, Input, Modal, Row, Upload } from 'antd';
+import { Col, Form, Image, Input, Modal, Row, Upload } from 'antd';
 import { FC, useState } from 'react';
 import styles from './style.module.scss';
-import { UploadOutlined } from '@ant-design/icons';
+import UploadIcon from '@/components/icons/upload.icons';
 
 interface Props {
   left: boolean;
@@ -124,10 +124,12 @@ const FormCareer: FC<Props> = ({ left, data }) => {
               <Form.Item hasFeedback label="Số điện thoại của bạn" name="phone">
                 <Input className={styles['input-form']} placeholder="Nhập số điện thoại" />
               </Form.Item>
-              <Form.Item hasFeedback label="CV của bạn" name="cv">
-                {/* <Input className={styles['input-form']} placeholder="Validate required onBlur" /> */}
-                <Upload>
-                  <Button icon={<UploadOutlined />}>Upload</Button>
+              <Form.Item hasFeedback label="CV của bạn" name="file">
+                <Upload fileList={[]}>
+                  <div className={styles['upload-form']}>
+                    <UploadIcon />
+                    <p>Kéo thả hoặc chọn file</p>
+                  </div>
                 </Upload>
               </Form.Item>
             </Form>
