@@ -1,10 +1,10 @@
 import CustomButton from '@/components/Button/CustomButton';
-import SendIcon from '@/components/icons/send.icons';
 import { ButtonType } from '@/config/constant';
 import { Col, Form, Image, Input, Modal, Row, Upload } from 'antd';
 import { FC, useState } from 'react';
 import styles from './style.module.scss';
 import UploadIcon from '@/components/icons/upload.icons';
+import SendIcon from '@/components/icons/Send.icons';
 
 interface Props {
   left: boolean;
@@ -36,7 +36,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
     <div className={styles['career']}>
       {left ? (
         <Row className={styles['content-career-body']}>
-          <Col span={8}>
+          <Col md={8} xs={24}>
             <div className={styles['text-career-body-header']}>
               <div className={styles['text-child-career-body-header']}>
                 <h3>{data.title}</h3>
@@ -51,7 +51,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
               </div>
             </div>
           </Col>
-          <Col span={16}>
+          <Col md={16} xs={24}>
             <Image
               className={styles['image-career-body-header']}
               preview={false}
@@ -62,7 +62,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
         </Row>
       ) : (
         <Row className={styles['content-career-body']}>
-          <Col span={16}>
+          <Col md={16} xs={24}>
             <Image
               className={styles['image-career-body-center']}
               preview={false}
@@ -70,7 +70,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
               src={data.image as string}
             />
           </Col>
-          <Col span={8}>
+          <Col md={8} xs={24}>
             <div className={styles['text-career-body-center']}>
               <div className={styles['text-child-career-body-center']}>
                 <h3>{data.title}</h3>
@@ -88,6 +88,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
         </Row>
       )}
       <Modal
+        className={styles['modal-style']}
         title=""
         open={isModalOpen}
         onOk={handleOk}
@@ -104,13 +105,28 @@ const FormCareer: FC<Props> = ({ left, data }) => {
         <Row gutter={[32, 24]}>
           <Col xl={12} lg={12} md={12}>
             <Form layout="vertical">
-              <Form.Item hasFeedback label="Tên của bạn" name="name">
+              <Form.Item
+                hasFeedback
+                label="Tên của bạn"
+                name="name"
+                className={styles['label-form']}
+              >
                 <Input className={styles['input-form']} placeholder="Nhập họ và tên" />
               </Form.Item>
-              <Form.Item hasFeedback label="Email của bạn" name="email">
+              <Form.Item
+                hasFeedback
+                label="Email của bạn"
+                name="email"
+                className={styles['label-form']}
+              >
                 <Input className={styles['input-form']} placeholder="Nhập email" />
               </Form.Item>
-              <Form.Item hasFeedback label="Để lại lời nhắn của bạn" name="message">
+              <Form.Item
+                hasFeedback
+                label="Để lại lời nhắn của bạn"
+                name="message"
+                className={styles['label-form']}
+              >
                 <Input
                   className={styles['input-message-form']}
                   placeholder="Viết gì đó cho chúng tôi"
@@ -121,10 +137,20 @@ const FormCareer: FC<Props> = ({ left, data }) => {
           </Col>
           <Col xl={12} lg={12} md={12}>
             <Form layout="vertical">
-              <Form.Item hasFeedback label="Số điện thoại của bạn" name="phone">
+              <Form.Item
+                hasFeedback
+                label="Số điện thoại của bạn"
+                name="phone"
+                className={styles['label-form']}
+              >
                 <Input className={styles['input-form']} placeholder="Nhập số điện thoại" />
               </Form.Item>
-              <Form.Item hasFeedback label="CV của bạn" name="file">
+              <Form.Item
+                hasFeedback
+                label="CV của bạn"
+                name="file"
+                className={styles['label-form']}
+              >
                 <Upload fileList={[]}>
                   <div className={styles['upload-form']}>
                     <UploadIcon />
