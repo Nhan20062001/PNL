@@ -1,10 +1,10 @@
 import CustomButton from '@/components/Button/CustomButton';
+import SendIcon from '@/components/icons/Send.icons';
 import { ButtonType } from '@/config/constant';
 import { Col, Form, Image, Input, Modal, Row, Upload } from 'antd';
 import { FC, useState } from 'react';
 import styles from './style.module.scss';
 import UploadIcon from '@/components/icons/upload.icons';
-import SendIcon from '@/components/icons/Send.icons';
 
 interface Props {
   left: boolean;

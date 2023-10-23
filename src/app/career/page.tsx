@@ -11,23 +11,25 @@ const Career = () => {
       id: '1',
       title: 'DEV FRONTEND NEXTJS',
       description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
-      image: '/images/imageBody.jpg',
+      image: '/images/imageCareer.jpeg',
     },
     {
       id: '2',
       title: 'DEV FRONTEND NEXTJS',
       description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
-      image: '/images/imageBody.jpg',
-    },{
+      image: '/images/imageCareer.jpeg',
+    },
+    {
       id: '3',
       title: 'DEV FRONTEND NEXTJS',
       description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
-      image: '/images/imageBody.jpg',
-    },{
+      image: '/images/imageCareer.jpeg',
+    },
+    {
       id: '4',
       title: 'DEV FRONTEND NEXTJS',
       description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
-      image: '/images/imageBody.jpg',
+      image: '/images/imageCareer.jpeg',
     },
   ];
   return (
@@ -37,8 +39,14 @@ const Career = () => {
           className={styles['image-career-banner']}
           preview={false}
           alt=""
-          src="/images/banner.webp"
+          src="/images/bannerCareer.jpeg"
         />
+        <h1 className={styles['text-banner1']}>CAREER</h1>
+        <h1 className={styles['text-banner2']}>OUR CONNECTION</h1>
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+          unknown printer took a galley of type and scrambled it to make a type specimen book
+        </p>
       </div>
       <div className="container">
         {dataMock.map((item, index) => {
