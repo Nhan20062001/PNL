@@ -8,7 +8,6 @@ import AndroidIcon from '@/layouts/icons/AndroidIcons';
 import WebsiteIcon from '@/layouts/icons/WebsiteIcons';
 import UIUXIcon from '@/layouts/icons/UIUXIcons';
 
-
 type Types = {
   id?: string;
   icon?: React.ReactNode;
@@ -73,7 +72,6 @@ const WhatWeDoCardPage = () => {
             preview={false}
           />
         </motion.div>
-
         <div ref={ref} className={styles['content-right-container']}>
           <h3 className={styles['content-right-title']}>What we do</h3>
           <div className={styles['content-right-main-container']}>

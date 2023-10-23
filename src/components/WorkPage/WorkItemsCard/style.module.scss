@@ -64,6 +64,7 @@
 
             &:hover {
               background-color: var(--bg-color-btn-default-hover);
+              color: var(--font-color-white);
             }
           }
         }
@@ -109,8 +110,8 @@
           }
           .button-card {
             .outline-btn {
-              width: 100px;
-              height: 35px;
+              width: 120px;
+              height: 34px;
               font-size: var(--fs-text-primary-2);
             }
           }
@@ -146,7 +147,7 @@
           .button-card {
             .outline-btn {
               width: 94px;
-              height: 22px;
+              height: 30px;
               font-size: var(--fs-text-primary);
             }
           }
