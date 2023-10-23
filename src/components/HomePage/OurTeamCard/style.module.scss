@@ -5,6 +5,7 @@
   position: relative;
   margin: 0 auto;
   width: 900px;
+  margin-top: 54px;
   h3 {
     font-size: var(--fs-header-primary);
     font-style: normal;
@@ -94,8 +95,10 @@
 @media only screen and (max-width: $md-max-width) {
   .our-team {
     width: 650px;
+    margin-top: 34px;
     h3 {
-      font-size: 30px;
+      font-size: var(--fs-header-primary-2);
+      margin-bottom: 10px;
     }
     :global(.ant-carousel) {
       width: 100%;
@@ -107,7 +110,7 @@
         height: 120px;
       }
       .member-info {
-        font-size: 18px;
+        font-size: var(--fs-text-primary-2);
       }
     }
     :global(.slick-current) {
@@ -125,7 +128,7 @@
   .our-team {
     width: 516px;
     h3 {
-      font-size: 28px;
+      font-size: var(--fs-header-mobile);
       margin-bottom: 5px;
     }
     :global(.ant-carousel) {
@@ -138,7 +141,7 @@
         height: 94px;
       }
       .member-info {
-        font-size: 18px;
+        font-size: var(--fs-text-primary-2);
       }
     }
     :global(.slick-current) {
@@ -156,7 +159,7 @@
   .our-team {
     width: 394px;
     h3 {
-      font-size: 24px;
+      font-size: var(--fs-header-mobile-2);
       margin-bottom: 5px;
     }
     :global(.ant-carousel) {
@@ -169,7 +172,7 @@
         height: 80px;
       }
       .member-info {
-        font-size: 16px;
+        font-size: var(--fs-text-primary);
       }
     }
     :global(.slick-current) {
@@ -187,7 +190,7 @@
   .our-team {
     width: 351px;
     h3 {
-      font-size: 20px;
+      font-size: var(--fs-header-mobile-2);
       margin-bottom: -15px;
     }
     :global(.ant-carousel) {
@@ -200,7 +203,7 @@
         height: 68px;
       }
       .member-info {
-        font-size: 14px;
+        font-size: var(--fs-text-mobile);
       }
     }
     :global(.slick-current) {
@@ -219,7 +222,7 @@
     width: 296px;
     padding: 0;
     h3 {
-      font-size: 20px;
+      font-size: var(--fs-header-mobile-2);
       margin-bottom: -15px;
     }
     :global(.ant-carousel) {
@@ -232,7 +235,7 @@
         height: 60px;
       }
       .member-info {
-        font-size: 14px;
+        font-size: var(--fs-text-mobile);
       }
     }
     :global(.slick-current) {

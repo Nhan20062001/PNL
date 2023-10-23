@@ -25,6 +25,7 @@
         height: 154px;
         border-radius: 18px;
         margin-right: 25px;
+        object-fit: cover;
       }
       &::after {
         clear: left;
@@ -54,10 +55,10 @@
   }
 }
 
-@media only screen and (max-width: $xs-max-width) {
+@media only screen and (max-width: $sm-max-width) {
   .work-detail {
     h4 {
-      font-size: var(--fs-header-mobile);
+      font-size: var(--fs-text-primary-2);
     }
     .body-work-detail {
       :global(.ant-image) {
@@ -70,6 +71,9 @@
           margin-right: 25px;
         }
       }
+      .text-description {
+        font-size: var(--fs-text-primary);
+      }
     }
   }
 }
@@ -77,10 +81,11 @@
 @media only screen and (max-width: $xs-max-width-large) {
   .work-detail {
     h4 {
-      font-size: var(--fs-header-mobile);
+      font-size: var(--fs-text-primary-2);
     }
     .body-work-detail {
-      padding: 0;
+      padding: 0 15px;
+
       :global(.ant-image) {
         margin-bottom: 0;
         padding: 0;

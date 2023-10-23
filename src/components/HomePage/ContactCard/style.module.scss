@@ -1,7 +1,7 @@
 @import '@/styles/mixins.scss';
 
 .contact-card {
-  height: 700px;
+  height: 716px;
   margin: 58px 0px;
   position: relative;
 
@@ -26,7 +26,7 @@
       opacity: 0.85;
       position: absolute;
       width: 100%;
-      height: 700px;
+      height: 100%;
     }
 
     .contact-card-content {
@@ -141,11 +141,9 @@
 
 @media only screen and (max-width: $md-max-width) {
   .contact-card {
-    height: 742px;
+    margin-top: 34px;
+    margin-bottom: 0px;
     .contact-container {
-      &-opacity-layer {
-        height: 742px;
-      }
       .contact-card-content {
         h3 {
           font-size: var(--fs-header-primary-2);
@@ -155,9 +153,21 @@
         }
         .contact-form {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           .button {
             align-items: flex-start;
+            width: 33%;
+            .btn-style {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              border-radius: 20px;
+
+              .button-text {
+                color: var(--primary-color);
+                font-size: var(--fs-text-primary-2);
+              }
+            }
           }
         }
       }
@@ -167,7 +177,7 @@
 
 @media only screen and (max-width: $sm-max-width) {
   .contact-card {
-    height: 800px;
+    height: 760px;
     .contact-container {
       height: 100%;
       &-opacity-layer {
@@ -176,7 +186,7 @@
       .contact-card-content {
         height: 100%;
         h3 {
-          font-size: var(--fs-header-mobile);
+          font-size: var(--fs-header-mobile-2);
         }
         p {
           font-size: var(--fs-text-primary);
@@ -207,6 +217,20 @@
               font-size: 16px;
             }
           }
+          .button {
+            width: 100%;
+            .btn-style {
+              width: 100%;
+              border-radius: 18px;
+              height: 50px;
+              display: flex;
+              justify-content: center;
+              .button-text {
+                font-size: var(--fs-text-primary);
+                padding-left: 10px;
+              }
+            }
+          }
         }
       }
     }
@@ -227,7 +251,7 @@
           font-size: var(--fs-header-mobile);
         }
         p {
-          font-size: var(--fs-text-primary-2);
+          font-size: var(--fs-text-primary);
         }
         .contact-form {
           height: 100%;
@@ -235,19 +259,6 @@
           flex-direction: column;
           .form-container {
             width: 100%;
-          }
-          .button {
-            width: 100%;
-            .btn-style {
-              width: 70%;
-              border-radius: 20px;
-              height: 30px;
-              .button-text {
-                color: var(--primary-color);
-                font-size: var(--fs-text-primary-2);
-                padding-left: 10px;
-              }
-            }
           }
         }
       }
@@ -262,8 +273,8 @@
         .contact-form {
           .button {
             .btn-style {
-              width: 90%;
-              justify-content: start;
+              width: 100%;
+              height: 30px;
             }
           }
         }
