@@ -46,7 +46,7 @@ const AboutUsCardComponent = () => {
         <div className={styles['about-us-opacity-layer']}></div>
 
         <div className={styles['carousel-container']}>
-          <Carousel autoplay>
+          <Carousel autoplay={true}>
             {dataMock.map((item) => {
               return (
                 <div className={styles['carousel-content-padding']} key={item.id}>
