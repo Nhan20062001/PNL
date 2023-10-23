@@ -4,9 +4,9 @@ import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import { appConfig } from '@/config/appConfig';
 import { ReduxProvider } from '@/store/provider';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({ subsets: ['latin'], weight: "500" } );
 
 export const metadata: Metadata = {
   title: appConfig.title,
@@ -43,7 +43,7 @@ export default function RootLayout({
         {/* Twitter image */}
         <meta property="twitter:image" content="/images/twitter-image.png" />
       </head>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <ReduxProvider>
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         </ReduxProvider>

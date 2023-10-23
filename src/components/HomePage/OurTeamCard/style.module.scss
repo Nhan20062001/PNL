@@ -1,209 +1,247 @@
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 
 .our-team {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 900px;
+  h3 {
+    font-size: var(--fs-header-primary);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--font-color-black-2);
+  }
 
-    h3 {
-        font-size: 36px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 44px; 
-        text-align: center;
-        margin-bottom: 30px;
+  :global(.ant-carousel) {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  :global(.slick-track) {
+    margin: 0 auto;
+    position: absolute;
+  }
+  :global(.slick-slide slick-active slick-center slick-current) {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  :global(.slick-dots) {
+    visibility: hidden;
+  }
+
+  .member-card {
+    width: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+
+    img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      margin: 0 auto;
     }
 
-
-    :global(.slick-track) {
-        margin: 0 auto;
-        position: absolute;
-
-        
+    .member-info {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+      .member-position {
+        color: #9f9f9f;
+      }
     }
-    :global(.slick-slide slick-active slick-center slick-current) {
-        display: flex;
-        justify-content: space-around;
-        align-items: baseline;
-    }
+  }
 
-    :global(.slick-dots){
-        visibility: hidden;
-    }
-    
+  :global(.slick-current) {
+    will-change: transform;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(1.2);
+    transition: transform 0.6s ease-in-out;
     .member-card {
-        width: 100px;
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        align-items: center;
-        margin: 30px 0;
+      width: 150px;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: center;
+      margin: 30px 0;
 
-        img {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            margin: 0 auto;
-        }
+      img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        margin: 0 auto;
+        object-fit: cover;
+      }
 
-
-        .member-info {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            font-size: 20px;
-            .member-position {
-                color: #9F9F9F;
-            }
-        }
-
-    }  
-    
-    :global(.slick-current) {
-        will-change: transform;
-        margin-left: auto;
-        margin-right: auto;
-        transform: scale(1.2);
-        transition: transform 0.6s ease-in-out;
-        .member-card {
-            width: 150px;
-            display: flex;
-            justify-content: space-evenly;
-            flex-direction: column;
-            align-items: center;
-            margin: 30px 0;
-    
-            img {
-                width: 220px;
-                height: 220px;
-                border-radius: 50%;
-                margin: 0 auto;
-                object-fit: cover;
-            }
-    
-    
-            .member-info {
-                display: block;
-                text-align: center;
-                margin-top: 20px;
-            }
-    
-        }
-       
+      .member-info {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+      }
     }
-
-   
-        
+  }
 }
 
 @media only screen and (max-width: $md-max-width) {
-    .our-team {
-        h3 {
-            font-size: 30px;
-
-        }
-        .member-card {
-            img {
-                width: 120px;
-                height: 120px;
-            }
-            .member-info {
-                font-size: 18px;
-            }
-        }
-        :global(.slick-current) {
-            .member-card  {
-                img {
-                    width: 150px;
-                    height: 150px;
-                }
-            }
-            
-        }
-        
+  .our-team {
+    width: 650px;
+    h3 {
+      font-size: 30px;
     }
+    :global(.ant-carousel) {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .member-card {
+      img {
+        width: 120px;
+        height: 120px;
+      }
+      .member-info {
+        font-size: 18px;
+      }
+    }
+    :global(.slick-current) {
+      .member-card {
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: $sm-max-width) {
-    .our-team {
-        h3 {
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
-        .member-card {
-            // margin: 15px 0;
-            img {
-                width: 100px;
-                height: 100px;
-            }
-            .member-info {
-                font-size: 18px;
-            }
-        }
-        :global(.slick-current) {
-            .member-card  {
-                img {
-                    width: 130px;
-                    height: 130px;
-                }
-            }
-            
-        }
-        
+  .our-team {
+    width: 516px;
+    h3 {
+      font-size: 28px;
+      margin-bottom: 5px;
     }
+    :global(.ant-carousel) {
+      margin: 0 auto;
+      width: 100%;
+    }
+    .member-card {
+      img {
+        width: 94px;
+        height: 94px;
+      }
+      .member-info {
+        font-size: 18px;
+      }
+    }
+    :global(.slick-current) {
+      .member-card {
+        img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: $xs-max-width) {
-    .our-team {
-        h3 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        .member-card {
-            // margin: 15px 0;
-            img {
-                width: 80px;
-                height: 80px;
-            }
-            .member-info {
-                font-size: 16px;
-            }
-        }
-        :global(.slick-current) {
-            .member-card  {
-                img {
-                    width: 100px;
-                    height: 100px;
-                }
-            }
-            
-        }
+  .our-team {
+    width: 394px;
+    h3 {
+      font-size: 24px;
+      margin-bottom: 5px;
     }
+    :global(.ant-carousel) {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .member-card {
+      img {
+        width: 80px;
+        height: 80px;
+      }
+      .member-info {
+        font-size: 16px;
+      }
+    }
+    :global(.slick-current) {
+      .member-card {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: $xs-max-width-large) {
-    .our-team {
-        h3 {
-            font-size: 20px;
-            margin-bottom: -15px;
-        }
-        .member-card {
-            // margin: 10px 0;
-            img {
-                width: 60px;
-                height: 60px;
-            }
-            .member-info {
-                font-size: 14px;
-            }
-        }
-        :global(.slick-current) {
-            .member-card  {
-                img {
-                    width: 80px;
-                    height: 80px;
-                }
-            }
-            
-        }
+  .our-team {
+    width: 351px;
+    h3 {
+      font-size: 20px;
+      margin-bottom: -15px;
     }
+    :global(.ant-carousel) {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .member-card {
+      img {
+        width: 68px;
+        height: 68px;
+      }
+      .member-info {
+        font-size: 14px;
+      }
+    }
+    :global(.slick-current) {
+      .member-card {
+        img {
+          width: 88px;
+          height: 88px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $xs-max-width-medium) {
+  .our-team {
+    width: 296px;
+    padding: 0;
+    h3 {
+      font-size: 20px;
+      margin-bottom: -15px;
+    }
+    :global(.ant-carousel) {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .member-card {
+      img {
+        width: 60px;
+        height: 60px;
+      }
+      .member-info {
+        font-size: 14px;
+      }
+    }
+    :global(.slick-current) {
+      .member-card {
+        img {
+          width: 74px;
+          height: 74px;
+        }
+      }
+    }
+  }
 }

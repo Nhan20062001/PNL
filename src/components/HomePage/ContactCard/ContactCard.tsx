@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 import TextArea from 'antd/es/input/TextArea';
 import CustomButton from '@/components/Button/CustomButton';
 import { ButtonType } from '@/config/constant';
-import SendIcon from '@/components/icons/Send.icons';
+import SendIcon from '@/layouts/icons/SendIcons';
 
 const ContactCardComponent = () => {
   const [form] = Form.useForm();
