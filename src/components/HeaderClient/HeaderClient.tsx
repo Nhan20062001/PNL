@@ -78,11 +78,6 @@ const HeaderClient = () => {
 
   const [active, setActive] = useState('');
 
-  const handleOnClick = (e: any, link: any) => {
-    console.log(e);
-    console.log(link.href);
-  };
-
   useEffect(() => {
     if (storageUtils.get('lang')) {
       dispatch(changeLanguage(storageUtils.get('lang')));
@@ -116,7 +111,6 @@ const HeaderClient = () => {
         >
           <div className={styles['nav-header-client']}>
             <Anchor
-              onClick={(e, link) => handleOnClick(e, link)}
               className={styles['ant-anchor']}
               direction="horizontal"
               items={listItems}
