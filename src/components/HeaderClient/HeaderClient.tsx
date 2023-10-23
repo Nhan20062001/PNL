@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './header.module.scss';
-import { Anchor, Button, Drawer, Select } from 'antd';
+import { Anchor, Button, Drawer, Layout, Menu, MenuProps, Select, Space } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { useAppDispatch, useAppSelector } from '@/store';
 import useTranslation from '@/hook/useTranslation';
@@ -11,54 +11,18 @@ import { TranslateEnum } from '@/store/translation/translation.type';
 import { Col, Row } from 'antd';
 import { useRouter } from 'next/navigation';
 
-interface IAnchorLinkItemProps {
-  key: string;
-  href: string;
-  title: string | React.ReactNode;
-}
-
 const HeaderClient = () => {
   const { language } = useAppSelector((state) => state.translation.translate);
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
-  const listItems: IAnchorLinkItemProps[] = [
-    {
-      key: 'home',
-      href: '/',
-      title: t('clientHeader')['itemHome'],
-    },
-    {
-      key: 'service',
-      href: '/service',
-      title: t('clientHeader')['serviceHome'],
-    },
-    {
-      key: 'work',
-      href: '/work',
-      title: t('clientHeader')['workHome'],
-    },
-    {
-      key: 'customer',
-      href: '/customer',
-      title: t('clientHeader')['customerHome'],
-    },
-    {
-      key: 'team',
-      href: '/team',
-      title: t('clientHeader')['teamHome'],
-    },
-    {
-      key: 'career',
-      href: '/career',
-      title: t('clientHeader')['careerHome'],
-    },
-    {
-      key: 'contact',
-      href: '/contact',
-      title: t('clientHeader')['contactHome'],
-    },
-  ];
+  const router = useRouter();
+  const [current, setCurrent] = useState('/');
+
+  const onClick: MenuProps['onClick'] = (e) => {
+    console.log('click ', e);
+    setCurrent(e.key);
+  };
 
   const [open, setOpen] = useState(false);
 
@@ -70,13 +34,75 @@ const HeaderClient = () => {
     setOpen(false);
   };
 
-  const router = useRouter();
-
   const handleChangeLanguage = (value: TranslateEnum) => {
     dispatch(changeLanguage(value));
   };
 
-  const [active, setActive] = useState('');
+  const menuItems: MenuProps['items'] = [
+    {
+      label: 'Home',
+      key: '/',
+      onClick: () => {
+        setOpen(false);
+        setCurrent('/');
+        router.push('/');
+      },
+    },
+    {
+      label: 'Service',
+      key: '/service',
+      onClick: () => {
+        setOpen(false);
+        setCurrent('/service');
+        router.push('/service');
+      },
+    },
+    {
+      label: 'Work',
+      key: '/work',
+      onClick: () => {
+        setCurrent('/work');
+        setOpen(false);
+        router.push('/work');
+      },
+    },
+    {
+      label: 'Our Customer',
+      key: '/customer',
+      onClick: () => {
+        setCurrent('/customer');
+        setOpen(false);
+        router.push('/customer');
+      },
+    },
+    {
+      label: 'Team',
+      key: '/team',
+      onClick: () => {
+        setCurrent('/team');
+        setOpen(false);
+        router.push('/team');
+      },
+    },
+    {
+      label: 'Career',
+      key: '/career',
+      onClick: () => {
+        setCurrent('/career');
+        setOpen(false);
+        router.push('/career');
+      },
+    },
+    {
+      label: 'Contact',
+      key: '/contact',
+      onClick: () => {
+        setCurrent('/contact');
+        setOpen(false);
+        router.push('/contact');
+      },
+    },
+  ];
 
   useEffect(() => {
     if (storageUtils.get('lang')) {
@@ -110,36 +136,20 @@ const HeaderClient = () => {
           md={{ span: 18, offset: 0 }}
         >
           <div className={styles['nav-header-client']}>
-            <Anchor
-              className={styles['ant-anchor']}
-              direction="horizontal"
-              items={listItems}
-            />
-
+            <Menu mode="horizontal" selectedKeys={[current]} items={menuItems} />
             <div className={styles['wrapper-menu-mobile']}>
               <Button type="primary" onClick={showDrawer}>
                 <MenuOutlined />
               </Button>
+
               <Drawer
                 title={<Image width={50} height={50} src={'/images/pnl-logo 1.png'} alt="PNL" />}
+                open={open}
+                key="Menu"
                 placement="right"
                 onClose={onClose}
-                open={open}
               >
-                {listItems.map((item) => {
-                  const handleMenuMobileClick = () => {
-                    router.push(item.href as string);
-                  };
-                  return (
-                    <p
-                      onClick={handleMenuMobileClick}
-                      className={styles['menu-list']}
-                      key={item.key}
-                    >
-                      {item.title}
-                    </p>
-                  );
-                })}
+                <Menu mode="inline" items={menuItems} />
               </Drawer>
             </div>
           </div>
