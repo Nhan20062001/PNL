@@ -1,12 +1,13 @@
 import { Image } from 'antd';
 import styles from './style.module.scss';
-import UIUXIcon from '../../icons/UIUX.icons';
 import React from 'react';
-import LampIcon from '../../icons/Lamp.icons';
-import AndroidIcon from '../../icons/Android.icons';
-import WebsiteIcon from '../../icons/Website.icons';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import LampIcon from '@/layouts/icons/LampIcons';
+import AndroidIcon from '@/layouts/icons/AndroidIcons';
+import WebsiteIcon from '@/layouts/icons/WebsiteIcons';
+import UIUXIcon from '@/layouts/icons/UIUXIcons';
+
 
 type Types = {
   id?: string;
@@ -58,7 +59,7 @@ const WhatWeDoCardPage = () => {
     initial: { opacity: 0, x: -200 },
     animate: isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -200 },
     exit: { opacity: 0, x: -200 },
-    transition: isInView ? { duration: 2} : { duration: 0},
+    transition: isInView ? { duration: 2 } : { duration: 0 },
   };
 
   return (
@@ -79,6 +80,7 @@ const WhatWeDoCardPage = () => {
             {dataMock.map((item, index) => {
               return (
                 <motion.div
+                  key={item.id}
                   {...motionSetting}
                   transition={
                     isInView ? { duration: 1, delay: index * 0.8 } : { duration: 0, delay: 0 }

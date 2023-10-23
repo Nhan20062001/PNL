@@ -1,9 +1,9 @@
-import SendIcon from '../../icons/Send.icons';
-import { Image } from 'antd';
+import {  Image } from 'antd';
 import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import CustomButton from '@/components/Button/CustomButton';
 import { ButtonType } from '@/config/constant';
+import SendIcon from '@/layouts/icons/SendIcons';
 
 const motionSetting = {
   initial: { opacity: 0, y: 50 },
@@ -33,7 +33,7 @@ const IntroPage = () => {
           </div>
           <motion.div {...motionSetting} transition={{ duration: 1, delay: 2 }}>
             <CustomButton className={styles.button} buttonType={ButtonType.PRIMARY}>
-              <SendIcon />
+            <SendIcon/>
               <p className={styles['button-text']}>Contact to work</p>
             </CustomButton>
           </motion.div>
