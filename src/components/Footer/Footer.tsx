@@ -3,7 +3,7 @@ import { Col, Row } from 'antd';
 import styles from './footer.module.scss';
 import { Image } from 'antd';
 import { FacebookOutlined, InstagramOutlined, MailOutlined } from '@ant-design/icons';
-import Ellipse from '../icons/Ellipse.icon';
+import Ellipse from '../../../public/icons/Ellipse.icon';
 
 function FooterClient() {
   return (
@@ -14,6 +14,8 @@ function FooterClient() {
             xs={{ span: 24, offset: 0 }}
             lg={{ span: 8, offset: 0 }}
             md={{ span: 10, offset: 0 }}
+            sm={{ span: 24, offset: 0 }}
+            xl={{ span: 8, offset: 0 }}
           >
             <p className={styles['footer-title']}>Location</p>
             <Image
@@ -29,11 +31,12 @@ function FooterClient() {
           </Col>
 
           <Col
-            sm={6}
             className={styles['col-company']}
-            xs={{ span: 12, offset: 0 }}
+            xs={{ span: 9, offset: 0 }}
             lg={{ span: 8, offset: 0 }}
-            md={{ span: 7, offset: 0 }}
+            md={{ span: 6, offset: 0 }}
+            sm={{ span: 12, offset: 0 }}
+            xl={{ span: 10, offset: 0 }}
           >
             <p className={styles['footer-title']}>Company</p>
             <ul className={styles['company-list']}>
@@ -45,11 +48,12 @@ function FooterClient() {
           </Col>
 
           <Col
-            sm={6}
+            sm={{ span: 12, offset: 0 }}
             className={styles['col-contact-us']}
-            xs={{ span: 12, offset: 0 }}
+            xs={{ span: 15, offset: 0 }}
             lg={{ span: 8, offset: 0 }}
-            md={{ span: 7, offset: 0 }}
+            md={{ span: 8, offset: 0 }}
+            xl={{ span: 6, offset: 0 }}
           >
             <p className={styles['footer-title']}>Contact Us</p>
             <ul className={styles['contact-list']}>
@@ -83,7 +87,7 @@ function FooterClient() {
           <ul>
             <li>
               <Ellipse />
-              <p>copyright © 2023. Công ty cung cấp giải pháp chuyến đổi số PNL</p>
+              <p>Copyright © 2023. Công ty cung cấp giải pháp chuyến đổi số PNL</p>
             </li>
             <li>
               <Ellipse />
@@ -95,7 +99,7 @@ function FooterClient() {
             </li>
             <li>
               <Ellipse />
-              <p>powerby PNL ltd</p>
+              <p>Powerby PNL ltd</p>
             </li>
           </ul>
         </div>

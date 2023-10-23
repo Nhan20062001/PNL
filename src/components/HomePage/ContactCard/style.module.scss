@@ -106,8 +106,8 @@
           align-items: flex-end;
           .btn-style {
             justify-content: space-around;
-            width: 214px;
-            height: 48px;
+            width: 256px;
+            height: 50px;
             border: 3px solid var(--bg-color-btn-default-2);
             border-radius: 28px;
             svg {
@@ -131,7 +131,11 @@
 
 @media only screen and (max-width: $md-max-width) {
   .contact-card {
+    height: 742px;
     .contact-container {
+      &--opacity-layer {
+        height: 742px;
+      }
       .contact-card-content {
         h3 {
           font-size: var(--fs-header-primary-2);
@@ -140,9 +144,16 @@
           font-size: var(--fs-text-primary-2);
         }
         .contact-form {
+          display: flex;
+          flex-direction: column;
           .button {
+            width: 100%;
             .btn-style {
-              width: 195px;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              border-radius: 20px;
+
               .button-text {
                 color: var(--primary-color);
                 font-size: var(--fs-text-primary-2);
@@ -155,7 +166,70 @@
   }
 }
 
-@media only screen and (max-width: $xs-max-width) {
+@media only screen and (max-width: $sm-max-width) {
+  .contact-card {
+    height: 800px;
+    .contact-container {
+      height: 100%;
+      &--opacity-layer {
+        height: 100%;
+      }
+      .contact-card-content {
+        height: 100%;
+        h3 {
+          font-size: var(--fs-header-mobile);
+        }
+        p {
+          font-size: var(--fs-text-primary);
+        }
+        .contact-form {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+
+          :global(.ant-form-item) {
+            :global(.ant-row) {
+              :global(.ant-col) {
+                label {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+
+          .form-container {
+            width: 100%;
+
+            .input-name,
+            .input-address,
+            .input-phone-number,
+            .input-email,
+            .input-note {
+              font-size: 16px;
+            }
+          }
+          .button {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            .btn-style {
+              border-radius: 20px;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              .button-text {
+                font-size: var(--fs-text-primary);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $xs-max-width-large) {
   .contact-card {
     height: 800px;
     .contact-container {
@@ -178,11 +252,12 @@
           .form-container {
             width: 100%;
           }
+
           .button {
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            flex-direction: row;
+            :global(.ant-btn) {
+              width: 100%;
+              border-radius: 20px;
+            }
           }
         }
       }

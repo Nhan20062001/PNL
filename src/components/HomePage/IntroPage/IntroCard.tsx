@@ -1,4 +1,4 @@
-import SendIcon from '../../icons/Send.icons';
+import SendIcon from '../../../../public/icons/Send.icons';
 import { Button, Image } from 'antd';
 import styles from './style.module.scss';
 import CustomButton from '@/components/Button/CustomButton';
@@ -16,22 +16,17 @@ const IntroPage = () => {
               unknown printer took a galley of type and scrambled it to make a type specimen book
             </h6>
           </div>
-          <CustomButton
-            buttonType={ButtonType.PRIMARY}
-            className={styles['button']}
-          >
+          <CustomButton buttonType={ButtonType.PRIMARY} className={styles['button']}>
             <SendIcon />
-            <p className={styles['button-text']}>
-              Contact to work
-            </p>
+            <p className={styles['button-text']}>Contact to work</p>
           </CustomButton>
         </div>
 
         <div className={styles['intro-right']}>
           <Image
             className={styles['content-image-right']}
-            src='/images/header twiscode 1.png'
-            alt=''
+            src="/images/header twiscode 1.png"
+            alt=""
             preview={false}
           />
         </div>

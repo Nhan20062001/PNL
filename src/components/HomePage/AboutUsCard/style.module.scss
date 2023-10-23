@@ -64,12 +64,29 @@
   }
 }
 
+@media only screen and (max-width: $md-max-width) {
+  .about-us {
+    .carousel-container {
+      width: 100%;
+      &--title {
+        font-size: var(--fs-header-primary-2);
+      }
+      .carousel-content-padding {
+        padding: 0 15px 30px 15px;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: $sm-max-width) {
   .about-us {
     .carousel-container {
       width: 100%;
       &--title {
         font-size: var(--fs-header-mobile);
+      }
+      &--description {
+        font-size: var(--fs-text-primary);
       }
       .carousel-content-padding {
         padding: 0 15px 30px 15px;
@@ -81,8 +98,11 @@
   .about-us {
     .carousel-container {
       width: 100%;
+      &--title {
+        font-size: var(--fs-header-mobile-2);
+      }
       &--description {
-        font-size: var(--fs-text-primary-2);
+        font-size: var(--fs-text-primary);
       }
     }
   }

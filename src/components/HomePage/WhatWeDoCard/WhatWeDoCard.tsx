@@ -1,10 +1,10 @@
 import { Image } from 'antd';
 import styles from './style.module.scss';
-import UIUXIcon from '../../icons/UIUX.icons';
+import UIUXIcon from '../../../../public/icons/UIUX.icons';
 import React from 'react';
-import LampIcon from '../../icons/Lamp.icons';
-import AndroidIcon from '../../icons/Android.icons';
-import WebsiteIcon from '../../icons/Website.icons';
+import LampIcon from '../../../../public/icons/Lamp.icons';
+import AndroidIcon from '../../../../public/icons/Android.icons';
+import WebsiteIcon from '../../../../public/icons/Website.icons';
 
 type Types = {
   id?: string;
