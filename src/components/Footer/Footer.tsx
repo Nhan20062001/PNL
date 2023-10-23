@@ -3,8 +3,7 @@ import { Col, Row } from 'antd';
 import styles from './footer.module.scss';
 import { Image } from 'antd';
 import { FacebookOutlined, InstagramOutlined, MailOutlined } from '@ant-design/icons';
-import Ellipse from '../../../public/icons/Ellipse.icon';
-
+import Ellipse from '@/layouts/icons/EllipseIcon';
 function FooterClient() {
   return (
     <footer className={styles['wrapper-footer-client']}>

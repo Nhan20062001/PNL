@@ -4,6 +4,7 @@
   margin: 58px 0px;
   position: relative;
   max-width: 100%;
+  margin-top: 50px;
 
   .our-customers-header {
     display: flex;
@@ -23,6 +24,7 @@
       justify-content: center;
       flex-wrap: wrap-reverse;
       flex-direction: column;
+      overflow: hidden;
 
       .rectangle-top {
         width: 288px;

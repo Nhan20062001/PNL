@@ -1,14 +1,23 @@
+import { useRef } from 'react';
 import styles from './style.module.scss';
+import { useInView, motion } from 'framer-motion';
 
 const OurCustomersPage = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const motionSetting = {
+    initial: { opacity: 0, x: '100%' },
+    animate: isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: '100%' },
+    transition: { duration: 1 },
+  };
   return (
     <div className="container">
-      <div className={styles['our-customers']}>
+      <div ref={ref} className={styles['our-customers']}>
         <div className={styles['our-customers-header']}>
           <h3>Our Customers</h3>
           <div className={styles['rectangle']}>
-            <div className={styles['rectangle-top']}></div>
-            <div className={styles['rectangle-bottom']}></div>
+            <motion.div {...motionSetting} className={styles['rectangle-top']}></motion.div>
+            <motion.div {...motionSetting} className={styles['rectangle-bottom']}></motion.div>
           </div>
         </div>
 
