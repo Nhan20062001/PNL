@@ -66,6 +66,11 @@ body {
     .ant-drawer-wrapper-body p {
       font-size: 19px;
       margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      &:hover {
+        color: var(--secondary-color);
+      }
     }
   }
   .ant-drawer-close {
