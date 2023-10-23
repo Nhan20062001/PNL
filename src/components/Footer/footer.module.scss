@@ -1,13 +1,12 @@
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 
 .wrapper-footer-client {
-  background-color: #fff;
+  background-color: var(--bg-color-white);
   margin-bottom: 55px;
   .footer-title {
-    color: #414141;
+    color: var(--font-color-black-2);
 
-    font-family: Poppins;
-    font-size: 24px;
+    font-size: var(--fs-header-mobile);
     font-style: normal;
     font-weight: 600;
     line-height: 72px;
@@ -23,7 +22,7 @@
 
     .rectangle-location {
       position: absolute;
-      background-color: #fff;
+      background-color: var(--bg-color-white);
       width: 200px;
       height: 70px;
       top: 82px;
@@ -34,12 +33,12 @@
       padding-left: 12px;
 
       h6 {
-        font-size: 24px;
-        color: #414141;
+        font-size: var(--fs-header-mobile);
+        color: var(--font-color-black-2);
       }
       span {
-        font-size: 12px;
-        color: #414141;
+        font-size: var(--fs-text-mobile);
+        color: var(--fs-header-mobile);
       }
     }
   }
@@ -50,11 +49,10 @@
     align-items: center;
     .company-list {
       list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 50 L100 50' stroke='black' stroke-width='10'%3E%3C/path%3E%3C/svg%3E");
-      color: #9F9F9F;
+      color: var(--font-color-black-4);
       list-style-position: inside;
-      // margin-left: 15px;
       li {
-        font-size: 18px;
+        font-size: var(--fs-text-primary-2);
         margin: 8px 0;
       }
     }
@@ -72,11 +70,11 @@
         .icon-name {
           margin-left: 15px;
           font-size: 18px;
-          color: #9F9F9F;
+          color: var(--font-color-black-4);
         }
       }
     }
-  }  
+  }
 
   .footer-center {
     display: flex;
@@ -90,17 +88,24 @@
 
   .footer-bottom {
     ul {
-      list-style: disc;
+      list-style: none;
       display: flex;
-      justify-content: flex-start;
-      flex-direction: row;
-      list-style-position: inside;
+      align-items: flex-start;
+      flex-wrap: wrap;
       margin-bottom: 5px;
       li {
-        font-size: 18px;
-        margin-right: 10px;
-        color: #9F9F9F;
-        // background: #9F9F9F;
+        display: flex;
+        align-content: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        p {
+          font-size: var(--fs-text-primary-2);
+          margin-right: 10px;
+          color: var(--font-color-black-4);
+          margin-left: 10px;
+          margin-right: 35px;
+        }
       }
     }
   }
@@ -111,7 +116,7 @@
     .col-company {
       .company-list {
         li {
-          font-size: 16px;
+          font-size: var(--fs-text-primary);
         }
       }
     }
@@ -119,7 +124,7 @@
       .contact-list {
         li {
           .icon-name {
-            font-size: 16px;
+            font-size: var(--fs-text-primary);
           }
         }
       }
@@ -127,7 +132,7 @@
     .footer-bottom {
       ul {
         li {
-          font-size: 16px;
+          font-size: var(--fs-text-primary);
         }
       }
     }
@@ -136,13 +141,21 @@
 
 @media only screen and (max-width: $xs-max-width) {
   .wrapper-footer-client {
+    :global(.ant-image) {
+      display: flex;
+      align-items: center;
+      .location-map {
+        width: 300px;
+        height: 130px;
+      }
+    }
     .col-company {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       .company-list {
         li {
-          font-size: 16px;
+          font-size: var(--fs-text-primary);
         }
       }
     }
@@ -153,16 +166,29 @@
       .contact-list {
         li {
           .icon-name {
-            font-size: 16px;
+            font-size: var(--fs-text-primary);
           }
         }
       }
     }
     .footer-bottom {
       ul {
-        display: block;
+        display: inline-flex;
+        flex-direction: column;
         li {
-          font-size: 14px;
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          svg {
+            circle {
+              cx: 4;
+              cy: 4;
+              r: 4;
+            }
+          }
+          p {
+            font-size: var(--fs-text-mobile);
+          }
         }
       }
     }
