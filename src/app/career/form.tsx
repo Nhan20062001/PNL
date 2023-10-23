@@ -35,7 +35,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
   return (
     <div className={styles['career']}>
       {left ? (
-        <Row className={styles['content-career-body']}>
+        <Row className={styles['content-career-body-1']}>
           <Col md={8} xs={24}>
             <div className={styles['text-career-body-header']}>
               <div className={styles['text-child-career-body-header']}>
@@ -61,7 +61,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
           </Col>
         </Row>
       ) : (
-        <Row className={styles['content-career-body']}>
+        <Row className={styles['content-career-body-2']}>
           <Col md={16} xs={24}>
             <Image
               className={styles['image-career-body-center']}

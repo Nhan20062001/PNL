@@ -10,13 +10,15 @@ const Career = () => {
     {
       id: '1',
       title: 'DEV FRONTEND NEXTJS',
-      description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
+      description:
+        'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luônyêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
       image: '/images/imageCareer.jpeg',
     },
     {
       id: '2',
       title: 'DEV FRONTEND NEXTJS',
-      description: 'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôn',
+      description:
+        'yêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luônyêu cầu kinh nghiệm, các yêu cầu khác thì ghi vào đây luôncác yêu cầu khác thì ghi vào đây luôncác yêu cầu khác thì ghi vào đây luôncác yêu cầu khác thì ghi vào đây luôncác yêu cầu khác thì ghi vào đây luôn',
       image: '/images/imageCareer.jpeg',
     },
     {
@@ -49,9 +51,11 @@ const Career = () => {
         </p>
       </div>
       <div className="container">
-        {dataMock.map((item, index) => {
-          return <FormCareer key={item.id} left={index % 2 === 0 ? true : false} data={item} />;
-        })}
+        {/* <div className={styles['career-content']}> */}
+          {dataMock.map((item, index) => {
+            return <FormCareer key={item.id} left={index % 2 === 0 ? true : false} data={item} />;
+          })}
+        {/* </div> */}
       </div>
     </MainClient>
   );
