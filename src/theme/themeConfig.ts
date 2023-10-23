@@ -2,7 +2,7 @@ import type { ThemeConfig } from 'antd';
 
 const theme: ThemeConfig = {
   token: {
-    colorPrimary: '#066156',
+    colorPrimary: '#5aaf32',
   },
 };
 
