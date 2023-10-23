@@ -119,9 +119,8 @@
   @media (max-width: $sm-max-width) {
     margin-bottom: 60px;
   }
-  @media (max-width: $xs-max-width-large) {
-    // position: static;
-    display: flex !important;
+  @media (max-width: $sm-max-width) {
+    position: relative;
     flex-direction: column-reverse !important;
   }
   .text-career-body-header {
@@ -135,6 +134,8 @@
     box-shadow: 0 0 20px #aaa;
     @media (max-width: $sm-max-width) {
       width: 100%;
+      transform: none;
+      position: relative;
     }
     @media (max-width: $xs-max-width-large) {
       position: relative;
@@ -196,7 +197,7 @@
         }
       }
       .btn-apply {
-        margin-top: 62px;
+        margin-top: 50px;
         width: 140px;
         border-radius: 20px;
         font-size: var(--fs-text-primary-m);
@@ -244,7 +245,6 @@
       height: 175px;
       border-radius: 20px 20px 0 0;
       box-shadow: 0 0 20px #aaa;
-      // position: static;
     }
   }
 }
@@ -327,7 +327,7 @@
         }
       }
       .btn-apply {
-        margin-top: 62px;
+        margin-top: 50px;
         width: 140px;
         border-radius: 20px;
         font-size: var(--fs-text-primary-m);
@@ -335,7 +335,7 @@
         @media (max-width: $sm-min-width) {
           font-size: var(--fs-text-primary);
           width: 115px;
-          margin-top: 50px;
+          margin-top: 35px;
         }
         @media (max-width: $xs-max-width-large) {
           font-size: var(--fs-text-primary);
@@ -413,17 +413,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 160px;
-    left: 65%;
+    width: 143px;
+    left: 69%;
     font-size: var(--fs-text-primary);
     @media (max-width: $xs-max-width-large) {
-      left: 55%;
+      left: 60%;
     }
     @media (max-width: $xs-max-width-medium) {
-      left: 47%;
+      left: 53%;
     }
     @media (max-width: $xs-max-width-small) {
-      left: 34%;
+      left: 41%;
     }
     svg {
       width: 22px;
@@ -489,7 +489,7 @@
 }
 .upload-form {
   width: 218px;
-  height: 150px;
+  height: 158px;
   border-radius: 20px;
   border: solid 1px var(--secondary-color);
   background: #efeeec;
