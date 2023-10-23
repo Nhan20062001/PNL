@@ -112,8 +112,8 @@
             border: 1px solid var(--bg-color-btn-default-2);
             background-color: var(--bg-color-btn-default-2);
             box-shadow:
-              3px 3px 10px 0px #ffffff,
-              3px 3px 15px 0px #cbcbcb;
+              1px 1px 5px 0px #cbcbcb,
+              1px 1px 5px 0px #ffffff;
             border-radius: 28px;
             transition: all 0.4s ease;
             svg {
@@ -129,8 +129,8 @@
               background-color: var(--bg-color-btn-default-active);
               border: 1px solid var(--bg-color-btn-default-active);
               box-shadow:
-                6px 6px 15px 0px #cbcbcb,
-                6px 6px 20px 0px #a0a0a0;
+                1px 1px 5px 0px #a0a0a0,
+                1px 1px 5px 0px #cbcbcb;
             }
           }
         }
@@ -156,7 +156,7 @@
         .contact-form {
           display: flex;
           flex-direction: column;
-          .button{
+          .button {
             align-items: flex-start;
           }
         }
@@ -239,15 +239,31 @@
           .button {
             width: 100%;
             .btn-style {
-              width: 100%;
-              display: flex;
-              justify-content: center;
+              width: 70%;
               border-radius: 20px;
-
+              height: 30px;
               .button-text {
                 color: var(--primary-color);
                 font-size: var(--fs-text-primary-2);
+                padding-left: 10px;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $xs-max-width-small) {
+  .contact-card {
+    .contact-container {
+      .contact-card-content {
+        .contact-form {
+          .button {
+            .btn-style {
+              width: 90%;
+              justify-content: start;
             }
           }
         }
