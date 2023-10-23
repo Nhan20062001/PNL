@@ -69,6 +69,7 @@ const WhatWeDoCardPage = () => {
             className={styles['image-style']}
             src="/images/pedram-sedghi-QXxmRGMoJv0-unsplash.jpg"
             alt=""
+            preview={false}
           />
         </motion.div>
 

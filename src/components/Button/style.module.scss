@@ -14,9 +14,9 @@
 
 .btn-default {
   &:global(.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover) {
-    background-color: var(--bg-color-btn-default-hover);
+    background-color: var(--bg-color-btn-default-hover-2);
     color: var(--font-color-white);
-    border-color: var(--bg-color-btn-default-hover);
+    border-color: var(--bg-color-btn-default-hover-2);
   }
 }
 

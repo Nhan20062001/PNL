@@ -32,13 +32,9 @@ const IntroPage = () => {
             </motion.h6>
           </div>
           <motion.div {...motionSetting} transition={{ duration: 1, delay: 2 }}>
-            <CustomButton
-              className={styles.button}
-              buttonType={ButtonType.PRIMARY}
-              onClick={() => {}}
-            >
+            <CustomButton className={styles.button} buttonType={ButtonType.PRIMARY}>
               <SendIcon />
-              Contact to work
+              <p className={styles['button-text']}>Contact to work</p>
             </CustomButton>
           </motion.div>
         </div>
@@ -48,6 +44,7 @@ const IntroPage = () => {
             className={styles['content-image-right']}
             src="/images/header twiscode 1.png"
             alt=""
+            preview={false}
           />
         </motion.div>
       </div>
