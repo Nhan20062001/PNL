@@ -9,6 +9,7 @@ import storageUtils from '@/utils/storage';
 import { changeLanguage } from '@/store/translation/translation.reducer';
 import { TranslateEnum } from '@/store/translation/translation.type';
 import { Col, Row } from 'antd';
+import { useRouter } from 'next/navigation';
 
 interface IAnchorLinkItemProps {
   key: string;
@@ -24,7 +25,7 @@ const HeaderClient = () => {
   const listItems: IAnchorLinkItemProps[] = [
     {
       key: 'home',
-      href: '/home',
+      href: '/',
       title: t('clientHeader')['itemHome'],
     },
     {
@@ -69,8 +70,17 @@ const HeaderClient = () => {
     setOpen(false);
   };
 
+  const router = useRouter();
+
   const handleChangeLanguage = (value: TranslateEnum) => {
     dispatch(changeLanguage(value));
+  };
+
+  const [active, setActive] = useState('');
+
+  const handleOnClick = (e: any, link: any) => {
+    console.log(e);
+    console.log(link.href);
   };
 
   useEffect(() => {
@@ -105,7 +115,12 @@ const HeaderClient = () => {
           md={{ span: 18, offset: 0 }}
         >
           <div className={styles['nav-header-client']}>
-            <Anchor className={styles['ant-anchor']} direction="horizontal" items={listItems} />
+            <Anchor
+              onClick={(e, link) => handleOnClick(e, link)}
+              className={styles['ant-anchor']}
+              direction="horizontal"
+              items={listItems}
+            />
 
             <div className={styles['wrapper-menu-mobile']}>
               <Button type="primary" onClick={showDrawer}>
@@ -118,8 +133,15 @@ const HeaderClient = () => {
                 open={open}
               >
                 {listItems.map((item) => {
+                  const handleMenuMobileClick = () => {
+                    router.push(item.href as string);
+                  };
                   return (
-                    <p className={styles['menu-list']} key={item.key}>
+                    <p
+                      onClick={handleMenuMobileClick}
+                      className={styles['menu-list']}
+                      key={item.key}
+                    >
                       {item.title}
                     </p>
                   );
