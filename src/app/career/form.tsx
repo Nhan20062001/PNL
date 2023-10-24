@@ -103,7 +103,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
         }
       >
         <Row gutter={[32, 24]}>
-          <Col xl={12} lg={12} md={12}>
+          <Col xl={12} lg={12} md={12} sm={24} xs={24}>
             <Form layout="vertical">
               <Form.Item
                 hasFeedback
@@ -135,7 +135,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
               </Form.Item>
             </Form>
           </Col>
-          <Col xl={12} lg={12} md={12}>
+          <Col xl={12} lg={12} md={12}  sm={24} xs={24}>
             <Form layout="vertical">
               <Form.Item
                 hasFeedback
