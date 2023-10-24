@@ -4,7 +4,7 @@ import { changeLanguage } from '@/store/translation/translation.reducer';
 import storageUtils from '@/utils/storage';
 import { MenuOutlined } from '@ant-design/icons';
 import { Button, Col, Drawer, Image, Menu, MenuProps, Row } from 'antd';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import SelectLanguage from '../SelectLanguage/SelectLanguage';
 import styles from './header.module.scss';
@@ -16,6 +16,7 @@ const HeaderClient = () => {
 
   const router = useRouter();
   const [current, setCurrent] = useState('/');
+  const pathname = usePathname();
 
   const [open, setOpen] = useState(false);
 
@@ -100,6 +101,11 @@ const HeaderClient = () => {
   useEffect(() => {
     if (storageUtils.get('lang')) {
       dispatch(changeLanguage(storageUtils.get('lang')));
+    }
+  }, []);
+  useEffect(() => {
+    if (menuItems.map((item) => item?.key === pathname)) {
+      setCurrent(pathname);
     }
   }, []);
 
