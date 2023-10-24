@@ -19,11 +19,6 @@ const HeaderClient = () => {
   const router = useRouter();
   const [current, setCurrent] = useState('/');
 
-  const onClick: MenuProps['onClick'] = (e) => {
-    console.log('click ', e);
-    setCurrent(e.key);
-  };
-
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -40,7 +35,7 @@ const HeaderClient = () => {
 
   const menuItems: MenuProps['items'] = [
     {
-      label: 'Home',
+      label: t('clientHeader')['itemHome'],
       key: '/',
       onClick: () => {
         setOpen(false);
@@ -49,7 +44,7 @@ const HeaderClient = () => {
       },
     },
     {
-      label: 'Service',
+      label: t('clientHeader')['serviceHome'],
       key: '/service',
       onClick: () => {
         setOpen(false);
@@ -58,7 +53,7 @@ const HeaderClient = () => {
       },
     },
     {
-      label: 'Work',
+      label: t('clientHeader')['workHome'],
       key: '/work',
       onClick: () => {
         setCurrent('/work');
@@ -67,7 +62,7 @@ const HeaderClient = () => {
       },
     },
     {
-      label: 'Our Customer',
+      label: t('clientHeader')['customerHome'],
       key: '/customer',
       onClick: () => {
         setCurrent('/customer');
@@ -76,7 +71,7 @@ const HeaderClient = () => {
       },
     },
     {
-      label: 'Team',
+      label: t('clientHeader')['teamHome'],
       key: '/team',
       onClick: () => {
         setCurrent('/team');
@@ -85,7 +80,7 @@ const HeaderClient = () => {
       },
     },
     {
-      label: 'Career',
+      label: t('clientHeader')['careerHome'],
       key: '/career',
       onClick: () => {
         setCurrent('/career');
@@ -94,7 +89,7 @@ const HeaderClient = () => {
       },
     },
     {
-      label: 'Contact',
+      label: t('clientHeader')['contactHome'],
       key: '/contact',
       onClick: () => {
         setCurrent('/contact');
