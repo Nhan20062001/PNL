@@ -72,18 +72,34 @@ function FooterClient() {
           </Col>
         </Row>
 
-        <div className={styles['footer-center']}>
-          <Image className={styles['image']} src="/images/dmca.jpg" alt="" preview={false} />
-          <Image
-            className={styles['image']}
-            src="/images/bo-cong-thuong.gif"
-            alt=""
-            preview={false}
-          />
-        </div>
-
         <div className={styles['footer-bottom']}>
-          <ul>
+          <Row className={styles['row-info']}>
+            <Col className={styles['col-info']} xxl={14} md={18} xs={24}>
+              <Ellipse />
+              <p>Copyright © 2023. Công ty cung cấp giải pháp chuyến đổi số PNL</p>
+            </Col>
+            <Col className={styles['col-info']} xxl={6} md={18} xs={24}>
+              <Ellipse />
+              <p>Mã số thuế: 2340923424</p>
+            </Col>
+            <Col className={styles['col-info']} xxl={14} md={18} xs={24}>
+              <Ellipse />
+              <p>Bản quyền và sở hữu thuộc Công ty cung cấp giải pháp chuyến đổi số PNL</p>
+            </Col>
+            <Col className={styles['col-info']} xxl={6} md={18} xs={24}>
+              <Ellipse />
+              <p>Powerby PNL ltd</p>
+            </Col>
+            <Col className={styles['col-image']} xxl={4} md={6} xs={24}>
+              <Image
+                className={styles['image']}
+                src="/images/bo-cong-thuong.gif"
+                alt=""
+                preview={false}
+              />
+            </Col>
+          </Row>
+          {/* <ul>
             <li>
               <Ellipse />
               <p>Copyright © 2023. Công ty cung cấp giải pháp chuyến đổi số PNL</p>
@@ -100,7 +116,7 @@ function FooterClient() {
               <Ellipse />
               <p>Powerby PNL ltd</p>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </footer>

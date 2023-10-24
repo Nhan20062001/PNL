@@ -1,6 +1,12 @@
 import React from 'react';
-import { Carousel } from 'antd';
+import { Image } from 'antd';
 import styles from './style.module.scss';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import dynamic from 'next/dynamic';
+const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
+  ssr: false,
+});
 
 type Types = {
   id?: string;
@@ -19,7 +25,7 @@ const OurTeamCardComponent = () => {
     autoplaySpeed: 4000,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: true,
+    autoplay: false,
 
     responsive: [
       {
@@ -75,24 +81,53 @@ const OurTeamCardComponent = () => {
       position: 'COO',
     },
   ];
+  const carouselCustomerSettings = {
+    responsive: {
+      0: {
+        center: false,
+        items: 1,
+      },
+      768: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+  };
 
   return (
     <div className="container">
       <div className={styles['our-team']}>
         <h3>Our Team</h3>
-        <Carousel {...settings} className={styles['member-card-container']}>
-          {dataMock.map((item) => {
-            return (
-              <div className={styles['member-card']} key={item.id}>
-                <img src={item.image} alt="" />
-                <div className={styles['member-info']}>
-                  <p className={styles['member-name']}>{item.name}</p>
-                  <p className={styles['member-position']}>{item.position}</p>
-                </div>
+
+        <OwlCarousel
+          className={styles['carousel-member']}
+          center={dataMock.length > 2}
+          loop={dataMock.length > 2}
+          dots={false}
+          // autoWidth
+          autoplay
+          autoplaySpeed
+          margin={8}
+          nav={dataMock.length > 3}
+          responsive={carouselCustomerSettings.responsive}
+        >
+          {dataMock.map((item) => (
+            <div
+              key={item.id}
+              className={`${
+                dataMock.length > 2 ? 'carousel-customer-item' : 'carousel-customer-item-child'
+              }`}
+            >
+              <Image src={item.image} alt="" preview={false} />
+              <div className={styles['member-info']}>
+                <p className={styles['member-name']}>{item.name}</p>
+                <p className={styles['member-position']}>{item.position}</p>
               </div>
-            );
-          })}
-        </Carousel>
+            </div>
+          ))}
+        </OwlCarousel>
       </div>
     </div>
   );

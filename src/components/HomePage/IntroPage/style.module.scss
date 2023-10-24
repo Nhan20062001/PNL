@@ -36,9 +36,11 @@
       }
 
       .button {
-        width: 250px;
-        height: 60px;
-        justify-content: space-between;
+        padding: 28px 20px;
+        border-radius: 12px;
+        .button-text {
+          margin-left: 15px;
+        }
       }
     }
 
@@ -93,8 +95,7 @@
           }
         }
         .button {
-          width: 202px;
-          height: 50px;
+          padding: 20px 20px;
           p {
             font-size: var(--fs-text-primary);
           }
@@ -133,16 +134,9 @@
           }
         }
         .button {
-          width: 150px;
-          height: 50px;
-          margin: 0 auto;
           width: 100%;
-          border-radius: 20px;
           display: flex;
           justify-content: center;
-          .button-text {
-            font-size: var(--fs-text-primary);
-          }
         }
       }
       .intro-right {
