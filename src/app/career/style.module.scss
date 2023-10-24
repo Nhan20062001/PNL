@@ -40,20 +40,20 @@
     font-size: var(--fs-banner-medium);
     color: #414241;
     @media (max-width: $sm-min-width) {
-      font-size: calc(var(--fs-header-primary) + 6px);
+      font-size: 36px;
+    }
+    @media (max-width: $xs-max-width) {
+      font-size: 25px;
     }
     @media (max-width: $xs-max-width-large) {
-      font-size: var(--fs-header-primary);
-    }
-    @media (max-width: $xs-max-width-large) {
-      font-size: calc(var(--padding-medium) + 1px);
+      font-size: calc(var(--padding-medium));
     }
     @media (max-width: $xs-max-width-medium) {
-      font-size: calc(var(--padding-medium) + 2px);
+      font-size: 17px;
     }
 
     @media (max-width: $xs-max-width-small) {
-      font-size: var(--fs-text-primary-m);
+      font-size: 18px;
     }
   }
   .text-banner2 {
@@ -71,19 +71,25 @@
     color: #ccd2e3;
     font-weight: 700;
     @media (max-width: $xl-max-width) {
-      font-size: var(--fs-banner-larger-2);
+      font-size: var(--fs-banner-small);
+    }
+    @media (max-width: $md-max-width) {
+      font-size: 65px;
     }
     @media (max-width: $sm-min-width) {
-      font-size: calc(var(--fs-banner-medium) + 5px);
+      font-size: 55px;
+    }
+    @media (max-width: $xs-max-width) {
+      font-size: var(--fs-header-primary);
     }
     @media (max-width: $xs-max-width-large) {
-      font-size: calc(var(--fs-header-primary) + 1px);
+      font-size: 26px;
     }
     @media (max-width: $xs-max-width-medium) {
-      font-size: var(--fs-header-primary-2);
+      font-size: 22px;
     }
     @media (max-width: $xs-max-width-small) {
-      font-size: calc(var(--padding-medium) + 3px);
+      font-size: 25px;
     }
   }
   p {
@@ -96,14 +102,19 @@
     justify-content: center;
     font-weight: 400;
     text-align: center;
-    font-size: var(--fs-text-primary-2);
-    padding: 0 60px;
+    font-size: 20px;
+    padding: 0 150px;
     // color: #8E908D;
     @media (max-width: $sm-min-width) {
       font-size: var(--fs-text-primary);
+      padding: 0 50px;
+    }
+    @media (max-width: $xs-max-width) {
+      font-size: 14px;
+      padding: 0 30px;
     }
     @media (max-width: $xs-max-width-large) {
-      font-size: var(--padding-small-s);
+      font-size: 12px;
       padding: 0 30px;
     }
     @media (max-width: $xs-max-width-medium) {
@@ -137,9 +148,10 @@
       transform: none;
       position: relative;
     }
+    @media (max-width: $sm-max-width) {
+      border-radius: 0 0 20px 20px;
+    }
     @media (max-width: $xs-max-width-large) {
-      position: relative;
-      width: 100%;
       border-radius: 0 0 20px 20px;
     }
     .text-child-career-body-header {
@@ -169,10 +181,10 @@
           font-size: var(--fs-title-primary);
         }
         @media (max-width: $xs-max-width-medium) {
-          font-size: var(--fs-text-mobile);
+          font-size: 16px;
         }
         @media (max-width: $xs-max-width-small) {
-          font-size: var(--fs-text-mobile);
+          font-size: 16px;
         }
       }
       p {
@@ -182,25 +194,24 @@
         overflow: hidden;
         -webkit-line-clamp: 4;
         text-overflow: ellipsis;
-
         @media (max-width: $sm-min-width) {
-          font-size: var(--fs-title-primary-m);
+          font-size: 17px;
         }
         @media (max-width: $xs-max-width-large) {
-          font-size: var(--fs-title-primary-m);
+          font-size: 15px;
         }
         @media (max-width: $xs-max-width-medium) {
-          font-size: var(--fs-title-primary-m);
+          font-size: 14px;
         }
         @media (max-width: $xs-max-width-small) {
-          font-size: var(--padding-small-m);
+          font-size: 13px;
         }
       }
       .btn-apply {
         margin-top: 50px;
         width: 140px;
         border-radius: 20px;
-        font-size: var(--fs-text-primary-m);
+        font-size: 18px;
         justify-content: center;
         @media (max-width: $sm-min-width) {
           font-size: var(--fs-text-primary);
@@ -233,14 +244,18 @@
       border-radius: 30px;
       width: 100%;
       height: 100%;
-      @media (max-width: $xs-max-width-large) {
+      @media (max-width: $sm-max-width) {
         border-radius: 20px 20px 0 0;
         box-shadow: 0 0 20px #aaa;
+      }
+      @media (max-width: $xs-max-width-large) {
+        border-radius: 20px 20px 0 0;
       }
     }
     @media (max-width: $sm-min-width) {
       height: 280px;
     }
+
     @media (max-width: $xs-max-width-large) {
       height: 175px;
       border-radius: 20px 20px 0 0;
@@ -268,6 +283,8 @@
     box-shadow: 0 0 20px #aaa;
     @media (max-width: $sm-max-width) {
       width: 100%;
+      position: relative;
+      border-radius: 0 0 20px 20px;
     }
     @media (max-width: $xs-max-width-large) {
       position: relative;
@@ -300,10 +317,10 @@
           font-size: var(--fs-title-primary);
         }
         @media (max-width: $xs-max-width-medium) {
-          font-size: var(--fs-text-mobile);
+          font-size: 16px;
         }
         @media (max-width: $xs-max-width-small) {
-          font-size: var(--fs-text-mobile);
+          font-size: 16px;
         }
       }
       p {
@@ -314,23 +331,23 @@
         -webkit-line-clamp: 4;
         text-overflow: ellipsis;
         @media (max-width: $sm-min-width) {
-          font-size: var(--fs-title-primary-m);
+          font-size: 17px;
         }
         @media (max-width: $xs-max-width-large) {
-          font-size: var(--fs-title-primary-m);
+          font-size: 15px;
         }
         @media (max-width: $xs-max-width-medium) {
-          font-size: var(--fs-title-primary-m);
+          font-size: 14px;
         }
         @media (max-width: $xs-max-width-small) {
-          font-size: var(--padding-small-m);
+          font-size: 13px;
         }
       }
       .btn-apply {
         margin-top: 50px;
         width: 140px;
         border-radius: 20px;
-        font-size: var(--fs-text-primary-m);
+        font-size: 18px;
         justify-content: center;
         @media (max-width: $sm-min-width) {
           font-size: var(--fs-text-primary);
@@ -363,10 +380,12 @@
       border-radius: 30px;
       width: 100%;
       height: 100%;
-      @media (max-width: $xs-max-width-large) {
-        height: 175px;
+      @media (max-width: $sm-max-width) {
         border-radius: 20px 20px 0 0;
         box-shadow: 0 0 20px #aaa;
+      }
+      @media (max-width: $xs-max-width-large) {
+        height: 175px;
       }
     }
     @media (max-width: $sm-min-width) {
@@ -388,6 +407,9 @@
 }
 
 .modal-style {
+  :global(.ant-upload-wrapper .ant-upload-select) {
+    width: 100%;
+  }
   :global(.ant-modal-content) {
     :global(.ant-modal-body) {
       margin-top: 25px;
@@ -416,7 +438,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: var(--fs-text-primary);
-    span{
+    span {
       padding: 0 0 0 15px;
     }
     svg {
@@ -438,18 +460,9 @@
 .input-form {
   border-radius: 20px;
   border-color: var(--secondary-color);
-  outline: 0;
-  -webkit-box-shadow: 0 0 0 2px var(--secondary-color(87, 168, 233, 0.2));
-  box-shadow: 0 0 0 2px var(--secondary-color(87, 168, 233, 0.2));
   background: #efeeec;
   @media (max-width: $xs-max-width-large) {
-    width: 350px;
-  }
-  @media (max-width: $xs-max-width-medium) {
-    width: 297px;
-  }
-  @media (max-width: $xs-max-width-small) {
-    width: 242px;
+    width: 100%;
   }
   input {
     background: #efeeec;
@@ -463,15 +476,7 @@
   -webkit-box-shadow: 0 0 0 2px var(--secondary-color(87, 168, 233, 0.2));
   box-shadow: 0 0 0 2px var(--secondary-color(87, 168, 233, 0.2));
   background: #efeeec;
-  @media (max-width: $xs-max-width-large) {
-    width: 350px;
-  }
-  @media (max-width: $xs-max-width-medium) {
-    width: 297px;
-  }
-  @media (max-width: $xs-max-width-small) {
-    width: 242px;
-  }
+
   input {
     background: #efeeec;
     position: relative;
@@ -482,7 +487,7 @@
   }
 }
 .upload-form {
-  width: 218px;
+  width: 100%;
   height: 158px;
   border-radius: 20px;
   border: solid 1px var(--secondary-color);
@@ -492,13 +497,7 @@
   align-items: center;
   flex-direction: column;
   @media (max-width: $xs-max-width-large) {
-    width: 350px;
-  }
-  @media (max-width: $xs-max-width-medium) {
-    width: 297px;
-  }
-  @media (max-width: $xs-max-width-small) {
-    width: 242px;
+    width: 100%;
   }
   svg {
     path {

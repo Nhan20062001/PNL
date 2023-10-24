@@ -9,6 +9,7 @@
     "contactHome": "Contact"
   },
   "btn": {
-    "contactToWork": "Contact to work"
+    "contactToWork": "Contact to work",
+    "applyCareer": "Apply",
   }
 }

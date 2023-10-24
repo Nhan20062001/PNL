@@ -5,6 +5,7 @@ import { FC, useState } from 'react';
 import styles from './style.module.scss';
 import UploadIcon from '@/layouts/icons/UploadIcons';
 import SendIcon from '@/layouts/icons/SendIcons';
+import useTranslation from '@/hook/useTranslation';
 
 interface Props {
   left: boolean;
@@ -19,7 +20,7 @@ export interface Type {
 }
 const FormCareer: FC<Props> = ({ left, data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const { t } = useTranslation();
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -46,7 +47,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
                   buttonType={ButtonType.DEFAULT}
                   onClick={showModal}
                 >
-                  Apply
+                  {t('btn')['applyCareer']}
                 </CustomButton>
               </div>
             </div>
@@ -80,7 +81,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
                   buttonType={ButtonType.DEFAULT}
                   onClick={showModal}
                 >
-                  Apply
+                  {t('btn')['applyCareer']}
                 </CustomButton>
               </div>
             </div>
@@ -97,13 +98,13 @@ const FormCareer: FC<Props> = ({ left, data }) => {
           <div className={styles['footer-modal']}>
             <CustomButton buttonType={ButtonType.PRIMARY} className={styles['btn-apply']}>
               <SendIcon />
-              Ứng tuyển
+              {t('btn')['applyCareer']}
             </CustomButton>
           </div>
         }
       >
-        <Row gutter={[32, 24]}>
-          <Col xl={12} lg={12} md={12}>
+        <Row gutter={[32, { xl: 24, xs: 0 }]}>
+          <Col xl={12} lg={12} md={12} sm={24} xs={24}>
             <Form layout="vertical">
               <Form.Item
                 hasFeedback
@@ -135,7 +136,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
               </Form.Item>
             </Form>
           </Col>
-          <Col xl={12} lg={12} md={12}>
+          <Col xl={12} lg={12} md={12} sm={24} xs={24}>
             <Form layout="vertical">
               <Form.Item
                 hasFeedback
