@@ -102,7 +102,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
           </div>
         }
       >
-        <Row gutter={[32, 24]}>
+        <Row gutter={[32,{xl:24 ,xs: 0}]}>
           <Col xl={12} lg={12} md={12} sm={24} xs={24}>
             <Form layout="vertical">
               <Form.Item

@@ -40,20 +40,20 @@
     font-size: var(--fs-banner-medium);
     color: #414241;
     @media (max-width: $sm-min-width) {
-      font-size: calc(var(--fs-header-primary) + 6px);
+      font-size: 36px;
+    }
+    @media (max-width: $xs-max-width) {
+      font-size: 25px;
     }
     @media (max-width: $xs-max-width-large) {
-      font-size: var(--fs-header-primary);
-    }
-    @media (max-width: $xs-max-width-large) {
-      font-size: calc(var(--padding-medium) + 1px);
+      font-size: calc(var(--padding-medium));
     }
     @media (max-width: $xs-max-width-medium) {
-      font-size: calc(var(--padding-medium) + 2px);
+      font-size: 17px;
     }
 
     @media (max-width: $xs-max-width-small) {
-      font-size: var(--fs-text-primary-m);
+      font-size: 18px;
     }
   }
   .text-banner2 {
@@ -71,19 +71,25 @@
     color: #ccd2e3;
     font-weight: 700;
     @media (max-width: $xl-max-width) {
-      font-size: var(--fs-banner-larger-2);
+      font-size: var(--fs-banner-small);
+    }
+    @media (max-width: $md-max-width) {
+      font-size: 65px;
     }
     @media (max-width: $sm-min-width) {
-      font-size: calc(var(--fs-banner-medium) + 5px);
+      font-size: 55px;
+    }
+    @media (max-width: $xs-max-width) {
+      font-size: var(--fs-header-primary);
     }
     @media (max-width: $xs-max-width-large) {
-      font-size: calc(var(--fs-header-primary) + 1px);
+      font-size: 26px;
     }
     @media (max-width: $xs-max-width-medium) {
-      font-size: var(--fs-header-primary-2);
+      font-size: 22px;
     }
     @media (max-width: $xs-max-width-small) {
-      font-size: calc(var(--padding-medium) + 3px);
+      font-size: 25px;
     }
   }
   p {
@@ -96,14 +102,18 @@
     justify-content: center;
     font-weight: 400;
     text-align: center;
-    font-size: var(--fs-text-primary-2);
+    font-size: 20px;
     padding: 0 60px;
     // color: #8E908D;
     @media (max-width: $sm-min-width) {
       font-size: var(--fs-text-primary);
     }
+    @media (max-width: $xs-max-width) {
+      font-size: 14px;
+      padding: 0 30px;
+    }
     @media (max-width: $xs-max-width-large) {
-      font-size: var(--padding-small-s);
+      font-size: 12px;
       padding: 0 30px;
     }
     @media (max-width: $xs-max-width-medium) {
@@ -182,25 +192,12 @@
         overflow: hidden;
         -webkit-line-clamp: 4;
         text-overflow: ellipsis;
-
-        @media (max-width: $sm-min-width) {
-          font-size: var(--fs-title-primary-m);
-        }
-        @media (max-width: $xs-max-width-large) {
-          font-size: var(--fs-title-primary-m);
-        }
-        @media (max-width: $xs-max-width-medium) {
-          font-size: var(--fs-title-primary-m);
-        }
-        @media (max-width: $xs-max-width-small) {
-          font-size: var(--padding-small-m);
-        }
       }
       .btn-apply {
         margin-top: 50px;
         width: 140px;
         border-radius: 20px;
-        font-size: var(--fs-text-primary-m);
+        font-size: 18px;
         justify-content: center;
         @media (max-width: $sm-min-width) {
           font-size: var(--fs-text-primary);
@@ -323,14 +320,14 @@
           font-size: var(--fs-title-primary-m);
         }
         @media (max-width: $xs-max-width-small) {
-          font-size: var(--padding-small-m);
+          font-size: 13px;
         }
       }
       .btn-apply {
         margin-top: 50px;
         width: 140px;
         border-radius: 20px;
-        font-size: var(--fs-text-primary-m);
+        font-size: 18px;
         justify-content: center;
         @media (max-width: $sm-min-width) {
           font-size: var(--fs-text-primary);
@@ -388,7 +385,7 @@
 }
 
 .modal-style {
-  :global(.ant-upload-wrapper .ant-upload-select){
+  :global(.ant-upload-wrapper .ant-upload-select) {
     width: 100%;
   }
   :global(.ant-modal-content) {
