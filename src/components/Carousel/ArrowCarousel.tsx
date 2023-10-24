@@ -1,5 +1,5 @@
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import styles from './style.module.scss'
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import styles from './style.module.scss';
 
 interface ArrowProps {
   className?: string;
@@ -11,7 +11,7 @@ const NextArrow: React.FC<ArrowProps> = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${styles["wrapper-arrow-carousel"]} ${className}`}
+      className={`${styles['wrapper-arrow-carousel']} ${className}`}
       style={{ ...style }}
       onClick={onClick}
     >
