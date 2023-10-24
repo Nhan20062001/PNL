@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import styles from './header.module.scss';
-import { Anchor, Button, Drawer, Layout, Menu, MenuProps, Select, Space } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
-import { useAppDispatch, useAppSelector } from '@/store';
 import useTranslation from '@/hook/useTranslation';
-import Image from 'next/image';
-import storageUtils from '@/utils/storage';
+import { useAppDispatch, useAppSelector } from '@/store';
 import { changeLanguage } from '@/store/translation/translation.reducer';
-import { TranslateEnum } from '@/store/translation/translation.type';
-import { Col, Row } from 'antd';
-import { useRouter } from 'next/navigation';
+import storageUtils from '@/utils/storage';
+import { MenuOutlined } from '@ant-design/icons';
+import { Button, Col, Drawer, Image, Menu, MenuProps, Row } from 'antd';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import SelectLanguage from '../SelectLanguage/SelectLanguage';
+import styles from './header.module.scss';
 
 const HeaderClient = () => {
   const { language } = useAppSelector((state) => state.translation.translate);
@@ -18,6 +16,7 @@ const HeaderClient = () => {
 
   const router = useRouter();
   const [current, setCurrent] = useState('/');
+  const pathname = usePathname();
 
   const [open, setOpen] = useState(false);
 
@@ -29,7 +28,7 @@ const HeaderClient = () => {
     setOpen(false);
   };
 
-  const handleChangeLanguage = (value: TranslateEnum) => {
+  const handleChangeLanguage = (value: string) => {
     dispatch(changeLanguage(value));
   };
 
@@ -104,6 +103,11 @@ const HeaderClient = () => {
       dispatch(changeLanguage(storageUtils.get('lang')));
     }
   }, []);
+  useEffect(() => {
+    if (menuItems.map((item) => item?.key === pathname)) {
+      setCurrent(pathname);
+    }
+  }, []);
 
   return (
     <header className={styles['wrapper-header-client']}>
@@ -116,6 +120,7 @@ const HeaderClient = () => {
           md={{ span: 3, offset: 0 }}
         >
           <Image
+            preview={false}
             className={styles['nav-header-logo']}
             src="/images/pnl-logo 1.png"
             alt=""
@@ -138,7 +143,15 @@ const HeaderClient = () => {
               </Button>
 
               <Drawer
-                title={<Image width={50} height={50} src={'/images/pnl-logo 1.png'} alt="PNL" />}
+                title={
+                  <Image
+                    preview={false}
+                    width={50}
+                    height={50}
+                    src={'/images/pnl-logo 1.png'}
+                    alt="PNL"
+                  />
+                }
                 open={open}
                 key="Menu"
                 placement="right"
@@ -157,33 +170,12 @@ const HeaderClient = () => {
           md={{ span: 3, offset: 0 }}
         >
           <div className={styles['translation']}>
-            <Select
-              suffixIcon={null}
-              style={{ width: '60px', textAlign: 'center' }}
+            <SelectLanguage
               value={language}
-              options={[
-                {
-                  label: (
-                    <div style={{ display: 'inline-block' }}>
-                      <Image width={30} height={25} alt="" src="/images/logotiengviet.webp" />
-                    </div>
-                  ),
-                  value: 'vn_VN',
-                },
-                {
-                  label: (
-                    <div style={{ display: 'inline-block' }}>
-                      <Image width={30} height={25} alt="" src="/images/logotienganh.png" />
-                    </div>
-                  ),
-                  value: 'en_US',
-                },
-              ]}
               onChange={(value) => {
                 handleChangeLanguage(value);
               }}
-              placeholder="Ngôn ngữ"
-            ></Select>
+            />
           </div>
         </Col>
       </Row>

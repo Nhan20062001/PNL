@@ -28,5 +28,17 @@ instanceAxios.interceptors.response.use(
     }
     return response;
   },
-  (error: AxiosError) => Promise.reject(error),
+  (error: AxiosError) => {
+    if (error?.response?.status === 401) {
+      localStorage.setItem('persist:auth', '');
+      window.location.href = '/admin/dang-nhap';
+    }
+    if (error?.response?.status === 404) {
+      window.location.href = '/404';
+    }
+    if (error?.response?.status === 500) {
+      window.location.href = '/500';
+    }
+    return Promise.reject(error);
+  }
 );
