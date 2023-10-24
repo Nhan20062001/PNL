@@ -3,9 +3,12 @@
     "itemHome": "Trang chủ",
     "serviceHome": "Dịch vụ",
     "workHome": "Công việc",
-    "customerHome": "Khách hàng",
+    "customerHome": "Khách hàng của chúng tôi",
     "teamHome": "Đội ngũ",
     "careerHome": "Tuyển dụng",
     "contactHome": "Liên hệ"
+  },
+  "btn": {
+    "contactToWork": "Liên hệ"
   }
 }
