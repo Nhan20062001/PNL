@@ -40,7 +40,7 @@ const AboutUsCardComponent = () => {
       <div className={styles['about-us']}>
         <img
           className={styles['about-us-image']}
-          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1630&q=80"
+          src="/images/ec34ddc5ab531a19e86c9704fbeab279.jpg"
           alt="about us computer"
         />
         <div className={styles['about-us-opacity-layer']}></div>

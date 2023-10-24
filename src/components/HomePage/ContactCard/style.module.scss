@@ -65,28 +65,28 @@
           .input-name {
             width: 71%;
             height: 37px;
-            border-radius: 24px;
+            border-radius: 12px;
             border: 1px solid var(--primary-color);
             background: var(--bg-color-white);
           }
           .input-phone-number {
             width: 62%;
             height: 37px;
-            border-radius: 24px;
+            border-radius: 12px;
             border: 1px solid var(--primary-color);
             background: var(--bg-color-white);
           }
           .input-email {
             width: 94%;
             height: 37px;
-            border-radius: 24px;
+            border-radius: 12px;
             border: 1px solid var(--primary-color);
             background: var(--bg-color-white);
           }
           .input-address {
             width: 53%;
             height: 37px;
-            border-radius: 24px;
+            border-radius: 12px;
             border: 1px solid var(--primary-color);
             background: var(--bg-color-white);
           }
@@ -94,7 +94,7 @@
             padding-top: 10px;
             width: 99%;
             height: 80px;
-            border-radius: 24px;
+            border-radius: 12px;
             border: 1px solid var(--primary-color);
             background: var(--bg-color-white);
           }
@@ -106,15 +106,13 @@
           align-items: flex-end;
           margin-bottom: 30px;
           .btn-style {
-            justify-content: space-around;
-            width: 256px;
-            height: 50px;
+            padding: 24px 26px;
             border: 1px solid var(--bg-color-btn-default-2);
             background-color: var(--bg-color-btn-default-2);
             box-shadow:
               1px 1px 5px 0px #cbcbcb,
               1px 1px 5px 0px #ffffff;
-            border-radius: 28px;
+            border-radius: 12px;
             transition: all 0.4s ease;
             svg {
               path {
@@ -158,11 +156,6 @@
             align-items: flex-start;
             width: 33%;
             .btn-style {
-              width: 100%;
-              display: flex;
-              justify-content: center;
-              border-radius: 20px;
-
               .button-text {
                 color: var(--primary-color);
                 font-size: var(--fs-text-primary-2);
@@ -177,7 +170,7 @@
 
 @media only screen and (max-width: $sm-max-width) {
   .contact-card {
-    height: 760px;
+    height: 780px;
     .contact-container {
       height: 100%;
       &-opacity-layer {
@@ -192,9 +185,7 @@
           font-size: var(--fs-text-primary);
         }
         .contact-form {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
+          display: block;
 
           :global(.ant-form-item) {
             :global(.ant-row) {
@@ -219,16 +210,9 @@
           }
           .button {
             width: 100%;
+            display: flex;
+            align-items: center;
             .btn-style {
-              width: 100%;
-              border-radius: 18px;
-              height: 50px;
-              display: flex;
-              justify-content: center;
-              .button-text {
-                font-size: var(--fs-text-primary);
-                padding-left: 10px;
-              }
             }
           }
         }
@@ -237,7 +221,7 @@
   }
 }
 
-@media only screen and (max-width: $xs-max-width-large) {
+@media only screen and (max-width: $xs-max-width) {
   .contact-card {
     height: 800px;
     .contact-container {
@@ -260,21 +244,14 @@
           .form-container {
             width: 100%;
           }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: $xs-max-width-small) {
-  .contact-card {
-    .contact-container {
-      .contact-card-content {
-        .contact-form {
           .button {
             .btn-style {
               width: 100%;
-              height: 30px;
+              display: flex;
+              justify-content: center;
+              .button-text {
+                font-size: var(--fs-text-primary);
+              }
             }
           }
         }
@@ -282,3 +259,20 @@
     }
   }
 }
+
+// @media only screen and (max-width: $xs-max-width-small) {
+//   .contact-card {
+//     .contact-container {
+//       .contact-card-content {
+//         .contact-form {
+//           .button {
+//             .btn-style {
+//               // width: 100%;
+//               // height: 30px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

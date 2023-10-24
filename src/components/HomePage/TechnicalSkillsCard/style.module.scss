@@ -46,14 +46,25 @@
 
   .technical-skills-main {
     margin: 40px 0;
+    :global(.ant-carousel) {
+      :global(.slick-slider) {
+        :global(.slick-list) {
+          display: flex;
+          align-items: center;
+          :global(.slick-track) {
+            margin: 0 auto;
 
-    .logo-skills {
-      display: flex;
-      justify-content: space-between;
-
-      img {
-        width: 180px;
-        height: 70px;
+            display: flex;
+            align-items: center;
+            :global(.slick-slide) {
+              display: flex;
+              justify-content: space-around;
+              img {
+                width: 150px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -78,13 +89,7 @@
         font-size: var(--fs-header-primary-2);
       }
     }
-    .technical-skills-main {
-      .logo-skills {
-        img {
-          width: 120px;
-        }
-      }
-    }
+ 
   }
 }
 
@@ -106,13 +111,7 @@
         font-size: var(--fs-header-mobile);
       }
     }
-    .technical-skills-main {
-      .logo-skills {
-        img {
-          width: 100px;
-        }
-      }
-    }
+ 
   }
 }
 
@@ -136,10 +135,18 @@
       }
     }
     .technical-skills-main {
-      .logo-skills {
-        img {
-          width: 80px;
-          height: 40px;
+      margin: 5px 0;
+      :global(.ant-carousel) {
+        :global(.slick-slider) {
+          :global(.slick-list) {
+            :global(.slick-track) {
+              :global(.slick-slide) {
+                img {
+                  width: 120px;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -162,14 +169,6 @@
       }
       h3 {
         font-size: var(--fs-header-mobile-2);
-      }
-    }
-    .technical-skills-main {
-      .logo-skills {
-        img {
-          width: 80px;
-          height: 40px;
-        }
       }
     }
   }

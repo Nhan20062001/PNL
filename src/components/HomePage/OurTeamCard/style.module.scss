@@ -16,77 +16,58 @@
     color: var(--font-color-black-2);
   }
 
-  :global(.ant-carousel) {
-    width: 100%;
-    margin: 0 auto;
-  }
+  :global(.owl-carousel) {
+    :global(.owl-stage-outer) {
+      :global(.owl-stage) {
+        :global(.owl-item) {
+          :global(.carousel-customer-item) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            :global(.ant-image) {
+              width: 170px;
+              height: 170px;
+              object-fit: cover;
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                transition: all 0.4s;
+              }
+            }
+          }
+        }
 
-  :global(.slick-track) {
-    margin: 0 auto;
-    position: absolute;
-  }
-  :global(.slick-slide slick-active slick-center slick-current) {
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-  }
-
-  :global(.slick-dots) {
-    visibility: hidden;
-  }
-
-  .member-card {
-    width: 100px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-    margin: 30px 0;
-
-    img {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      margin: 0 auto;
+        :global(.owl-item.active.center) {
+          :global(.carousel-customer-item) {
+            :global(.ant-image) {
+              width: 200px;
+              height: 200px;
+              img {
+                transform: scale(1.3);
+                margin-top: 0 !important;
+                position: relative;
+                z-index: 999;
+                filter: blur(0px);
+              }
+            }
+          }
+        }
+      }
     }
+    :global(.owl-nav) {
+      display: none;
+    }
+  }
 
+  .carousel-member {
     .member-info {
       display: block;
       text-align: center;
       margin-top: 20px;
       font-size: 20px;
       .member-position {
-        color: #9f9f9f;
-      }
-    }
-  }
-
-  :global(.slick-current) {
-    will-change: transform;
-    margin-left: auto;
-    margin-right: auto;
-    transform: scale(1.2);
-    transition: transform 0.6s ease-in-out;
-    .member-card {
-      width: 150px;
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: column;
-      align-items: center;
-      margin: 30px 0;
-
-      img {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        margin: 0 auto;
-        object-fit: cover;
-      }
-
-      .member-info {
-        display: block;
-        text-align: center;
-        margin-top: 20px;
+        color: var(--font-color-black-4);
       }
     }
   }
