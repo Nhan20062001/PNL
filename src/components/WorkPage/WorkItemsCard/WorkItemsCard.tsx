@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styles from './style.module.scss';
-import { Button, Image, Modal } from 'antd';
+import { Image, Modal } from 'antd';
 import { Col, Row } from 'antd';
 import WorkDetail from '../WorkDetail/WorkDetail';
 import CustomButton from '@/components/Button/CustomButton';
 import { ButtonType } from '@/config/constant';
+import useTranslation from '@/hook/useTranslation';
 
 type Types = {
   id?: string;
@@ -15,6 +16,7 @@ type Types = {
 
 function WorkItemsCard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation();
   const dataMock: Types[] = [
     {
       id: '1',
@@ -73,7 +75,7 @@ function WorkItemsCard() {
               <Row className={styles['box-item']} key={item.id}>
                 <Col
                   lg={{ span: 8, offset: 0 }}
-                  xs={{ span: 10, offset: 0 }}
+                  xs={{ span: 24, offset: 0 }}
                   md={{ span: 8, offset: 0 }}
                 >
                   <Image className={styles['image-left']} src={item.image} preview={false} alt="" />
@@ -81,7 +83,7 @@ function WorkItemsCard() {
                 <Col
                   className={styles['box-item-content']}
                   lg={{ span: 16, offset: 0 }}
-                  xs={{ span: 14, offset: 0 }}
+                  xs={{ span: 24, offset: 0 }}
                   md={{ span: 16, offset: 0 }}
                 >
                   <h4>{item.title}</h4>
@@ -92,7 +94,7 @@ function WorkItemsCard() {
                       buttonType={ButtonType.DEFAULT}
                       onClick={showModal}
                     >
-                      Xem thêm
+                      {t('btn')['readMore']}
                     </CustomButton>
                   </div>
                 </Col>
