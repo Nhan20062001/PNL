@@ -409,21 +409,15 @@
   }
 }
 .footer-modal {
+  display: flex;
+  justify-content: flex-end;
   .btn-apply {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 143px;
-    left: 69%;
     font-size: var(--fs-text-primary);
-    @media (max-width: $xs-max-width-large) {
-      left: 60%;
-    }
-    @media (max-width: $xs-max-width-medium) {
-      left: 53%;
-    }
-    @media (max-width: $xs-max-width-small) {
-      left: 41%;
+    span{
+      padding: 0 0 0 15px;
     }
     svg {
       width: 22px;
