@@ -28,7 +28,10 @@ const IntroPage = () => {
     <div className={styles['intro-container']}>
       <div className={styles['intro-main']}>
         <div className={styles['intro-left']}>
-          <motion.h3 {...motionSetting}>Cung cấp giải pháp chuyển đổi số</motion.h3>
+          <div className={styles['intro-title']}>
+            <motion.h3 {...motionSetting}>Nội dung gì đó</motion.h3>
+            <motion.h3 {...motionSetting}>Cung cấp giải pháp chuyển đổi số</motion.h3>
+          </div>
           <div className={styles['intro-detail']}>
             <motion.h6 {...motionSetting} transition={{ duration: 1, delay: 1 }}>
               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
@@ -38,7 +41,7 @@ const IntroPage = () => {
           <motion.div {...motionSetting} transition={{ duration: 1, delay: 2 }}>
             <CustomButton className={styles.button} buttonType={ButtonType.PRIMARY}>
               <SendIcon />
-              <p className={styles['button-text']}>{t('btn')['contactToWork']}</p>
+              {t('btn')['contactToWork']}
             </CustomButton>
           </motion.div>
         </div>
