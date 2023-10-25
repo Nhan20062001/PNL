@@ -1,9 +1,11 @@
 import React from 'react';
-import { Image } from 'antd';
+import { Col, Image, Row } from 'antd';
 import styles from './style.module.scss';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import dynamic from 'next/dynamic';
+import Section from '@/components/Section/Section';
+import Skeleton from 'react-loading-skeleton';
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
   ssr: false,
 });
@@ -128,6 +130,61 @@ const OurTeamCardComponent = () => {
             </div>
           ))}
         </OwlCarousel>
+
+        <Section
+          title="Our Team"
+          align="center"
+          component={
+            dataMock?.length === 0 ? (
+              <Row gutter={[12, 12]} className={styles['container-section-product']}>
+                <Col xs={24} sm={24} md={6} lg={6} xl={6}>
+                  <Skeleton className={styles['wrapper-image-product-loading']} />
+                </Col>
+                <Col xs={24} sm={24} md={6} lg={6} xl={6}>
+                  <Skeleton className={styles['wrapper-image-product-loading']} />
+                </Col>
+                <Col xs={24} sm={24} md={6} lg={6} xl={6}>
+                  <Skeleton className={styles['wrapper-image-product-loading']} />
+                </Col>
+                <Col xs={24} sm={24} md={6} lg={6} xl={6}>
+                  <Skeleton className={styles['wrapper-image-product-loading']} />
+                </Col>
+              </Row>
+            ) : (
+              <div
+                className={
+                  dataMock.length <= 2
+                    ? styles['carousel-customer carousel-customer-child']
+                    : styles['carousel-customer']
+                }
+              >
+                <OwlCarousel
+                  center={dataMock.length > 2}
+                  loop={dataMock.length > 2}
+                  // autoWidth
+                  autoplay
+                  autoplaySpeed
+                  margin={8}
+                  nav={dataMock.length > 3}
+                  responsive={carouselCustomerSettings.responsive}
+                >
+                  {dataMock.map((imageSlide) => (
+                    <div
+                      key={imageSlide.id}
+                      className={`${
+                        dataMock.length > 2
+                          ? styles['carousel-customer-item']
+                          : styles['carousel-customer-item-child']
+                      }`}
+                    >
+                      <img src={imageSlide.image} alt="" />
+                    </div>
+                  ))}
+                </OwlCarousel>
+              </div>
+            )
+          }
+        />
       </div>
     </div>
   );

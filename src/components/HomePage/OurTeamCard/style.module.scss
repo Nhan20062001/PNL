@@ -71,6 +71,56 @@
       }
     }
   }
+  .container-section-product {
+    .wrapper-image-product {
+      .title-product {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        color: #ffffff;
+        font-size: 22px;
+        transform: translate(0, -50%);
+      }
+      transition: transform 0.3s ease;
+      &:hover {
+        &::before {
+          transform: scale(1.1); /* Thay đổi kích thước lớn hơn 10% */
+        }
+      }
+    }
+
+    .slick-prev {
+      top: 50%;
+      z-index: 1000;
+      left: 2%;
+
+      width: 36px;
+      height: 36px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slick-next {
+      top: 50%;
+      z-index: 1000;
+      right: 2%;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slick-list {
+      margin: 0 -4px;
+    }
+    .slick-slide > div {
+      padding: 0 4px;
+    }
+
+    .wrapper-image-product-loading {
+      height: 200px;
+    }
+  }
 }
 
 @media only screen and (max-width: $md-max-width) {
