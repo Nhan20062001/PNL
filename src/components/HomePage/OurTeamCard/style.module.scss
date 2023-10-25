@@ -17,6 +17,9 @@
   }
 
   :global(.owl-carousel) {
+    :global(.owl-item.active.center .carousel-customer-item .ant-image) {
+      margin-bottom: 30px !important;
+    }
     :global(.owl-stage-outer) {
       :global(.owl-stage) {
         :global(.owl-item) {
@@ -25,6 +28,7 @@
             flex-direction: column;
             align-items: center;
             :global(.ant-image) {
+              margin-top: 31px;
               width: 170px;
               height: 170px;
               object-fit: cover;
@@ -137,8 +141,8 @@
     }
     .member-card {
       img {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
       }
       .member-info {
         font-size: var(--fs-text-primary-2);
@@ -214,6 +218,10 @@
         }
       }
     }
+    :global(.owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image){
+      width: 300px;
+      height: 300px;
+    }
   }
 }
 
@@ -244,6 +252,10 @@
           height: 88px;
         }
       }
+    }
+    :global(.owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image){
+      width: 250px;
+      height: 250px;
     }
   }
 }
@@ -276,6 +288,10 @@
           height: 74px;
         }
       }
+    }
+    :global(.owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image){
+      width: 200px;
+      height: 200px;
     }
   }
 }
