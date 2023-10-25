@@ -19,6 +19,8 @@
   :global(.owl-carousel) {
     :global(.owl-item.active.center .carousel-customer-item .ant-image) {
       margin-bottom: 30px !important;
+      width: 170px !important;
+      height: 170px !important;
     }
     :global(.owl-stage-outer) {
       :global(.owl-stage) {
@@ -29,8 +31,8 @@
             align-items: center;
             :global(.ant-image) {
               margin-top: 31px;
-              width: 170px;
-              height: 170px;
+              width: 150px;
+              height: 150px;
               object-fit: cover;
               img {
                 width: 100%;
@@ -45,8 +47,8 @@
         :global(.owl-item.active.center) {
           :global(.carousel-customer-item) {
             :global(.ant-image) {
-              width: 200px;
-              height: 200px;
+              width: 150px;
+              height: 150px;
               img {
                 transform: scale(1.3);
                 margin-top: 0 !important;
@@ -187,6 +189,12 @@
         }
       }
     }
+    :global(
+        .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image
+      ) {
+      width: 300px;
+      height: 300px;
+    }
   }
 }
 
@@ -218,16 +226,19 @@
         }
       }
     }
-    :global(.owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image){
-      width: 300px;
-      height: 300px;
+    :global(
+        .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image
+      ) {
+      width: 250px;
+      height: 250px;
     }
   }
 }
 
-@media only screen and (max-width: $xs-max-width-large) {
+@media only screen and (max-width: ($xs-max-width-large + 1px)) {
   .our-team {
     width: 351px;
+    margin-bottom: 20px;
     h3 {
       font-size: var(--fs-header-mobile-2);
       margin-bottom: -15px;
@@ -253,9 +264,11 @@
         }
       }
     }
-    :global(.owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image){
-      width: 250px;
-      height: 250px;
+    :global(
+        .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image
+      ) {
+      width: 230px;
+      height: 230px;
     }
   }
 }
@@ -289,7 +302,9 @@
         }
       }
     }
-    :global(.owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image){
+    :global(
+        .owl-carousel .owl-stage-outer .owl-stage .owl-item .carousel-customer-item .ant-image
+      ) {
       width: 200px;
       height: 200px;
     }
