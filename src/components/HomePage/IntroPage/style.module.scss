@@ -38,10 +38,10 @@
       .button {
         width: 250px;
         justify-content: center;
-        padding: 28px 20px;
-        span {
-          margin-left: 20px;
-        }
+        padding: 28px 16px;
+      }
+      span{
+        margin-left: 16px;
       }
     }
 
@@ -69,7 +69,7 @@
           font-size: 26px;
         }
         .intro-detail {
-          margin-top: 100px;
+        margin-top: 100px;
           h6 {
             font-size: 14px;
             color: var(--font-color-black-4);
@@ -80,7 +80,7 @@
         }
       }
       .intro-right {
-        margin-top: 16.5%;
+        margin-top: 17%;
         width: 70%;
       }
     }
@@ -154,6 +154,7 @@
           margin-top: -25px;
           span {
             font-size: 14px;
+            margin-left: 0;
           }
         }
       }
