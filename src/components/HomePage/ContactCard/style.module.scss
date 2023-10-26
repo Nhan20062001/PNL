@@ -1,7 +1,7 @@
 @import '@/styles/mixins.scss';
 
 .contact-card {
-  height: 716px;
+  height: auto;
   margin: 58px 0px;
   position: relative;
 
@@ -14,6 +14,7 @@
 
     :global(.ant-image) {
       width: 100%;
+      height: 750px;
     }
 
     :global(.ant-image-img) {
@@ -36,13 +37,13 @@
       padding-top: 25px;
 
       h3 {
-        font-size: var(--fs-header-primary);
+        font-size: var(--fs-title-1);
         font-style: normal;
         font-weight: 700;
         line-height: 44px;
       }
       p {
-        font-size: var(--fs-text-primary-2);
+        font-size: var(--fs-1);
         font-weight: 400;
         line-height: 24px;
       }
@@ -55,7 +56,7 @@
         :global(.ant-col) {
           label {
             color: var(--bg-color-white);
-            font-size: var(--fs-text-primary-2);
+            font-size: var(--fs-2);
           }
         }
 
@@ -105,8 +106,9 @@
           width: 40%;
           align-items: flex-end;
           margin-bottom: 30px;
-          .btn-style {
-            padding: 24px 26px;
+          .btn-style,
+          .btn-style-vn {
+            padding: 25px 30px 25px 20px;
             border: 1px solid var(--bg-color-btn-default-2);
             background-color: var(--bg-color-btn-default-2);
             box-shadow:
@@ -120,8 +122,8 @@
               }
             }
             .button-text {
+              margin-left: 16px;
               color: var(--primary-color);
-              font-size: var(--fs-text-primary-2);
             }
             &:hover {
               background-color: var(--bg-color-btn-default-active);
@@ -136,7 +138,7 @@
     }
   }
 }
-
+//992px
 @media only screen and (max-width: $md-max-width) {
   .contact-card {
     margin-top: 34px;
@@ -144,10 +146,10 @@
     .contact-container {
       .contact-card-content {
         h3 {
-          font-size: var(--fs-header-primary-2);
+          font-size: var(--fs-title-3);
         }
         p {
-          font-size: var(--fs-text-primary-2);
+          font-size: var(--fs-2);
         }
         .contact-form {
           display: flex;
@@ -155,10 +157,10 @@
           .button {
             align-items: flex-start;
             width: 33%;
-            .btn-style {
+            .btn-style,
+            .btn-style-vn {
               .button-text {
                 color: var(--primary-color);
-                font-size: var(--fs-text-primary-2);
               }
             }
           }
@@ -170,7 +172,6 @@
 
 @media only screen and (max-width: $sm-max-width) {
   .contact-card {
-    height: 780px;
     .contact-container {
       height: 100%;
       &-opacity-layer {
@@ -178,25 +179,11 @@
       }
       .contact-card-content {
         height: 100%;
-        h3 {
-          font-size: var(--fs-header-mobile-2);
-        }
         p {
           font-size: var(--fs-text-primary);
         }
         .contact-form {
           display: block;
-
-          :global(.ant-form-item) {
-            :global(.ant-row) {
-              :global(.ant-col) {
-                label {
-                  font-size: 16px;
-                }
-              }
-            }
-          }
-
           .form-container {
             width: 100%;
 
@@ -211,19 +198,16 @@
           .button {
             width: 100%;
             display: flex;
-            align-items: center;
-            .btn-style {
-            }
+            align-items: start;
           }
         }
       }
     }
   }
 }
-
+//575px
 @media only screen and (max-width: $xs-max-width) {
   .contact-card {
-    height: 800px;
     .contact-container {
       height: 100%;
       &-opacity-layer {
@@ -231,26 +215,32 @@
       }
       .contact-card-content {
         height: 100%;
-        h3 {
-          font-size: var(--fs-header-mobile);
-        }
         p {
-          font-size: var(--fs-text-primary);
+          font-size: var(--fs-3);
         }
         .contact-form {
           height: 100%;
           display: flex;
           flex-direction: column;
+          :global(.ant-col) {
+            label {
+              color: var(--bg-color-white);
+              font-size: var(--fs-3);
+            }
+          }
           .form-container {
             width: 100%;
           }
           .button {
-            .btn-style {
-              width: 100%;
+            margin-bottom: 0px;
+
+            .btn-style,
+            .btn-style-vn {
               display: flex;
               justify-content: center;
+              padding: 23px 30px 23px 20px;
               .button-text {
-                font-size: var(--fs-text-primary);
+                font-size: var(--fs-3);
               }
             }
           }
@@ -259,20 +249,3 @@
     }
   }
 }
-
-// @media only screen and (max-width: $xs-max-width-small) {
-//   .contact-card {
-//     .contact-container {
-//       .contact-card-content {
-//         .contact-form {
-//           .button {
-//             .btn-style {
-//               // width: 100%;
-//               // height: 30px;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }

@@ -4,10 +4,14 @@ import TextArea from 'antd/es/input/TextArea';
 import CustomButton from '@/components/Button/CustomButton';
 import { ButtonType } from '@/config/constant';
 import SendIcon from '@/layouts/icons/SendIcons';
+import { useAppSelector } from '@/store';
+import { TranslateEnum } from '@/store/translation/translation.type';
+import useTranslation from '@/hook/useTranslation';
 
 const ContactCardComponent = () => {
   const [form] = Form.useForm();
-
+  const { language } = useAppSelector((state) => state.translation.translate);
+  const { t } = useTranslation();
   return (
     <div className={styles['contact-card']}>
       <div className={styles['contact-container']}>
@@ -58,9 +62,14 @@ const ContactCardComponent = () => {
                 </Form.Item>
               </Form>
               <div className={styles['button']}>
-                <CustomButton buttonType={ButtonType.DEFAULT} className={styles['btn-style']}>
+                <CustomButton
+                  buttonType={ButtonType.DEFAULT}
+                  className={
+                    language === TranslateEnum.en_US ? styles['btn-style'] : styles['btn-style-vn']
+                  }
+                >
                   <SendIcon />
-                  <p className={styles['button-text']}>Contact to work</p>
+                  <p className={styles['button-text']}> {t('btn')['contactToWork']}</p>
                 </CustomButton>
               </div>
             </div>
