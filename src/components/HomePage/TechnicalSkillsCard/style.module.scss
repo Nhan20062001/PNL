@@ -8,7 +8,7 @@
     justify-content: space-between;
 
     h3 {
-      color: var(--font-color-black-2);
+      color: var(--fs-title-1);
       font-size: var(--fs-header-primary);
       font-style: normal;
       font-weight: 700;
@@ -69,7 +69,7 @@
     }
   }
 }
-
+//992px
 @media only screen and (max-width: $md-max-width) {
   .technical-skills-card {
     margin: 34px 0;
@@ -86,7 +86,7 @@
         }
       }
       h3 {
-        font-size: var(--fs-header-primary-2);
+        font-size: var(--fs-title-3);
       }
     }
  
@@ -107,9 +107,6 @@
           height: 10px;
         }
       }
-      h3 {
-        font-size: var(--fs-header-mobile);
-      }
     }
  
   }
@@ -129,9 +126,6 @@
           width: 95%;
           height: 8px;
         }
-      }
-      h3 {
-        font-size: var(--fs-header-mobile-2);
       }
     }
     .technical-skills-main {
@@ -167,9 +161,7 @@
           height: 6px;
         }
       }
-      h3 {
-        font-size: var(--fs-header-mobile-2);
-      }
+
     }
   }
 }

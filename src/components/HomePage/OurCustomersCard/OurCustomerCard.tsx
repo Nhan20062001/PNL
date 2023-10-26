@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import styles from './style.module.scss';
 import { useInView, motion } from 'framer-motion';
+import { Image } from 'antd';
 
 const OurCustomersPage = () => {
   const ref = useRef(null);
@@ -23,11 +24,11 @@ const OurCustomersPage = () => {
 
         <div className={styles['our-customers-main']}>
           <div className={styles['logo-customers']}>
-            <img src="/images/60e65ead2d4a34352a4c30b53e87847e.png" alt=""></img>
-            <img src="/images/044b33e97ef3509555c13284864151c5.png" alt=""></img>
-            <img src="/images/60e65ead2d4a34352a4c30b53e87847e.png" alt=""></img>
-            <img src="/images/97c80880b8d5c8eab3478432afe5c1b1.png" alt=""></img>
-            <img src="/images/c09b2647062f20feda9ae69f4ef00659.png" alt=""></img>
+            <Image preview={false} src="/images/60e65ead2d4a34352a4c30b53e87847e.png" alt="" />
+            <Image preview={false} src="/images/044b33e97ef3509555c13284864151c5.png" alt="" />
+            <Image preview={false} src="/images/60e65ead2d4a34352a4c30b53e87847e.png" alt="" />
+            <Image preview={false} src="/images/97c80880b8d5c8eab3478432afe5c1b1.png" alt="" />
+            <Image preview={false} src="/images/c09b2647062f20feda9ae69f4ef00659.png" alt="" />
           </div>
         </div>
       </div>

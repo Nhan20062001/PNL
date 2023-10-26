@@ -15,18 +15,17 @@
     .image-style {
       border-radius: 10px;
       width: 100%;
-      height: 600px;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
   .content-right-container {
     width: 54%;
-    height: 100%;
     display: inline-block;
-
     .content-right-title {
       color: var(--font-color-black-2);
-      font-size: var(--fs-header-primary);
+      font-size: var(--fs-title-1);
       font-style: normal;
       font-weight: 700;
       line-height: 44px;
@@ -35,6 +34,8 @@
     .content-right-main-container {
       display: block;
       height: 90%;
+      overflow-y: auto;
+
       .box-content {
         width: 100%;
         display: flex;
@@ -51,7 +52,7 @@
 
           span {
             color: var(--font-color-black-2);
-            font-size: var(--fs-text-primary);
+            font-size: var(--fs-1);
             font-style: normal;
             font-weight: 600;
             line-height: 24px;
@@ -59,7 +60,7 @@
 
           p {
             color: var(--font-color-black-3);
-            font-size: var(--fs-text-mobile);
+            font-size: var(--fs-3);
             font-style: normal;
             font-weight: 400;
             line-height: 24px;
@@ -69,7 +70,7 @@
     }
   }
 }
-
+//1199px
 @media only screen and (max-width: $xl-max-width) {
   .what-we-do {
     .image-left {
@@ -83,61 +84,45 @@
     }
   }
 }
-
+//991px
 @media only screen and (max-width: $md-max-width) {
   .what-we-do {
     .image-left {
       width: 50%;
-      .image-style {
-        height: 430px;
-      }
       :global(.ant-image) {
         width: 95%;
       }
     }
     .content-right-container {
       width: 50%;
-      height: 500px;
       .content-right-title {
-        font-size: var(--fs-header-primary-2);
+        font-size: var(--fs-title-3);
       }
       .content-right-main-container {
-        height: 80%;
-        overflow-y: hidden;
+        height: 500px;
         transition: overflow-y 0.3s ease;
-
+        overflow-y: auto;
         .box-content {
           margin: 15px 0;
         }
       }
-      .content-right-main-container:hover {
-        overflow-y: auto;
-      }
     }
   }
 }
-
+//767px
 @media only screen and (max-width: $sm-max-width) {
   .what-we-do {
     height: 430px;
     .image-left {
       width: 50%;
-      .image-style {
-        height: 100%;
-      }
       :global(.ant-image) {
         width: 95%;
       }
     }
     .content-right-container {
       width: 50%;
-      height: 100%;
-      .content-right-title {
-        font-size: var(--fs-header-primary-2);
-      }
       .content-right-main-container {
         height: 80%;
-        overflow-y: hidden;
         transition: overflow-y 0.3s ease;
 
         .box-content {
@@ -158,46 +143,55 @@
     }
   }
 }
-
+//575px
 @media only screen and (max-width: $xs-max-width) {
   .what-we-do {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 500x;
-
+    height: auto;
     .image-left {
       display: flex;
       flex-direction: row;
       justify-content: center;
       width: 100%;
-      .image-style {
-        height: 240px;
+
+      .ant-image-img {
+        height: 100%;
+        width: 100%;
         object-fit: cover;
       }
       :global(.ant-image) {
-        width: 90%;
+        width: 100%;
+        height: 250px;
       }
     }
     .content-right-container {
       width: 100%;
 
       .content-right-title {
-        font-size: var(--fs-header-mobile-2);
+        margin-top: 20px;
       }
       .content-right-main-container {
-        height: 34%;
+        height: 350px;
         overflow: auto;
-
         .box-content {
-          margin: 15px 0;
+          margin: 10px 0;
           .text-right p {
             font-size: var(--fs-text-primary);
           }
         }
       }
-      .content-right-main-container:hover {
-        overflow-y: auto;
+    }
+  }
+}
+
+//375px
+@media only screen and (max-width: $xs-max-width) {
+  .what-we-do {
+    .content-right-container {
+      .content-right-main-container {
+        height: 250px;
       }
     }
   }

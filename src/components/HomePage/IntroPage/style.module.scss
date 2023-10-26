@@ -3,31 +3,27 @@
 .intro-container {
   background-color: var(--bg-row-table-color);
   margin-top: 86px;
-  height: 590px;
+  // height: 590px;
   width: 100%;
   .intro-main {
+    padding: 30px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     position: relative;
     .intro-left {
-      padding-left: 125px;
-      width: 64%;
-      display: block;
-      margin: auto 0;
-
+      width: 35%;
       .intro-title {
-        font-size: 50px;
-        top: 18%;
+        font-size: var(--fs-title-1);
+        white-space: nowrap;
         color: var(--font-color-black-3);
-        position: absolute;
         font-style: normal;
         font-weight: 700;
       }
       .intro-detail {
         margin-bottom: 50px;
-        margin-top: 250px;
+        margin-top: 20px;
         h6 {
-          font-size: 20px;
+          font-size: var(--fs-1);
           color: var(--font-color-black-4);
           font-style: normal;
           font-weight: 400;
@@ -39,18 +35,26 @@
         width: 250px;
         justify-content: center;
         padding: 28px 16px;
+        &-vn {
+          justify-content: flex-start;
+          padding: 25px 30px 25px 20px;
+        }
       }
-      span{
+      span {
         margin-left: 16px;
       }
     }
 
     .intro-right {
-      margin-top: 3.5%;
-      width: 50%;
-
-      .content-image-right {
+      width: 35%;
+      :global(.ant-image) {
         width: 100%;
+        height: 350px;
+      }
+      :global(.ant-image .ant-image-img) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
   }
@@ -60,28 +64,25 @@
   .intro-container {
     .intro-main {
       .intro-left {
-        padding-left: 60px;
-        width: 64%;
-        display: block;
-        margin: auto 0;
-
         .intro-title {
-          font-size: 26px;
+          font-size: var(--fs-title-2);
         }
-        .intro-detail {
-        margin-top: 100px;
-          h6 {
-            font-size: 14px;
-            color: var(--font-color-black-4);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 24px;
-          }
+      }
+    }
+  }
+}
+//992px
+@media only screen and (max-width: $md-min-width) {
+  .intro-container {
+    .intro-main {
+      .intro-left {
+        width: 45%;
+        .intro-title {
+          font-size: var(--fs-title-3);
         }
       }
       .intro-right {
-        margin-top: 17%;
-        width: 70%;
+        width: 45%;
       }
     }
   }
@@ -92,126 +93,106 @@
   .intro-container {
     .intro-main {
       .intro-left {
-        padding-left: 60px;
-        width: 64%;
-        display: block;
-        margin: auto 0;
-
         .intro-title {
-          font-size: 20px;
+          font-size: var(--fs-title-4);
         }
         .intro-detail {
           h6 {
-            margin-top: 37%;
-            margin-bottom: 50px;
-            font-size: 16px;
-            color: var(--font-color-black-4);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 24px;
+            font-size: var(--fs-2);
           }
         }
       }
+    }
+  }
+}
+@media (max-width: ($sm-min-width - 118px)) {
+  .intro-container {
+    .intro-main {
       .intro-right {
-        margin-top: 33%;
-        width: 82%;
+        :global(.ant-image) {
+          height: 200px;
+          transform: translateY(50%);
+        }
+      }
+    }
+  }
+}
+//576px
+@media (max-width: $xs-min-width) {
+  .intro-container {
+    .intro-main {
+      .intro-left,
+      .intro-right {
+        width: 40%;
+      }
+      .intro-left {
+        .intro-detail {
+          margin-bottom: 20px;
+        }
       }
     }
   }
 }
 
-//425px
-@media (max-width: $xs-max-width-large) {
+//450px
+@media (max-width: ($xs-max-width-large + 25px)) {
   .intro-container {
-    height: 300px;
     .intro-main {
+      display: block;
+      .intro-left,
+      .intro-right {
+        width: 100%;
+        padding: 0 10px;
+      }
       .intro-left {
-        padding-left: 24px;
-        width: 50%;
-        display: block;
-        margin: auto 0;
-
         .intro-title {
+          font-size: var(--fs-title-5);
+        }
+        .intro-detail {
+          h6 {
+            font-size: var(--fs-3);
+          }
+        }
+        .button {
+          width: 200px;
+          padding: 25px 15px;
+          &-vn {
+            padding: 25px 30px 25px 20px;
+          }
+        }
+        span {
           font-size: 16px;
-          top: 6%;
-        }
-        .intro-detail {
-          margin-top: 45px;
-          h6 {
-            margin-top: 45%;
-            margin-bottom: 20px;
-            font-size: 12px;
-            color: var(--font-color-black-4);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 18px;
-          }
-        }
-        .button {
-          width: 135px;
-          justify-content: center;
-          padding: 0px;
-          margin-top: -25px;
-          span {
-            font-size: 14px;
-            margin-left: 0;
-          }
         }
       }
       .intro-right {
-        margin-top: 33%;
-        width: 47%;
+        :global(.ant-image) {
+          height: 280px;
+          transform: none;
+        }
       }
     }
   }
 }
-//375px
-@media (max-width: $xs-max-width-medium) {
+// 375px
+@media (max-width: ($xs-max-width-medium + 25px)) {
   .intro-container {
     .intro-main {
       .intro-left {
-        padding-left: 20px;
-        width: 50%;
-        display: block;
-        margin: auto 0;
-
         .intro-title {
-          font-size: 12px;
-          top: 6%;
+          font-size: var(--fs-title-6);
         }
-        .intro-detail {
-          h6 {
-            margin-top: 45%;
-            margin-bottom: 20px;
-            font-size: 11px;
-            color: var(--font-color-black-4);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 18px;
-          }
-        }
-        .button {
-          width: 135px;
-          justify-content: center;
-          padding: 0px;
-          span {
-            font-size: 14px;
-          }
-        }
-      }
-      .intro-right {
-        margin-top: 40.5%;
-        width: 49%;
       }
     }
   }
 }
-//325px
-@media (max-width: $xs-max-width-small) {
+//325
+@media (max-width: ($xs-max-width-small + 25px)) {
   .intro-container {
     .intro-main {
-      .intro-right {
-        margin-top: 54.5%;
+      .intro-left {
+        .intro-title {
+          font-size: var(--fs-title-7);
+        }
       }
     }
   }
