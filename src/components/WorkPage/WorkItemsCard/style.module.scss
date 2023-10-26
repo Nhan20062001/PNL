@@ -34,14 +34,14 @@
         justify-content: space-evenly;
         h4 {
           color: var(--font-color-black-2);
-          font-size: var(--fs-header-mobile);
+          font-size: var(--fs-title-2);
           font-style: normal;
           font-weight: 700;
           line-height: 34px;
         }
         h5 {
           color: var(--font-color-black-3);
-          font-size: var(--fs-text-primary);
+          font-size: var(--fs-1);
           font-style: normal;
           font-weight: 300;
           line-height: 28px;
@@ -90,6 +90,9 @@
           height: 224px;
         }
         .box-item-content {
+          h4{
+            font-size: var(--fs-title-3);
+          }
           .button-card {
             .outline-btn {
               padding: 18px 40px;
@@ -114,11 +117,9 @@
         }
         .box-item-content {
           h4 {
-            font-size: var(--fs-title-primary);
             margin-top: 10px;
           }
           h5 {
-            font-size: var(--fs-text-mobile);
             margin: 10px 0;
           }
           .button-card {
@@ -141,6 +142,11 @@
         :global(.ant-image) {
           .image-left {
             width: 100%;
+          }
+        }
+        .box-item-content{
+          h5{
+            font-size: var(--fs-3);
           }
         }
       }
