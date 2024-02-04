@@ -20,8 +20,11 @@
     "arrow-body-style": 1,
     "import/no-duplicates": 1,
     "react/self-closing-comp": 1,
+    "no-bitwise": "off",
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
+    "react/function-component-definition": "off",
+    "react/require-default-props": "off",
     "@typescript-eslint/no-shadow": 0,
     "import/no-useless-path-segments": 1,
     "import/no-extraneous-dependencies": 0,
@@ -35,6 +38,8 @@
       "ts": "never",
       "tsx": "never"
     }],
+    "camelcase": ["error", {"allow": ["en_US", "vn_VN"]}],
+    "no-shadow": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "object-curly-spacing": [

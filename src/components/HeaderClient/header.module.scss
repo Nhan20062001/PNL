@@ -1,9 +1,125 @@
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 
 .wrapper-header-client {
-  position: sticky;
-  top: -100px;
-  background-color: blue;
+  position: fixed;
+  top: 0px;
   transition: top 0.5s ease;
+  background-color: #fff;
   z-index: 1000;
+  width: 100%;
+  height: 86px;
+  flex-shrink: 0;
+
+  :global(.ant-row) {
+    height: 100%;
+  }
+  .row-container {
+    .col-logo {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .col-menu {
+      :global(.ant-drawer-wrapper-body) {
+        background-color: #5aaf32;
+      }
+      .nav-header-client {
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+
+        :global(.ant-menu-overflow) {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          @media (max-width: $sm-min-width) {
+            display: none;
+          }
+          :global(.ant-menu-overflow-item) {
+            :global(.ant-menu-item) {
+            }
+            :global(.ant-menu-title-content) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .wrapper-menu-mobile {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: stretch;
+        justify-content: space-evenly;
+        display: none;
+        @media (max-width: $sm-min-width) {
+          display: flex;
+        }
+      }
+    }
+    .col-translation {
+      align-items: center;
+      .translation {
+      }
+    }
+  }
+}
+
+@media (min-width: ($xs-max-width-small - 5)) {
+  .wrapper-header-client {
+    .row-container {
+      .col-translation {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+@media (min-width: $xs-max-width-large) {
+  .wrapper-header-client {
+    .row-container {
+      .col-translation {
+        display: flex;
+        justify-content: flex-end;
+        right: 2%;
+      }
+    }
+  }
+}
+
+@media (min-width: $sm-min-width) {
+  .wrapper-header-client {
+    .row-container {
+      .col-translation {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (min-width: $md-min-width) {
+  .wrapper-header-client {
+    .row-container {
+      .col-menu {
+        .nav-header-client {
+          justify-content: flex-end;
+          .ant-anchor {
+            display: flex;
+            justify-content: flex-end;
+            :global(.ant-anchor-link) {
+              margin: 0;
+            }
+          }
+          .wrapper-menu-mobile {
+            display: none;
+          }
+        }
+      }
+      .col-translation {
+        justify-content: flex-end;
+      }
+    }
+  }
 }

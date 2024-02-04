@@ -6,12 +6,6 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-  eslintConfig: {
-    extends: ['prettier'],
-  },
-  experimental: {
-    outputStandalone: true,
-  },
   images: {
     domains: [
       'res.cloudinary.com',
@@ -25,6 +19,21 @@ const nextConfig = {
       'img.freepik.com',
       'preview.redd.it',
     ],
+  },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.plugins.push(
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+      })
+    );
+    return config;
   },
 };
 

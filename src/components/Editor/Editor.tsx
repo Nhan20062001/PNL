@@ -22,7 +22,7 @@ type Props = {
   onChangeContentEditor?: (newContent: string) => void;
 };
 
-function Editor({ contentEditor, onChangeContentEditor }: Props) {
+const Editor = ({ contentEditor, onChangeContentEditor }: Props) => {
   const dispatch = useAppDispatch();
 
   const handleImageUploadBefore = (

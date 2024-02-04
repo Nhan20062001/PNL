@@ -1,0 +1,16 @@
+{
+  "clientHeader": {
+    "itemHome": "Home",
+    "serviceHome": "Service",
+    "workHome": "Work",
+    "customerHome": "Our Customer",
+    "teamHome": "Team",
+    "careerHome": "Career",
+    "contactHome": "Contact"
+  },
+  "btn": {
+    "contactToWork": "Contact to work",
+    "applyCareer": "Apply",
+    "readMore": "Learn more"
+  }
+}

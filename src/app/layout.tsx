@@ -4,20 +4,42 @@ import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import { appConfig } from '@/config/appConfig';
 import { ReduxProvider } from '@/store/provider';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
+import { ConfigProvider, ThemeConfig } from 'antd';
 
-const inter = Inter({ subsets: ['latin'] });
+const font = Poppins({ subsets: ['latin'], weight: '500' });
+
+const theme: ThemeConfig = {
+  token: {
+    colorPrimary: '#5aaf32',
+    fontFamily: font.style.fontFamily,
+  },
+  hashed: false,
+};
 
 export const metadata: Metadata = {
-  title: appConfig.title,
+  title: {
+    default: appConfig.siteName!,
+    template: `%s | ${appConfig.siteName}`,
+  },
   description: appConfig.description,
-  keywords: 'thiết kế sata, sata, thiết kế',
+  keywords: appConfig.keywords,
+  robots: {
+    follow: true,
+    index: true,
+  },
+  icons: {
+    icon: '/images/logo.png',
+  },
   authors: [
     {
       url: appConfig.url,
       name: appConfig.title,
     },
   ],
+  verification: {
+    google: 'your-verification-id',
+  },
   metadataBase: new URL(appConfig.url),
   openGraph: {
     images: `${appConfig.url}/favicon.ico`,
@@ -26,15 +48,11 @@ export const metadata: Metadata = {
     authors: appConfig.title,
     description: appConfig.description,
     locale: appConfig.locale,
-    siteName: appConfig.site_name,
+    siteName: appConfig.siteName,
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -43,9 +61,11 @@ export default function RootLayout({
         {/* Twitter image */}
         <meta property="twitter:image" content="/images/twitter-image.png" />
       </head>
-      <body className={inter.className}>
+      <body className={font.className}>
         <ReduxProvider>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          <ConfigProvider theme={theme}>
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          </ConfigProvider>
         </ReduxProvider>
       </body>
     </html>

@@ -2,14 +2,11 @@
 
 import React from 'react';
 import { MainClient } from '@/layouts/MainClient';
-import styles from './page.module.scss';
+import HomePage from '@/components/HomePage/HomePage';
 
-export default function Home() {
-  return (
+const Home = () => (
     <MainClient>
-      <div className={styles.main}>
-        <h1>Hoang Long</h1>
-      </div>
+      <HomePage />
     </MainClient>
   );
-}
+export default Home;

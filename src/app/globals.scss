@@ -1,4 +1,5 @@
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
 
 * {
   margin: 0;
@@ -6,6 +7,7 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  // font-family: Poppins;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
   h6,
   p,
   a {
-    // font-family: "__Montserrat_d9cbf0";
+    // font-family: '__Montserrat_d9cbf0';
     padding: 0;
     margin: 0;
   }
@@ -38,8 +40,8 @@ body {
     text-decoration: none;
   }
 
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
@@ -55,6 +57,26 @@ body {
     a {
       font-size: 16px;
     }
+  }
+
+  .ant-drawer {
+    .ant-drawer-body {
+      padding: 0 20px;
+    }
+    .ant-drawer-wrapper-body p {
+      font-size: 19px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      &:hover {
+        color: var(--secondary-color);
+      }
+    }
+  }
+  .ant-drawer-close {
+    position: absolute;
+    top: 30px;
+    right: 20px;
   }
 }
 

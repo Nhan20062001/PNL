@@ -15,7 +15,7 @@ type Props = {
   onChangeCollapseHeader: () => void;
 };
 
-function HeaderAdmin({ collapsed, onChangeCollapseHeader }: Props) {
+const HeaderAdmin = ({ collapsed, onChangeCollapseHeader }: Props) => {
   const { user } = useAppSelector((state) => state.authSlice);
   const router = useRouter();
   const [info, setInfo] = useState({

@@ -15,7 +15,7 @@ interface IProps {
   setIsVisible: (v: boolean) => void;
 }
 
-function AppConfirmModal(props: IProps) {
+const AppConfirmModal = (props: IProps) => {
   const {
     isVisible,
     type,

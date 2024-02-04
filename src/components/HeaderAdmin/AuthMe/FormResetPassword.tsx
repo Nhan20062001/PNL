@@ -13,7 +13,7 @@ interface IProps {
   isLoading: boolean;
   setIsLoading: (v: boolean) => void;
 }
-function FormRestPassword(props: IProps) {
+const FormRestPassword = (props: IProps) => {
   const { user } = useAppSelector((state) => state.authSlice);
   const {
     onCancel, onSubmitted, isLoading, setIsLoading,

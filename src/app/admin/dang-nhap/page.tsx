@@ -1,18 +1,15 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import theme from '@/theme/themeConfig';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import {
-  Button, ConfigProvider, Form, Input, Space, notification,
-} from 'antd';
+import { Button, Form, Input, Space, notification } from 'antd';
 import { loginAdminAction } from '@/store/auth/auth.action';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { useRouter } from 'next/navigation';
 import { LOGO_LOGIN_AMDIN, NotificationTypeEnum } from '@/config/constant';
 import './style.scss';
 
-function Login() {
+const Login = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const authSlice = useAppSelector((state) => state.authSlice);
@@ -25,10 +22,7 @@ function Login() {
     }
   }, [authSlice.token, router]);
 
-  const openNotificationWithIcon = (
-    type: NotificationTypeEnum,
-    message: string,
-  ) => {
+  const openNotificationWithIcon = (type: NotificationTypeEnum, message: string) => {
     api[type]({
       message,
       description: '',
@@ -39,10 +33,7 @@ function Login() {
     const { email, password } = values;
     const res: any = await dispatch(loginAdminAction({ email, password }));
     if (res.payload.error) {
-      openNotificationWithIcon(
-        NotificationTypeEnum.error,
-        'Đăng nhập thất bại',
-      );
+      openNotificationWithIcon(NotificationTypeEnum.error, 'Đăng nhập thất bại');
     } else {
       notification.success({
         message: 'Thông báo',
@@ -52,11 +43,12 @@ function Login() {
   };
 
   return (
-    <ConfigProvider theme={theme}>
+    <>
       {contextHolder}
       <div className="wrapper-admin-login">
         <div className="admin-login-logo">
           <picture>
+            <source srcSet={LOGO_LOGIN_AMDIN} type="image/png" />
             <img src={LOGO_LOGIN_AMDIN} alt="admin" />
           </picture>
         </div>
@@ -68,10 +60,7 @@ function Login() {
           layout="vertical"
         >
           <Space direction="vertical">
-            <Form.Item
-              name="email"
-              rules={[{ required: true, message: 'Vui lòng nhập email!' }]}
-            >
+            <Form.Item name="email" rules={[{ required: true, message: 'Vui lòng nhập email!' }]}>
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
                 placeholder="Email"
@@ -104,8 +93,8 @@ function Login() {
           </Space>
         </Form>
       </div>
-    </ConfigProvider>
+    </>
   );
-}
+};
 
 export default Login;
