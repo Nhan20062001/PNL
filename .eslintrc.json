@@ -1,5 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "airbnb-typescript", "airbnb", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb-typescript",
+    "airbnb",
+    "prettier"
+  ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -11,31 +16,36 @@
     }
   },
   "rules": {
-    "react/require-default-props": 0,
     "react/jsx-key": 2,
     "arrow-body-style": 1,
     "import/no-duplicates": 1,
     "react/self-closing-comp": 1,
+    "no-bitwise": "off",
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
+    "react/function-component-definition": "off",
+    "react/require-default-props": "off",
     "@typescript-eslint/no-shadow": 0,
     "import/no-useless-path-segments": 1,
     "import/no-extraneous-dependencies": 0,
     "@typescript-eslint/naming-convention": 0,
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "": "never",
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
+    "import/extensions": ["error",
+    "ignorePackages",
+    {
+      "": "never",
+      "js": "never",
+      "jsx": "never",
+      "ts": "never",
+      "tsx": "never"
+    }],
+    "camelcase": ["error", {"allow": ["en_US", "vn_VN"]}],
+    "no-shadow": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
-    "object-curly-spacing": [1, "always"],
+    "object-curly-spacing": [
+      1,
+      "always"
+    ],
     "@typescript-eslint/no-unused-vars": [
       1,
       {
@@ -48,13 +58,6 @@
       {
         "object": true,
         "array": false
-      }
-    ],
-    "react/function-component-definition": [
-      2,
-      {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
       }
     ]
   }

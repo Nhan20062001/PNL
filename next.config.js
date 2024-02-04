@@ -6,12 +6,6 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-  eslintConfig: {
-    extends: ['prettier'],
-  },
-  experimental: {
-    outputStandalone: true,
-  },
   images: {
     domains: [
       'res.cloudinary.com',
@@ -34,9 +28,9 @@ const nextConfig = {
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.plugins.push(
       new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
-        "window.jQuery": "jquery",
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
       })
     );
     return config;

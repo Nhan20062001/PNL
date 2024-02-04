@@ -1,11 +1,11 @@
 import React from 'react';
-import { Col, Row } from 'antd';
-import styles from './footer.module.scss';
-import { Image } from 'antd';
+import { Col, Row , Image } from 'antd';
+
 import { FacebookOutlined, InstagramOutlined, MailOutlined } from '@ant-design/icons';
 import Ellipse from '@/layouts/icons/EllipseIcon';
-function FooterClient() {
-  return (
+import styles from './footer.module.scss';
+
+const FooterClient = () => (
     <footer className={styles['wrapper-footer-client']}>
       <div className="container">
         <Row>
@@ -92,7 +92,7 @@ function FooterClient() {
             </Col>
             <Col className={styles['col-image']} xxl={4} md={6} xs={24}>
               <Image
-                className={styles['image']}
+                className={styles.image}
                 src="/images/bo-cong-thuong.gif"
                 alt=""
                 preview={false}
@@ -120,7 +120,6 @@ function FooterClient() {
         </div>
       </div>
     </footer>
-  );
-}
+  )
 
 export default FooterClient;

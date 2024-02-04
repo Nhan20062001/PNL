@@ -3,15 +3,12 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import HeaderAdmin from '@/components/HeaderAdmin/HeaderAdmin';
 
-import {
-  ConfigProvider, Layout, Menu, Spin,
-} from 'antd';
+import { Layout, Menu, Spin } from 'antd';
 import './style.scss';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAppSelector } from '@/store';
 import routes from './routes';
-import theme from '../theme/themeConfig';
 
 const { Sider, Content } = Layout;
 
@@ -19,18 +16,14 @@ type IMainProps = {
   children: ReactNode;
 };
 
-function MainAdmin({ children }: IMainProps) {
+const MainAdmin = ({ children }: IMainProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
   const [urlSelected, setUrlSelected] = useState<string>('');
   const authSlice = useAppSelector((state) => state.authSlice);
   useEffect(() => {
-    if (
-      !Object.values(authSlice.token).every(
-        (value) => value !== '' && value !== 0,
-      )
-    ) {
+    if (!Object.values(authSlice.token).every((value) => value !== '' && value !== 0)) {
       router.push('/admin/dang-nhap');
     }
   }, [authSlice.token, router]);
@@ -56,64 +49,63 @@ function MainAdmin({ children }: IMainProps) {
   }));
 
   return (
-    <ConfigProvider theme={theme}>
-      <Layout style={{ height: '100vh', overflow: 'auto' }}>
-        {!Object.values(authSlice.token).every((value) => value !== '') ? (
-          <Spin spinning={authSlice.loading}>
-            <div style={{ height: '100vh', width: '100vw' }}> </div>
-          </Spin>
-        ) : (
-          <>
-            <Sider
-              width={250}
-              trigger={null}
-              collapsible
-              collapsed={collapsed}
-              className="wrapper-sidebar-admin"
+    <Layout style={{ height: '100vh', overflow: 'auto' }}>
+      {!Object.values(authSlice.token).every((value) => value !== '') ? (
+        <Spin spinning={authSlice.loading}>
+          <div style={{ height: '100vh', width: '100vw' }}> </div>
+        </Spin>
+      ) : (
+        <>
+          <Sider
+            width={250}
+            trigger={null}
+            collapsible
+            collapsed={collapsed}
+            className="wrapper-sidebar-admin"
+          >
+            <div
+              className="wrapper-sidebar-admin-header"
+              style={{ width: !collapsed ? '250px' : '80px' }}
             >
-              <div
-                className="wrapper-sidebar-admin-header"
-                style={{ width: !collapsed ? '250px' : '80px' }}
-              >
-                <div className="container-sidebar-admin-logo">
-                  <picture>
-                    <img
-                      src="https://res.cloudinary.com/dlcvpix8s/image/upload/v1696488184/sata/vtgrcnzfvsqiv0pyh7aa.png"
-                      alt=""
-                    />
-                  </picture>
-                </div>
+              <div className="container-sidebar-admin-logo">
+                <picture>
+                  <source
+                    srcSet="https://res.cloudinary.com/dlcvpix8s/image/upload/v1696488184/sata/vtgrcnzfvsqiv0pyh7aa.png"
+                    type="image/png"
+                  />
+                  <img
+                    src="https://res.cloudinary.com/dlcvpix8s/image/upload/v1696488184/sata/vtgrcnzfvsqiv0pyh7aa.png"
+                    alt=""
+                  />
+                </picture>
               </div>
-              <Menu
-                mode="inline"
-                className="wrapper-sidebar-admin-menu"
-                style={{
-                  width: collapsed ? '80px' : '250px',
-                  overflow: 'scroll',
-                  paddingBottom: '32px',
-                }}
-                selectedKeys={[urlSelected]}
-                items={renderMenuItem}
-              />
-            </Sider>
-            <Layout
-              className="site-layout"
+            </div>
+            <Menu
+              mode="inline"
+              className="wrapper-sidebar-admin-menu"
               style={{
-                transition: 'all',
-                height: '100vh',
+                width: collapsed ? '80px' : '250px',
+                overflow: 'scroll',
+                paddingBottom: '32px',
               }}
-            >
-              <HeaderAdmin
-                collapsed={collapsed}
-                onChangeCollapseHeader={handleCollapseHeader}
-              />
-              <Content className="wrapper-content-admin">{children}</Content>
-            </Layout>
-          </>
-        )}
-      </Layout>
-    </ConfigProvider>
+              selectedKeys={[urlSelected]}
+              items={renderMenuItem}
+            />
+          </Sider>
+          <Layout
+            className="site-layout"
+            style={{
+              transition: 'all',
+              height: '100vh',
+            }}
+          >
+            <HeaderAdmin collapsed={collapsed} onChangeCollapseHeader={handleCollapseHeader} />
+            <Content className="wrapper-content-admin">{children}</Content>
+          </Layout>
+        </>
+      )}
+    </Layout>
   );
-}
+};
 
 export { MainAdmin };

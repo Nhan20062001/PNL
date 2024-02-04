@@ -1,12 +1,12 @@
 import { Image } from 'antd';
-import styles from './style.module.scss';
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+
 import LampIcon from '@/layouts/icons/LampIcons';
 import AndroidIcon from '@/layouts/icons/AndroidIcons';
 import WebsiteIcon from '@/layouts/icons/WebsiteIcons';
 import UIUXIcon from '@/layouts/icons/UIUXIcons';
+import styles from './style.module.scss';
 
 type Types = {
   id?: string;
@@ -75,8 +75,7 @@ const WhatWeDoCardPage = () => {
         <div ref={ref} className={styles['content-right-container']}>
           <h3 className={styles['content-right-title']}>What we do</h3>
           <div className={styles['content-right-main-container']}>
-            {dataMock.map((item, index) => {
-              return (
+            {dataMock.map((item, index) => (
                 <motion.div
                   key={item.id}
                   {...motionSetting}
@@ -91,8 +90,7 @@ const WhatWeDoCardPage = () => {
                     <p>{item.description}</p>
                   </div>
                 </motion.div>
-              );
-            })}
+              ))}
           </div>
         </div>
       </div>

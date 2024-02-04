@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import styles from './style.module.scss';
+import React, { useRef } from 'react';
 import { useInView, motion } from 'framer-motion';
 import { Image } from 'antd';
+import styles from './style.module.scss';
 
 const OurCustomersPage = () => {
   const ref = useRef(null);
@@ -16,9 +16,9 @@ const OurCustomersPage = () => {
       <div ref={ref} className={styles['our-customers']}>
         <div className={styles['our-customers-header']}>
           <h3>Our Customers</h3>
-          <div className={styles['rectangle']}>
-            <motion.div {...motionSetting} className={styles['rectangle-top']}></motion.div>
-            <motion.div {...motionSetting} className={styles['rectangle-bottom']}></motion.div>
+          <div className={styles.rectangle}>
+            <motion.div {...motionSetting} className={styles['rectangle-top']} />
+            <motion.div {...motionSetting} className={styles['rectangle-bottom']} />
           </div>
         </div>
 

@@ -3,9 +3,9 @@ import { useAppDispatch, useAppSelector } from '@/store';
 import { changeLanguage } from '@/store/translation/translation.reducer';
 import storageUtils from '@/utils/storage';
 import { MenuOutlined } from '@ant-design/icons';
-import { Button, Col, Drawer, Image, Menu, MenuProps, Row } from 'antd';
+import { Button, Col, Drawer, Image, Menu, Row } from 'antd';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import SelectLanguage from '../SelectLanguage/SelectLanguage';
 import styles from './header.module.scss';
 
@@ -32,82 +32,85 @@ const HeaderClient = () => {
     dispatch(changeLanguage(value));
   };
 
-  const menuItems: MenuProps['items'] = [
-    {
-      label: t('clientHeader')['itemHome'],
-      key: '/',
-      onClick: () => {
-        setOpen(false);
-        setCurrent('/');
-        router.push('/');
+  const menuItems = useMemo(
+    () => [
+      {
+        label: t('clientHeader').itemHome,
+        key: '/',
+        onClick: () => {
+          setOpen(false);
+          setCurrent('/');
+          router.push('/');
+        },
       },
-    },
-    {
-      label: t('clientHeader')['serviceHome'],
-      key: '/service',
-      onClick: () => {
-        setOpen(false);
-        setCurrent('/service');
-        router.push('/service');
+      {
+        label: t('clientHeader').serviceHome,
+        key: '/service',
+        onClick: () => {
+          setOpen(false);
+          setCurrent('/service');
+          router.push('/service');
+        },
       },
-    },
-    {
-      label: t('clientHeader')['workHome'],
-      key: '/work',
-      onClick: () => {
-        setCurrent('/work');
-        setOpen(false);
-        router.push('/work');
+      {
+        label: t('clientHeader').workHome,
+        key: '/work',
+        onClick: () => {
+          setCurrent('/work');
+          setOpen(false);
+          router.push('/work');
+        },
       },
-    },
-    {
-      label: t('clientHeader')['customerHome'],
-      key: '/customer',
-      onClick: () => {
-        setCurrent('/customer');
-        setOpen(false);
-        router.push('/customer');
+      {
+        label: t('clientHeader').customerHome,
+        key: '/customer',
+        onClick: () => {
+          setCurrent('/customer');
+          setOpen(false);
+          router.push('/customer');
+        },
       },
-    },
-    {
-      label: t('clientHeader')['teamHome'],
-      key: '/team',
-      onClick: () => {
-        setCurrent('/team');
-        setOpen(false);
-        router.push('/team');
+      {
+        label: t('clientHeader').teamHome,
+        key: '/team',
+        onClick: () => {
+          setCurrent('/team');
+          setOpen(false);
+          router.push('/team');
+        },
       },
-    },
-    {
-      label: t('clientHeader')['careerHome'],
-      key: '/career',
-      onClick: () => {
-        setCurrent('/career');
-        setOpen(false);
-        router.push('/career');
+      {
+        label: t('clientHeader').careerHome,
+        key: '/career',
+        onClick: () => {
+          setCurrent('/career');
+          setOpen(false);
+          router.push('/career');
+        },
       },
-    },
-    {
-      label: t('clientHeader')['contactHome'],
-      key: '/contact',
-      onClick: () => {
-        setCurrent('/contact');
-        setOpen(false);
-        router.push('/contact');
+      {
+        label: t('clientHeader').contactHome,
+        key: '/contact',
+        onClick: () => {
+          setCurrent('/contact');
+          setOpen(false);
+          router.push('/contact');
+        },
       },
-    },
-  ];
+    ],
+    [t, setOpen, setCurrent, router]
+  );
 
   useEffect(() => {
     if (storageUtils.get('lang')) {
       dispatch(changeLanguage(storageUtils.get('lang')));
     }
-  }, []);
+  }, [dispatch]);
   useEffect(() => {
     if (menuItems.map((item) => item?.key === pathname)) {
       setCurrent(pathname);
     }
-  }, []);
+  }, [pathname, menuItems]);
 
   return (
     <header className={styles['wrapper-header-client']}>
@@ -148,7 +151,7 @@ const HeaderClient = () => {
                     preview={false}
                     width={50}
                     height={50}
-                    src={'/images/pnl-logo 1.png'}
+                    src="/images/pnl-logo 1.png"
                     alt="PNL"
                   />
                 }
@@ -169,7 +172,7 @@ const HeaderClient = () => {
           sm={{ span: 4, offset: 0 }}
           md={{ span: 3, offset: 0 }}
         >
-          <div className={styles['translation']}>
+          <div className={styles.translation}>
             <SelectLanguage
               value={language}
               onChange={(value) => {

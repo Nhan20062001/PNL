@@ -1,8 +1,9 @@
+import React, { ReactNode, FC } from 'react';
 import { Button, ButtonProps } from 'antd';
-import { ReactNode, FC } from 'react';
-import styles from './style.module.scss';
+
 import csx from 'classnames';
 import { ButtonType } from '@/config/constant';
+import styles from './style.module.scss';
 
 interface Props extends ButtonProps {
   children: ReactNode;
@@ -16,12 +17,10 @@ const CustomButton: FC<Props> = ({
   shape,
   buttonType = ButtonType.DEFAULT,
   ...rest
-}: Props) => {
-  return (
-    <Button className={csx(styles[`${buttonType}`], `${className ?? ''}`)} {...rest}>
-      {children}
-    </Button>
-  );
-};
+}: Props) => (
+  <Button className={csx(styles[`${buttonType}`], `${className ?? ''}`)} {...rest}>
+    {children}
+  </Button>
+);
 
 export default CustomButton;

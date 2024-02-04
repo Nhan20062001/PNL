@@ -1,6 +1,6 @@
 import storageUtils from '@/utils/storage';
-import { TranslateEnum } from './translation.type';
 import { createSlice } from '@reduxjs/toolkit';
+import { TranslateEnum } from './translation.type';
 
 const translationSlice = createSlice({
   name: 'translation',
@@ -12,13 +12,16 @@ const translationSlice = createSlice({
   reducers: {
     changeLanguage: (state, action) => {
       storageUtils.set('lang', action.payload);
-      state.translate = {
-        language: action.payload,
+      return {
+        ...state,
+        translate: {
+          language: action.payload,
+        },
       };
     },
   },
 
-  extraReducers: (builder) => {},
+  extraReducers: () => {},
 });
 
 export const { changeLanguage } = translationSlice.actions;

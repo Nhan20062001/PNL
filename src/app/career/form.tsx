@@ -1,16 +1,12 @@
+import React, { FC, useState } from 'react';
 import CustomButton from '@/components/Button/CustomButton';
 import { ButtonType } from '@/config/constant';
 import { Col, Form, Image, Input, Modal, Row, Upload } from 'antd';
-import { FC, useState } from 'react';
-import styles from './style.module.scss';
+
 import UploadIcon from '@/layouts/icons/UploadIcons';
 import SendIcon from '@/layouts/icons/SendIcons';
 import useTranslation from '@/hook/useTranslation';
-
-interface Props {
-  left: boolean;
-  data: Type;
-}
+import styles from './style.module.scss';
 
 export interface Type {
   id: string;
@@ -18,6 +14,11 @@ export interface Type {
   description: string;
   image: string;
 }
+interface Props {
+  left: boolean;
+  data: Type;
+}
+
 const FormCareer: FC<Props> = ({ left, data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useTranslation();
@@ -34,20 +35,20 @@ const FormCareer: FC<Props> = ({ left, data }) => {
   };
 
   return (
-    <div className={styles['career']}>
+    <div className={styles.career}>
       {left ? (
         <Row className={styles['content-career-body-1']}>
           <Col md={8} xs={24}>
             <div className={styles['text-career-body-header']}>
               <div className={styles['text-child-career-body-header']}>
                 <h3>{data.title}</h3>
-                <p>{data.description}</p>
+                <h5>{data.description}</h5>
                 <CustomButton
                   className={styles['btn-apply']}
                   buttonType={ButtonType.DEFAULT}
                   onClick={showModal}
                 >
-                  {t('btn')['applyCareer']}
+                  {t('btn').applyCareer}
                 </CustomButton>
               </div>
             </div>
@@ -75,13 +76,13 @@ const FormCareer: FC<Props> = ({ left, data }) => {
             <div className={styles['text-career-body-center']}>
               <div className={styles['text-child-career-body-center']}>
                 <h3>{data.title}</h3>
-                <p>{data.description}</p>
+                <h5>{data.description}</h5>
                 <CustomButton
                   className={styles['btn-apply']}
                   buttonType={ButtonType.DEFAULT}
                   onClick={showModal}
                 >
-                  {t('btn')['applyCareer']}
+                  {t('btn').applyCareer}
                 </CustomButton>
               </div>
             </div>
@@ -98,7 +99,7 @@ const FormCareer: FC<Props> = ({ left, data }) => {
           <div className={styles['footer-modal']}>
             <CustomButton buttonType={ButtonType.PRIMARY} className={styles['btn-apply']}>
               <SendIcon />
-              {t('btn')['applyCareer']}
+              {t('btn').applyCareer}
             </CustomButton>
           </div>
         }

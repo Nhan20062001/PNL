@@ -1,9 +1,10 @@
 import React from 'react';
 import { Image } from 'antd';
+import dynamic from 'next/dynamic';
 import styles from './style.module.scss';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import dynamic from 'next/dynamic';
+
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
   ssr: false,
 });
@@ -16,45 +17,6 @@ type Types = {
 };
 
 const OurTeamCardComponent = () => {
-  const settings = {
-    centerMode: true,
-    infinite: true,
-    centerPadding: '0',
-    slidesToShow: 3,
-    speed: 500,
-    autoplaySpeed: 4000,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    autoplay: false,
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
   const dataMock: Types[] = [
     {
       id: '1',

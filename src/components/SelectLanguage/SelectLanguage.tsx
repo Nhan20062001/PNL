@@ -4,6 +4,7 @@ import React from 'react';
 const { Option } = Select;
 
 const customImageStyle = {
+  width: '40px',
   height: '22px',
   marginLeft: '1.5px',
   marginBottom: '1px',
@@ -14,8 +15,7 @@ interface SelectLanguageProps {
   onChange: (value: string) => void;
 }
 
-const SelectLanguage: React.FC<SelectLanguageProps> = ({ value, onChange }) => {
-  return (
+const SelectLanguage: React.FC<SelectLanguageProps> = ({ value, onChange }) => (
     <Select
       suffixIcon={null}
       value={value}
@@ -31,6 +31,5 @@ const SelectLanguage: React.FC<SelectLanguageProps> = ({ value, onChange }) => {
       </Option>
     </Select>
   );
-};
 
 export default SelectLanguage;

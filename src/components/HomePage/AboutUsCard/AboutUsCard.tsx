@@ -1,6 +1,6 @@
 import { Carousel } from 'antd';
-import styles from './style.module.scss';
 import React from 'react';
+import styles from './style.module.scss';
 
 type Types = {
   id?: string;
@@ -38,23 +38,24 @@ const AboutUsCardComponent = () => {
   return (
     <div className="container">
       <div className={styles['about-us']}>
-        <img
-          className={styles['about-us-image']}
-          src="/images/ec34ddc5ab531a19e86c9704fbeab279.jpg"
-          alt="about us computer"
-        />
-        <div className={styles['about-us-opacity-layer']}></div>
+        <picture className={styles['about-us-image']}>
+          <source srcSet="/images/ec34ddc5ab531a19e86c9704fbeab279.jpg" type="image/jpg" />
+          <img
+            className={styles['about-us-image']}
+            src="/images/ec34ddc5ab531a19e86c9704fbeab279.jpg"
+            alt="about us computer"
+          />
+        </picture>
+        <div className={styles['about-us-opacity-layer']} />
 
         <div className={styles['carousel-container']}>
-          <Carousel autoplay={true}>
-            {dataMock.map((item) => {
-              return (
-                <div className={styles['carousel-content-padding']} key={item.id}>
-                  <h3 className={styles['carousel-container-title']}>{item.title}</h3>
-                  <span className={styles['carousel-container-description']}>{item.content}</span>
-                </div>
-              );
-            })}
+          <Carousel autoplay>
+            {dataMock.map((item) => (
+              <div className={styles['carousel-content-padding']} key={item.id}>
+                <h3 className={styles['carousel-container-title']}>{item.title}</h3>
+                <span className={styles['carousel-container-description']}>{item.content}</span>
+              </div>
+            ))}
           </Carousel>
         </div>
       </div>

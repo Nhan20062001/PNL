@@ -13,7 +13,7 @@ interface IProps {
   setShowResetPasswordModal: (v: boolean) => void;
 }
 
-function ResetPassword(props: IProps) {
+const ResetPassword = (props: IProps) => {
   const dispatch = useAppDispatch();
   const { resetPasswordModalVisible, setShowResetPasswordModal } = props;
   const [isLoading, setIsLoading] = useState(false);

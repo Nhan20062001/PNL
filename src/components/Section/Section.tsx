@@ -7,17 +7,15 @@ type Props = {
   component?: React.ReactNode;
 };
 
-const Section = ({ title, align, component }: Props) => {
-  return (
+const Section = ({ title, align, component }: Props) => (
     <section className={styles[`wrapper-section`]}>
       {title ? (
         <h3 className={`${styles['wrapper-section-title title']}-${align}`}>{title}</h3>
       ) : (
         <h3>Loading</h3>
       )}
-      {component ? component : ''}
+      {component || ''}
     </section>
   );
-};
 
 export default Section;

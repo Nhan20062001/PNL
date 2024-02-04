@@ -1,9 +1,8 @@
 import React from 'react';
-import styles from './style.module.scss';
 import { Image } from 'antd';
+import styles from './style.module.scss';
 
-function WorkDetail() {
-  return (
+const WorkDetail = () => (
     <div className={styles['work-detail']}>
       <h4>Tên dự án</h4>
       <div className={styles['body-work-detail']}>
@@ -36,7 +35,6 @@ function WorkDetail() {
         </h5>
       </div>
     </div>
-  );
-}
+  )
 
 export default WorkDetail;

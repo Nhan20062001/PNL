@@ -80,7 +80,7 @@ export const ADMIN_PATH = {
   },
 };
 
-//Common button
+// Common button
 export enum ButtonType {
   DEFAULT = 'btn-default',
   PRIMARY = 'btn-primary',

@@ -1,7 +1,7 @@
 'use client';
 
+import React from 'react';
 import { Image } from 'antd';
-import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import CustomButton from '@/components/Button/CustomButton';
 import { ButtonType } from '@/config/constant';
@@ -9,6 +9,7 @@ import SendIcon from '@/layouts/icons/SendIcons';
 import useTranslation from '@/hook/useTranslation';
 import { TranslateEnum } from '@/store/translation/translation.type';
 import { useAppSelector } from '@/store';
+import styles from './style.module.scss';
 
 const motionSetting = {
   initial: { opacity: 0, y: 50 },
@@ -39,8 +40,9 @@ const IntroPage = () => {
           </div>
           <div className={styles['intro-detail']}>
             <motion.h6 {...motionSetting} transition={{ duration: 1, delay: 1 }}>
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a type specimen book
+              Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen
+              book
             </motion.h6>
           </div>
           <motion.div {...motionSetting} transition={{ duration: 1, delay: 2 }}>
@@ -49,7 +51,7 @@ const IntroPage = () => {
               buttonType={ButtonType.PRIMARY}
             >
               <SendIcon />
-              {t('btn')['contactToWork']}
+              {t('btn').contactToWork}
             </CustomButton>
           </motion.div>
         </div>

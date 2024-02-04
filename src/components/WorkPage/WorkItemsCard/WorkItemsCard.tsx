@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styles from './style.module.scss';
-import { Image, Modal } from 'antd';
-import { Col, Row } from 'antd';
-import WorkDetail from '../WorkDetail/WorkDetail';
+import { Image, Modal , Col, Row } from 'antd';
+
 import CustomButton from '@/components/Button/CustomButton';
 import { ButtonType } from '@/config/constant';
 import useTranslation from '@/hook/useTranslation';
+import WorkDetail from '../WorkDetail/WorkDetail';
+import styles from './style.module.scss';
 
 type Types = {
   id?: string;
@@ -14,7 +14,7 @@ type Types = {
   description?: string;
 };
 
-function WorkItemsCard() {
+const WorkItemsCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useTranslation();
   const dataMock: Types[] = [
@@ -70,8 +70,7 @@ function WorkItemsCard() {
     <div className={styles['work-items-card']}>
       <div className="container">
         <div className={styles['work-item-container']}>
-          {dataMock.map((item) => {
-            return (
+          {dataMock.map((item) => (
               <Row className={styles['box-item']} key={item.id}>
                 <Col
                   lg={{ span: 8, offset: 0 }}
@@ -94,13 +93,12 @@ function WorkItemsCard() {
                       buttonType={ButtonType.DEFAULT}
                       onClick={showModal}
                     >
-                      {t('btn')['readMore']}
+                      {t('btn').readMore}
                     </CustomButton>
                   </div>
                 </Col>
               </Row>
-            );
-          })}
+            ))}
 
           <Modal
             className={styles['model-work-detail']}

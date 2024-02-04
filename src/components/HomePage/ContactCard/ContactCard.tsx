@@ -1,5 +1,5 @@
+import React from 'react';
 import { Image, Form, Input } from 'antd';
-import styles from './style.module.scss';
 import TextArea from 'antd/es/input/TextArea';
 import CustomButton from '@/components/Button/CustomButton';
 import { ButtonType } from '@/config/constant';
@@ -7,6 +7,7 @@ import SendIcon from '@/layouts/icons/SendIcons';
 import { useAppSelector } from '@/store';
 import { TranslateEnum } from '@/store/translation/translation.type';
 import useTranslation from '@/hook/useTranslation';
+import styles from './style.module.scss';
 
 const ContactCardComponent = () => {
   const [form] = Form.useForm();
@@ -21,7 +22,7 @@ const ContactCardComponent = () => {
           alt=""
           preview={false}
         />
-        <div className={styles['contact-container-opacity-layer']}></div>
+        <div className={styles['contact-container-opacity-layer']} />
 
         <div className={styles['contact-card-content']}>
           <div className="container">
@@ -61,7 +62,7 @@ const ContactCardComponent = () => {
                   />
                 </Form.Item>
               </Form>
-              <div className={styles['button']}>
+              <div className={styles.button}>
                 <CustomButton
                   buttonType={ButtonType.DEFAULT}
                   className={
@@ -69,7 +70,7 @@ const ContactCardComponent = () => {
                   }
                 >
                   <SendIcon />
-                  <p className={styles['button-text']}> {t('btn')['contactToWork']}</p>
+                  <p className={styles['button-text']}> {t('btn').contactToWork}</p>
                 </CustomButton>
               </div>
             </div>

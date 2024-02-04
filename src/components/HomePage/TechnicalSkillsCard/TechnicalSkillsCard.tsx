@@ -1,7 +1,7 @@
-import styles from './style.module.scss';
 import { useInView, motion } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import Carousel from '@/components/Carousel/Carousel';
+import styles from './style.module.scss';
 
 type Types = {
   id?: string;
@@ -80,9 +80,9 @@ const TechnicalSkillsCardComponent = () => {
     <div className="container">
       <div ref={ref} className={styles['technical-skills-card']}>
         <div className={styles['technical-skills-header']}>
-          <div className={styles['rectangle']}>
-            <motion.div {...motionSetting} className={styles['rectangle-top']}></motion.div>
-            <motion.div {...motionSetting} className={styles['rectangle-bottom']}></motion.div>
+          <div className={styles.rectangle}>
+            <motion.div {...motionSetting} className={styles['rectangle-top']} />
+            <motion.div {...motionSetting} className={styles['rectangle-bottom']} />
           </div>
           <h3>Technical Skills</h3>
         </div>
